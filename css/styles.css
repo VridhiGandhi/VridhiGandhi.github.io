@@ -4109,7 +4109,7 @@ td:last-child {
  * ------------------------------------------------------------------- */
 @media screen and (max-width: 1600px) {
 	.clients-list__item {
-		width: 25%;
+		width: 20%;
 	}
 }
 
