@@ -419,7 +419,11 @@ const ssGA4LogoClicks = function () {
             { id: 'about-nav-about', label: 'About About' },
             { id: 'about-nav-services', label: 'About Services' },
             { id: 'about-nav-certificates', label: 'About Certificates' },
-            { id: 'about-nav-contact', label: 'About Contact' }
+            { id: 'about-nav-contact', label: 'About Contact' },
+            { id: 'services-nav-about', label: 'Services About' },
+            { id: 'services-nav-services', label: 'Services Services' },
+            { id: 'services-nav-certificates', label: 'Services Certificates' },
+            { id: 'services-nav-contact', label: 'Services Contact' }
         ];
 
         links.forEach(link => {
@@ -439,7 +443,8 @@ const ssGA4LogoClicks = function () {
 const ssGA4ResumeClicks = function () {
     const resumeButtons = [
         { id: 'home-resume-download', label: 'Home Resume Google Drive Link' },
-        { id: 'about-resume-download', label: 'About Resume Google Drive Link' }
+        { id: 'about-resume-download', label: 'About Resume Google Drive Link' },
+        { id: 'services-resume-download', label: 'About Resume Google Drive Link' }
     ];
 
     resumeButtons.forEach(btn => {
@@ -549,7 +554,8 @@ const ssGA4ClientLogoClicks = function () {
 const ssGA4LetsWorkClick = function () {
     const buttons = [
         { id: 'home-lets-work-click', label: "Home Let's Work Together Button" },
-        { id: 'about-lets-work-click', label: "About Let's Work Together Button" }
+        { id: 'about-lets-work-click', label: "About Let's Work Together Button" },
+        { id: 'services-lets-work-click', label: "Services Let's Work Together Button" }
     ];
 
     buttons.forEach(btn => {
@@ -578,7 +584,12 @@ const ssGA4LetsWorkClick = function () {
         { id: 'about-footer-about', label: 'About About - Footer' },
         { id: 'about-footer-services', label: 'About Services - Footer' },
         { id: 'about-footer-certificates', label: 'About Certificates - Footer' },
-        { id: 'about-footer-contact', label: 'About Contact - Footer' }
+        { id: 'about-footer-contact', label: 'About Contact - Footer' },
+        { id: 'services-footer-home', label: 'Services Home - Footer' },
+        { id: 'services-footer-about', label: 'Services About - Footer' },
+        { id: 'services-footer-services', label: 'Services Services - Footer' },
+        { id: 'services-footer-certificates', label: 'Services Certificates - Footer' },
+        { id: 'services-footer-contact', label: 'Services Contact - Footer' }
     ];
 
     links.forEach(link => {
@@ -606,7 +617,12 @@ const ssGA4LetsWorkClick = function () {
         { id: 'about-footer-linkedin-click', label: 'About Footer - LinkedIn' },
         { id: 'about-footer-whatsapp-click', label: 'About Footer - WhatsApp' },
         { id: 'about-footer-call-click', label: 'About Footer - Call' },
-        { id: 'about-footer-instagram-click', label: 'About Footer - Instagram' }
+        { id: 'about-footer-instagram-click', label: 'About Footer - Instagram' },
+        { id: 'services-footer-email-click', label: 'Services Footer - Email' },
+        { id: 'services-footer-linkedin-click', label: 'Services Footer - LinkedIn' },
+        { id: 'services-footer-whatsapp-click', label: 'Services Footer - WhatsApp' },
+        { id: 'services-footer-call-click', label: 'Services Footer - Call' },
+        { id: 'services-footer-instagram-click', label: 'Services Footer - Instagram' }
     ];
 
     socialLinks.forEach(link => {
@@ -626,7 +642,8 @@ const ssGA4LetsWorkClick = function () {
 const ssGA4BackToTopClick = function () {
     const buttons = [
         { id: 'back-to-top-click', label: 'Home Back to Top Button' },
-        { id: 'about-to-top-click', label: 'About Back to Top Button' }
+        { id: 'about-to-top-click', label: 'About Back to Top Button' },
+        { id: 'services-to-top-click', label: 'Services Back to Top Button' }
     ];
 
     buttons.forEach(btn => {
