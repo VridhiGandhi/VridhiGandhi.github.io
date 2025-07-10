@@ -521,6 +521,22 @@ const ssGA4ClientLogoClicks = function () {
         }
     });
 };
+    /* GA4 Let's Work Together Button Click Tracker
+* ------------------------------------------------------ */
+const ssGA4LetsWorkClick = function () {
+    const btn = document.getElementById('lets-work-click');
+    if (btn) {
+        btn.addEventListener('click', function () {
+            if (typeof gtag === 'function') {
+                gtag('event', 'lets_work_click', {
+                    event_category: 'navigation',
+                    event_label: "Let's Work Together Button"
+                });
+            }
+        });
+    }
+};
+
 
 
 
@@ -551,6 +567,7 @@ const ssGA4ClientLogoClicks = function () {
         ssGA4AboutMoreClick();
         ssGA4ServicesClick();
         ssGA4ClientLogoClicks();
+        ssGA4LetsWorkClick();
 
 
 
