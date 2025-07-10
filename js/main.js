@@ -483,6 +483,20 @@
         });
     }
 };
+    const ssGA4ServicesClick = function () {
+    const btn = document.getElementById('services-view-click');
+    if (btn) {
+        btn.addEventListener('click', function () {
+            if (typeof gtag === 'function') {
+                gtag('event', 'services_view_click', {
+                    event_category: 'navigation',
+                    event_label: 'View All Services Button'
+                });
+            }
+        });
+    }
+};
+
 
 
 
@@ -509,6 +523,7 @@
         ssGA4ScrollClick(); 
         ssGA4SocialClicks();
         ssGA4AboutMoreClick();
+        ssGA4ServicesClick(); 
 
 
 
