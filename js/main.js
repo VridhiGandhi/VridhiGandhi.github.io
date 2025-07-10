@@ -385,7 +385,7 @@
        /* GA4 Logo Click Tracker
     * ------------------------------------------------------ */
     const ssGA4LogoClick = function () {
-        const logo = document.getElementById('logo-click');
+        const logo = document.getElementById('home-logo-click');
         if (logo) {
             logo.addEventListener('click', function () {
                 if (typeof gtag === 'function') {
@@ -401,10 +401,10 @@
     * ------------------------------------------------------ */
     const ssGA4MenuClicks = function () {
         const links = [
-            { id: 'nav-about', label: 'About' },
-            { id: 'nav-services', label: 'Services' },
-            { id: 'nav-certificates', label: 'Certificates' },
-            { id: 'nav-contact', label: 'Contact' }
+            { id: 'home-nav-about', label: 'Home About' },
+            { id: 'home-nav-services', label: 'Home Services' },
+            { id: 'home-nav-certificates', label: 'Home Certificates' },
+            { id: 'home-nav-contact', label: 'Home Contact' }
         ];
 
         links.forEach(link => {
@@ -422,7 +422,7 @@
         });
     };
     const ssGA4ResumeClick = function () {
-    const resumeBtn = document.getElementById('resume-download');
+    const resumeBtn = document.getElementById('home-resume-download');
     if (resumeBtn) {
         resumeBtn.addEventListener('click', function () {
             if (typeof gtag === 'function') {
@@ -435,7 +435,7 @@
     }
 };
     const ssGA4ScrollClick = function () {
-    const scrollBtn = document.getElementById('scroll-click');
+    const scrollBtn = document.getElementById('home-scroll-click');
     if (scrollBtn) {
         scrollBtn.addEventListener('click', function () {
             if (typeof gtag === 'function') {
@@ -449,11 +449,11 @@
 };
     const ssGA4SocialClicks = function () {
     const socialLinks = [
-        { id: 'email-click', label: 'Email' },
-        { id: 'linkedin-click', label: 'LinkedIn' },
-        { id: 'whatsapp-click', label: 'WhatsApp' },
-        { id: 'call-click', label: 'Phone' },
-        { id: 'instagram-click', label: 'Instagram' }
+        { id: 'home-email-click', label: 'Email' },
+        { id: 'home-linkedin-click', label: 'LinkedIn' },
+        { id: 'home-whatsapp-click', label: 'WhatsApp' },
+        { id: 'home-call-click', label: 'Phone' },
+        { id: 'home-instagram-click', label: 'Instagram' }
     ];
 
     socialLinks.forEach(link => {
@@ -471,7 +471,7 @@
     });
 };
     const ssGA4AboutMoreClick = function () {
-    const btn = document.getElementById('about-more-click');
+    const btn = document.getElementById('home-about-more-click');
     if (btn) {
         btn.addEventListener('click', function () {
             if (typeof gtag === 'function') {
@@ -484,7 +484,7 @@
     }
 };
     const ssGA4ServicesClick = function () {
-    const btn = document.getElementById('services-view-click');
+    const btn = document.getElementById('home-services-view-click');
     if (btn) {
         btn.addEventListener('click', function () {
             if (typeof gtag === 'function') {
@@ -500,11 +500,11 @@
 * ------------------------------------------------------ */
 const ssGA4ClientLogoClicks = function () {
     const logoClickMap = [
-        { id: 'client-streambox', label: 'StreamBox Logo' },
-        { id: 'client-aari', label: 'AARI Logo' },
-        { id: 'client-finqy', label: 'FinQy Logo' },
-        { id: 'client-enpointe', label: 'Enpointe Logo' },
-        { id: 'client-merkle', label: 'Merkle Logo' },
+        { id: 'home-client-streambox', label: 'StreamBox Logo' },
+        { id: 'home-client-aari', label: 'AARI Logo' },
+        { id: 'home-client-finqy', label: 'FinQy Logo' },
+        { id: 'home-client-enpointe', label: 'Enpointe Logo' },
+        { id: 'home-client-merkle', label: 'Merkle Logo' },
     ];
 
     logoClickMap.forEach(item => {
@@ -524,7 +524,7 @@ const ssGA4ClientLogoClicks = function () {
     /* GA4 Let's Work Together Button Click Tracker
 * ------------------------------------------------------ */
 const ssGA4LetsWorkClick = function () {
-    const btn = document.getElementById('lets-work-click');
+    const btn = document.getElementById('home-lets-work-click');
     if (btn) {
         btn.addEventListener('click', function () {
             if (typeof gtag === 'function') {
