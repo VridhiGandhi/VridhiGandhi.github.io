@@ -536,6 +536,68 @@ const ssGA4LetsWorkClick = function () {
         });
     }
 };
+    const ssGA4FooterMenuClicks = function () {
+    const links = [
+        { id: 'home-footer-home', label: 'Home - Footer' },
+        { id: 'home-footer-about', label: 'About - Footer' },
+        { id: 'home-footer-services', label: 'Services - Footer' },
+        { id: 'home-footer-certificates', label: 'Certificates - Footer' },
+        { id: 'home-footer-contact', label: 'Contact - Footer' }
+    ];
+
+    links.forEach(link => {
+        const el = document.getElementById(link.id);
+        if (el) {
+            el.addEventListener('click', function () {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'menu_click', {
+                        event_category: 'navigation',
+                        event_label: link.label
+                    });
+                }
+            });
+        }
+    });
+};
+    const ssGA4FooterSocialClicks = function () {
+    const socialLinks = [
+        { id: 'home-footer-email-click', label: 'Footer - Email' },
+        { id: 'home-footer-linkedin-click', label: 'Footer - LinkedIn' },
+        { id: 'home-footer-whatsapp-click', label: 'Footer - WhatsApp' },
+        { id: 'home-footer-call-click', label: 'Footer - Call' },
+        { id: 'home-footer-instagram-click', label: 'Footer - Instagram' }
+    ];
+
+    socialLinks.forEach(link => {
+        const el = document.getElementById(link.id);
+        if (el) {
+            el.addEventListener('click', function () {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'social_click', {
+                        event_category: 'social_footer',
+                        event_label: link.label
+                    });
+                }
+            });
+        }
+    });
+};
+    const ssGA4BackToTopClick = function () {
+    const btn = document.getElementById('back-to-top-click');
+    if (btn) {
+        btn.addEventListener('click', function () {
+            if (typeof gtag === 'function') {
+                gtag('event', 'back_to_top_click', {
+                    event_category: 'navigation',
+                    event_label: 'Back to Top Button'
+                });
+            }
+        });
+    }
+};
+
+
+
 
 
 
@@ -568,6 +630,12 @@ const ssGA4LetsWorkClick = function () {
         ssGA4ServicesClick();
         ssGA4ClientLogoClicks();
         ssGA4LetsWorkClick();
+        ssGA4FooterMenuClicks();
+        ssGA4FooterSocialClicks();
+        ssGA4BackToTopClick();
+
+
+
 
 
 
