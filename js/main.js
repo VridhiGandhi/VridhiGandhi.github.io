@@ -434,6 +434,21 @@
         });
     }
 };
+    const ssGA4ScrollClick = function () {
+    const scrollBtn = document.getElementById('scroll-click');
+    if (scrollBtn) {
+        scrollBtn.addEventListener('click', function () {
+            if (typeof gtag === 'function') {
+                gtag('event', 'scroll_prompt_click', {
+                    event_category: 'navigation',
+                    event_label: 'Scroll for More Click'
+                });
+            }
+        });
+    }
+};
+
+    
 
 
 
@@ -453,6 +468,7 @@
         ssGA4LogoClick();
         ssGA4MenuClicks();
         ssGA4ResumeClick();
+        ssGA4ScrollClick(); 
 
 
     })();
