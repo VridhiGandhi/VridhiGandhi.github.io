@@ -447,6 +447,44 @@
         });
     }
 };
+    const ssGA4SocialClicks = function () {
+    const socialLinks = [
+        { id: 'email-click', label: 'Email' },
+        { id: 'linkedin-click', label: 'LinkedIn' },
+        { id: 'whatsapp-click', label: 'WhatsApp' },
+        { id: 'call-click', label: 'Phone' },
+        { id: 'instagram-click', label: 'Instagram' }
+    ];
+
+    socialLinks.forEach(link => {
+        const el = document.getElementById(link.id);
+        if (el) {
+            el.addEventListener('click', function () {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'social_click', {
+                        event_category: 'social',
+                        event_label: link.label
+                    });
+                }
+            });
+        }
+    });
+};
+    const ssGA4AboutMoreClick = function () {
+    const btn = document.getElementById('about-more-click');
+    if (btn) {
+        btn.addEventListener('click', function () {
+            if (typeof gtag === 'function') {
+                gtag('event', 'about_more_click', {
+                    event_category: 'navigation',
+                    event_label: 'More About Me Button'
+                });
+            }
+        });
+    }
+};
+
+
 
     
 
@@ -469,6 +507,9 @@
         ssGA4MenuClicks();
         ssGA4ResumeClick();
         ssGA4ScrollClick(); 
+        ssGA4SocialClicks();
+        ssGA4AboutMoreClick();
+
 
 
     })();
