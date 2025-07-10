@@ -384,19 +384,30 @@
     }; // end ssMoveTo
        /* GA4 Logo Click Tracker
     * ------------------------------------------------------ */
-    const ssGA4LogoClick = function () {
-        const logo = document.getElementById('home-logo-click');
-        if (logo) {
-            logo.addEventListener('click', function () {
+const ssGA4LogoClicks = function () {
+    const logos = [
+        { id: 'home-logo-click', label: 'Home Header Logo Click' },
+        { id: 'about-logo-click', label: 'About Header Logo Click' },
+        { id: 'services-logo-click', label: 'Services Header Logo Click' },
+        { id: 'certificates-logo-click', label: 'Certificates Header Logo Click' },
+        { id: 'contact-logo-click', label: 'Contact Header Logo Click' }
+    ];
+
+    logos.forEach(item => {
+        const el = document.getElementById(item.id);
+        if (el) {
+            el.addEventListener('click', function () {
                 if (typeof gtag === 'function') {
                     gtag('event', 'logo_click', {
                         event_category: 'navigation',
-                        event_label: 'Home Header Logo Click'
+                        event_label: item.label
                     });
                 }
             });
         }
-    };
+    });
+};
+
        /* GA4 Menu Link Click Tracker
     * ------------------------------------------------------ */
     const ssGA4MenuClicks = function () {
@@ -404,7 +415,11 @@
             { id: 'home-nav-about', label: 'Home About' },
             { id: 'home-nav-services', label: 'Home Services' },
             { id: 'home-nav-certificates', label: 'Home Certificates' },
-            { id: 'home-nav-contact', label: 'Home Contact' }
+            { id: 'home-nav-contact', label: 'Home Contact' },
+            { id: 'about-nav-about', label: 'About About' },
+            { id: 'about-nav-services', label: 'About Services' },
+            { id: 'about-nav-certificates', label: 'About Certificates' },
+            { id: 'about-nav-contact', label: 'About Contact' }
         ];
 
         links.forEach(link => {
@@ -421,19 +436,27 @@
             }
         });
     };
-    const ssGA4ResumeClick = function () {
-    const resumeBtn = document.getElementById('home-resume-download');
-    if (resumeBtn) {
-        resumeBtn.addEventListener('click', function () {
-            if (typeof gtag === 'function') {
-                gtag('event', 'resume_click', {
-                    event_category: 'download',
-                    event_label: 'Home Resume Google Drive Link'
-                });
-            }
-        });
-    }
+const ssGA4ResumeClicks = function () {
+    const resumeButtons = [
+        { id: 'home-resume-download', label: 'Home Resume Google Drive Link' },
+        { id: 'about-resume-download', label: 'About Resume Google Drive Link' }
+    ];
+
+    resumeButtons.forEach(btn => {
+        const el = document.getElementById(btn.id);
+        if (el) {
+            el.addEventListener('click', function () {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'resume_click', {
+                        event_category: 'download',
+                        event_label: btn.label
+                    });
+                }
+            });
+        }
+    });
 };
+
     const ssGA4ScrollClick = function () {
     const scrollBtn = document.getElementById('home-scroll-click');
     if (scrollBtn) {
@@ -524,25 +547,38 @@ const ssGA4ClientLogoClicks = function () {
     /* GA4 Let's Work Together Button Click Tracker
 * ------------------------------------------------------ */
 const ssGA4LetsWorkClick = function () {
-    const btn = document.getElementById('home-lets-work-click');
-    if (btn) {
-        btn.addEventListener('click', function () {
-            if (typeof gtag === 'function') {
-                gtag('event', 'lets_work_click', {
-                    event_category: 'navigation',
-                    event_label: "Home Let's Work Together Button"
-                });
-            }
-        });
-    }
+    const buttons = [
+        { id: 'home-lets-work-click', label: "Home Let's Work Together Button" },
+        { id: 'about-lets-work-click', label: "About Let's Work Together Button" }
+    ];
+
+    buttons.forEach(btn => {
+        const el = document.getElementById(btn.id);
+        if (el) {
+            el.addEventListener('click', function () {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'lets_work_click', {
+                        event_category: 'navigation',
+                        event_label: btn.label
+                    });
+                }
+            });
+        }
+    });
 };
+
     const ssGA4FooterMenuClicks = function () {
     const links = [
         { id: 'home-footer-home', label: 'Home Home - Footer' },
         { id: 'home-footer-about', label: 'Home About - Footer' },
         { id: 'home-footer-services', label: 'Home Services - Footer' },
         { id: 'home-footer-certificates', label: 'Home Certificates - Footer' },
-        { id: 'home-footer-contact', label: 'Home Contact - Footer' }
+        { id: 'home-footer-contact', label: 'Home Contact - Footer' },
+        { id: 'about-footer-home', label: 'About Home - Footer' },
+        { id: 'about-footer-about', label: 'About About - Footer' },
+        { id: 'about-footer-services', label: 'About Services - Footer' },
+        { id: 'about-footer-certificates', label: 'About Certificates - Footer' },
+        { id: 'about-footer-contact', label: 'About Contact - Footer' }
     ];
 
     links.forEach(link => {
@@ -565,7 +601,12 @@ const ssGA4LetsWorkClick = function () {
         { id: 'home-footer-linkedin-click', label: 'Home Footer - LinkedIn' },
         { id: 'home-footer-whatsapp-click', label: 'Home Footer - WhatsApp' },
         { id: 'home-footer-call-click', label: 'Home Footer - Call' },
-        { id: 'home-footer-instagram-click', label: 'Home Footer - Instagram' }
+        { id: 'home-footer-instagram-click', label: 'Home Footer - Instagram' },
+        { id: 'about-footer-email-click', label: 'About Footer - Email' },
+        { id: 'about-footer-linkedin-click', label: 'About Footer - LinkedIn' },
+        { id: 'about-footer-whatsapp-click', label: 'About Footer - WhatsApp' },
+        { id: 'about-footer-call-click', label: 'About Footer - Call' },
+        { id: 'about-footer-instagram-click', label: 'About Footer - Instagram' }
     ];
 
     socialLinks.forEach(link => {
@@ -582,19 +623,27 @@ const ssGA4LetsWorkClick = function () {
         }
     });
 };
-    const ssGA4BackToTopClick = function () {
-    const btn = document.getElementById('back-to-top-click');
-    if (btn) {
-        btn.addEventListener('click', function () {
-            if (typeof gtag === 'function') {
-                gtag('event', 'back_to_top_click', {
-                    event_category: 'navigation',
-                    event_label: 'Home Back to Top Button'
-                });
-            }
-        });
-    }
+const ssGA4BackToTopClick = function () {
+    const buttons = [
+        { id: 'back-to-top-click', label: 'Home Back to Top Button' },
+        { id: 'about-to-top-click', label: 'About Back to Top Button' }
+    ];
+
+    buttons.forEach(btn => {
+        const el = document.getElementById(btn.id);
+        if (el) {
+            el.addEventListener('click', function () {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'back_to_top_click', {
+                        event_category: 'navigation',
+                        event_label: btn.label
+                    });
+                }
+            });
+        }
+    });
 };
+
 
 
 
@@ -621,9 +670,9 @@ const ssGA4LetsWorkClick = function () {
         ssMailChimpForm();
         ssAlertBoxes();
         ssMoveTo();
-        ssGA4LogoClick();
+        ssGA4LogoClicks();
         ssGA4MenuClicks();
-        ssGA4ResumeClick();
+        ssGA4ResumeClicks();
         ssGA4ScrollClick(); 
         ssGA4SocialClicks();
         ssGA4AboutMoreClick();
