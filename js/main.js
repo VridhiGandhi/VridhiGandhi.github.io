@@ -421,6 +421,20 @@
             }
         });
     };
+    const ssGA4ResumeClick = function () {
+    const resumeBtn = document.getElementById('resume-download');
+    if (resumeBtn) {
+        resumeBtn.addEventListener('click', function () {
+            if (typeof gtag === 'function') {
+                gtag('event', 'resume_click', {
+                    event_category: 'download',
+                    event_label: 'Resume Google Drive Link'
+                });
+            }
+        });
+    }
+};
+
 
 
 
@@ -437,7 +451,9 @@
         ssAlertBoxes();
         ssMoveTo();
         ssGA4LogoClick();
-        ssGA4MenuClicks(); 
+        ssGA4MenuClicks();
+        ssGA4ResumeClick();
+
 
     })();
 
