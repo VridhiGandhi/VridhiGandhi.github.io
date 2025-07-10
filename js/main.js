@@ -1,8 +1,3 @@
-/* ===================================================================
- * Monica 1.0.0 - Main JS
- *
- * ------------------------------------------------------------------- */
-
 (function(html) {
 
     'use strict';
@@ -402,6 +397,31 @@
             });
         }
     };
+       /* GA4 Menu Link Click Tracker
+    * ------------------------------------------------------ */
+    const ssGA4MenuClicks = function () {
+        const links = [
+            { id: 'nav-about', label: 'About' },
+            { id: 'nav-services', label: 'Services' },
+            { id: 'nav-certificates', label: 'Certificates' },
+            { id: 'nav-contact', label: 'Contact' }
+        ];
+
+        links.forEach(link => {
+            const el = document.getElementById(link.id);
+            if (el) {
+                el.addEventListener('click', function () {
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'menu_click', {
+                            event_category: 'navigation',
+                            event_label: link.label
+                        });
+                    }
+                });
+            }
+        });
+    };
+
 
 
 
@@ -417,6 +437,7 @@
         ssAlertBoxes();
         ssMoveTo();
         ssGA4LogoClick();
+        ssGA4MenuClicks(); 
 
     })();
 
