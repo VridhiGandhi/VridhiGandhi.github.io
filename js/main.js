@@ -387,6 +387,22 @@
         });
 
     }; // end ssMoveTo
+       /* GA4 Logo Click Tracker
+    * ------------------------------------------------------ */
+    const ssGA4LogoClick = function () {
+        const logo = document.getElementById('logo-click');
+        if (logo) {
+            logo.addEventListener('click', function () {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'logo_click', {
+                        event_category: 'navigation',
+                        event_label: 'Header Logo Click'
+                    });
+                }
+            });
+        }
+    };
+
 
 
    /* Initialize
@@ -400,6 +416,7 @@
         ssMailChimpForm();
         ssAlertBoxes();
         ssMoveTo();
+        ssGA4LogoClick();
 
     })();
 
