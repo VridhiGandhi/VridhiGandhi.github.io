@@ -391,7 +391,7 @@
                 if (typeof gtag === 'function') {
                     gtag('event', 'logo_click', {
                         event_category: 'navigation',
-                        event_label: 'Header Logo Click'
+                        event_label: 'Home Header Logo Click'
                     });
                 }
             });
@@ -428,7 +428,7 @@
             if (typeof gtag === 'function') {
                 gtag('event', 'resume_click', {
                     event_category: 'download',
-                    event_label: 'Resume Google Drive Link'
+                    event_label: 'Home Resume Google Drive Link'
                 });
             }
         });
@@ -441,7 +441,7 @@
             if (typeof gtag === 'function') {
                 gtag('event', 'scroll_prompt_click', {
                     event_category: 'navigation',
-                    event_label: 'Scroll for More Click'
+                    event_label: 'Home Scroll for More Click'
                 });
             }
         });
@@ -449,11 +449,11 @@
 };
     const ssGA4SocialClicks = function () {
     const socialLinks = [
-        { id: 'home-email-click', label: 'Email' },
-        { id: 'home-linkedin-click', label: 'LinkedIn' },
-        { id: 'home-whatsapp-click', label: 'WhatsApp' },
-        { id: 'home-call-click', label: 'Phone' },
-        { id: 'home-instagram-click', label: 'Instagram' }
+        { id: 'home-about-email-click', label: 'Home About Email' },
+        { id: 'home-about-linkedin-click', label: 'Home About LinkedIn' },
+        { id: 'home-about-whatsapp-click', label: 'Home About WhatsApp' },
+        { id: 'home-about-call-click', label: 'Home About Phone' },
+        { id: 'home-about-instagram-click', label: 'Home About Instagram' }
     ];
 
     socialLinks.forEach(link => {
@@ -477,7 +477,7 @@
             if (typeof gtag === 'function') {
                 gtag('event', 'about_more_click', {
                     event_category: 'navigation',
-                    event_label: 'More About Me Button'
+                    event_label: 'Home More About Me Button'
                 });
             }
         });
@@ -490,7 +490,7 @@
             if (typeof gtag === 'function') {
                 gtag('event', 'services_view_click', {
                     event_category: 'navigation',
-                    event_label: 'View All Services Button'
+                    event_label: 'Home View All Services Button'
                 });
             }
         });
@@ -500,11 +500,11 @@
 * ------------------------------------------------------ */
 const ssGA4ClientLogoClicks = function () {
     const logoClickMap = [
-        { id: 'home-client-streambox', label: 'StreamBox Logo' },
-        { id: 'home-client-aari', label: 'AARI Logo' },
-        { id: 'home-client-finqy', label: 'FinQy Logo' },
-        { id: 'home-client-enpointe', label: 'Enpointe Logo' },
-        { id: 'home-client-merkle', label: 'Merkle Logo' },
+        { id: 'home-client-streambox', label: 'Home StreamBox Logo' },
+        { id: 'home-client-aari', label: 'Home AARI Logo' },
+        { id: 'home-client-finqy', label: 'Home FinQy Logo' },
+        { id: 'home-client-enpointe', label: 'Home Enpointe Logo' },
+        { id: 'home-client-merkle', label: 'Home Merkle Logo' },
     ];
 
     logoClickMap.forEach(item => {
@@ -530,7 +530,7 @@ const ssGA4LetsWorkClick = function () {
             if (typeof gtag === 'function') {
                 gtag('event', 'lets_work_click', {
                     event_category: 'navigation',
-                    event_label: "Let's Work Together Button"
+                    event_label: "Home Let's Work Together Button"
                 });
             }
         });
@@ -538,11 +538,11 @@ const ssGA4LetsWorkClick = function () {
 };
     const ssGA4FooterMenuClicks = function () {
     const links = [
-        { id: 'home-footer-home', label: 'Home - Footer' },
-        { id: 'home-footer-about', label: 'About - Footer' },
-        { id: 'home-footer-services', label: 'Services - Footer' },
-        { id: 'home-footer-certificates', label: 'Certificates - Footer' },
-        { id: 'home-footer-contact', label: 'Contact - Footer' }
+        { id: 'home-footer-home', label: 'Home Home - Footer' },
+        { id: 'home-footer-about', label: 'Home About - Footer' },
+        { id: 'home-footer-services', label: 'Home Services - Footer' },
+        { id: 'home-footer-certificates', label: 'Home Certificates - Footer' },
+        { id: 'home-footer-contact', label: 'Home Contact - Footer' }
     ];
 
     links.forEach(link => {
@@ -561,11 +561,11 @@ const ssGA4LetsWorkClick = function () {
 };
     const ssGA4FooterSocialClicks = function () {
     const socialLinks = [
-        { id: 'home-footer-email-click', label: 'Footer - Email' },
-        { id: 'home-footer-linkedin-click', label: 'Footer - LinkedIn' },
-        { id: 'home-footer-whatsapp-click', label: 'Footer - WhatsApp' },
-        { id: 'home-footer-call-click', label: 'Footer - Call' },
-        { id: 'home-footer-instagram-click', label: 'Footer - Instagram' }
+        { id: 'home-footer-email-click', label: 'Home Footer - Email' },
+        { id: 'home-footer-linkedin-click', label: 'Home Footer - LinkedIn' },
+        { id: 'home-footer-whatsapp-click', label: 'Home Footer - WhatsApp' },
+        { id: 'home-footer-call-click', label: 'Home Footer - Call' },
+        { id: 'home-footer-instagram-click', label: 'Home Footer - Instagram' }
     ];
 
     socialLinks.forEach(link => {
@@ -589,7 +589,7 @@ const ssGA4LetsWorkClick = function () {
             if (typeof gtag === 'function') {
                 gtag('event', 'back_to_top_click', {
                     event_category: 'navigation',
-                    event_label: 'Back to Top Button'
+                    event_label: 'Home Back to Top Button'
                 });
             }
         });
