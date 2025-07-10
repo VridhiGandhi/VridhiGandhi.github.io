@@ -496,6 +496,32 @@
         });
     }
 };
+    /* GA4 Client Logo Click Tracker
+* ------------------------------------------------------ */
+const ssGA4ClientLogoClicks = function () {
+    const logoClickMap = [
+        { id: 'client-streambox', label: 'StreamBox Logo' },
+        { id: 'client-aari', label: 'AARI Logo' },
+        { id: 'client-finqy', label: 'FinQy Logo' },
+        { id: 'client-enpointe', label: 'Enpointe Logo' },
+        { id: 'client-merkle', label: 'Merkle Logo' },
+    ];
+
+    logoClickMap.forEach(item => {
+        const el = document.getElementById(item.id);
+        if (el) {
+            el.addEventListener('click', function () {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'client_logo_click', {
+                        event_category: 'clients',
+                        event_label: item.label
+                    });
+                }
+            });
+        }
+    });
+};
+
 
 
 
@@ -523,7 +549,8 @@
         ssGA4ScrollClick(); 
         ssGA4SocialClicks();
         ssGA4AboutMoreClick();
-        ssGA4ServicesClick(); 
+        ssGA4ServicesClick();
+        ssGA4ClientLogoClicks();
 
 
 
