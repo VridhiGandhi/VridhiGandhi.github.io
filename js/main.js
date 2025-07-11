@@ -423,7 +423,11 @@ const ssGA4LogoClicks = function () {
             { id: 'services-nav-about', label: 'Services About' },
             { id: 'services-nav-services', label: 'Services Services' },
             { id: 'services-nav-certificates', label: 'Services Certificates' },
-            { id: 'services-nav-contact', label: 'Services Contact' }
+            { id: 'services-nav-contact', label: 'Services Contact' },
+            { id: 'contact-nav-about', label: 'Contact About' },
+            { id: 'contact-nav-services', label: 'Contact Services' },
+            { id: 'contact-nav-certificates', label: 'Contact Certificates' },
+            { id: 'contact-nav-contact', label: 'Contact Contact' }
         ];
 
         links.forEach(link => {
@@ -444,7 +448,8 @@ const ssGA4ResumeClicks = function () {
     const resumeButtons = [
         { id: 'home-resume-download', label: 'Home Resume Google Drive Link' },
         { id: 'about-resume-download', label: 'About Resume Google Drive Link' },
-        { id: 'services-resume-download', label: 'About Resume Google Drive Link' }
+        { id: 'services-resume-download', label: 'Services Resume Google Drive Link' },
+        { id: 'contact-resume-download', label: 'Contact Resume Google Drive Link' }
     ];
 
     resumeButtons.forEach(btn => {
@@ -481,7 +486,15 @@ const ssGA4ResumeClicks = function () {
         { id: 'home-about-linkedin-click', label: 'Home About LinkedIn' },
         { id: 'home-about-whatsapp-click', label: 'Home About WhatsApp' },
         { id: 'home-about-call-click', label: 'Home About Phone' },
-        { id: 'home-about-instagram-click', label: 'Home About Instagram' }
+        { id: 'home-about-instagram-click', label: 'Home About Instagram' },
+        { id: 'contact-sendemail-click', label: 'Contact Send Me An Email' },
+        { id: 'contact-social-email-click', label: 'Contatc Social Email' },
+        { id: 'contact-social-linkedin-click', label: 'Contatc Social LinkedIn' },
+        { id: 'contact-social-whatsapp-click', label: 'Contatc Social WhatsApp' },
+        { id: 'contact-social-call-click', label: 'Contatc Social Phone' },
+        { id: 'contact-social-instagram-click', label: 'Contatc Social Instagram' },
+        { id: 'contact-socialblock-email-click', label: 'Contatc Social Block Email' },
+        { id: 'contact-socialblock-call-click', label: 'Contatc Social Block Phone' }
     ];
 
     socialLinks.forEach(link => {
@@ -589,7 +602,12 @@ const ssGA4LetsWorkClick = function () {
         { id: 'services-footer-about', label: 'Services About - Footer' },
         { id: 'services-footer-services', label: 'Services Services - Footer' },
         { id: 'services-footer-certificates', label: 'Services Certificates - Footer' },
-        { id: 'services-footer-contact', label: 'Services Contact - Footer' }
+        { id: 'services-footer-contact', label: 'Services Contact - Footer' },
+        { id: 'contact-footer-home', label: 'Contact Home - Footer' },
+        { id: 'contact-footer-about', label: 'Contact About - Footer' },
+        { id: 'contact-footer-services', label: 'Contact Services - Footer' },
+        { id: 'contact-footer-certificates', label: 'Contact Certificates - Footer' },
+        { id: 'contact-footer-contact', label: 'Contact Contact - Footer' }
     ];
 
     links.forEach(link => {
@@ -622,7 +640,12 @@ const ssGA4LetsWorkClick = function () {
         { id: 'services-footer-linkedin-click', label: 'Services Footer - LinkedIn' },
         { id: 'services-footer-whatsapp-click', label: 'Services Footer - WhatsApp' },
         { id: 'services-footer-call-click', label: 'Services Footer - Call' },
-        { id: 'services-footer-instagram-click', label: 'Services Footer - Instagram' }
+        { id: 'services-footer-instagram-click', label: 'Services Footer - Instagram' },
+        { id: 'contact-footer-email-click', label: 'Contact Footer - Email' },
+        { id: 'contact-footer-linkedin-click', label: 'Contact Footer - LinkedIn' },
+        { id: 'contact-footer-whatsapp-click', label: 'Contact Footer - WhatsApp' },
+        { id: 'contact-footer-call-click', label: 'Contact Footer - Call' },
+        { id: 'contact-footer-instagram-click', label: 'Contact Footer - Instagram' }
     ];
 
     socialLinks.forEach(link => {
@@ -643,7 +666,8 @@ const ssGA4BackToTopClick = function () {
     const buttons = [
         { id: 'back-to-top-click', label: 'Home Back to Top Button' },
         { id: 'about-to-top-click', label: 'About Back to Top Button' },
-        { id: 'services-to-top-click', label: 'Services Back to Top Button' }
+        { id: 'services-to-top-click', label: 'Services Back to Top Button' },
+        { id: 'contact-to-top-click', label: 'Contact Back to Top Button' }
     ];
 
     buttons.forEach(btn => {
