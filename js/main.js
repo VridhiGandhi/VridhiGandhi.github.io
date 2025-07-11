@@ -427,7 +427,11 @@ const ssGA4LogoClicks = function () {
             { id: 'contact-nav-about', label: 'Contact About' },
             { id: 'contact-nav-services', label: 'Contact Services' },
             { id: 'contact-nav-certificates', label: 'Contact Certificates' },
-            { id: 'contact-nav-contact', label: 'Contact Contact' }
+            { id: 'contact-nav-contact', label: 'Contact Contact' },
+            { id: 'certificates-nav-about', label: 'Certificates About' },
+            { id: 'certificates-nav-services', label: 'Certificates Services' },
+            { id: 'certificates-nav-certificates', label: 'Certificates Certificates' },
+            { id: 'certificates-nav-contact', label: 'Certificates Contact' }
         ];
 
         links.forEach(link => {
@@ -449,7 +453,8 @@ const ssGA4ResumeClicks = function () {
         { id: 'home-resume-download', label: 'Home Resume Google Drive Link' },
         { id: 'about-resume-download', label: 'About Resume Google Drive Link' },
         { id: 'services-resume-download', label: 'Services Resume Google Drive Link' },
-        { id: 'contact-resume-download', label: 'Contact Resume Google Drive Link' }
+        { id: 'contact-resume-download', label: 'Contact Resume Google Drive Link' },
+        { id: 'certificates-resume-download', label: 'Certificates Resume Google Drive Link' }
     ];
 
     resumeButtons.forEach(btn => {
@@ -568,7 +573,8 @@ const ssGA4LetsWorkClick = function () {
     const buttons = [
         { id: 'home-lets-work-click', label: "Home Let's Work Together Button" },
         { id: 'about-lets-work-click', label: "About Let's Work Together Button" },
-        { id: 'services-lets-work-click', label: "Services Let's Work Together Button" }
+        { id: 'services-lets-work-click', label: "Services Let's Work Together Button" },
+        { id: 'certificates-lets-work-click', label: "Certificates Let's Work Together Button" }
     ];
 
     buttons.forEach(btn => {
@@ -607,7 +613,12 @@ const ssGA4LetsWorkClick = function () {
         { id: 'contact-footer-about', label: 'Contact About - Footer' },
         { id: 'contact-footer-services', label: 'Contact Services - Footer' },
         { id: 'contact-footer-certificates', label: 'Contact Certificates - Footer' },
-        { id: 'contact-footer-contact', label: 'Contact Contact - Footer' }
+        { id: 'contact-footer-contact', label: 'Contact Contact - Footer' },
+         { id: 'certificates-footer-home', label: 'Certificates Home - Footer' },
+        { id: 'certificates-footer-about', label: 'Certificates About - Footer' },
+        { id: 'certificates-footer-services', label: 'Certificates Services - Footer' },
+        { id: 'certificates-footer-certificates', label: 'Certificates Certificates - Footer' },
+        { id: 'certificates-footer-contact', label: 'Certificates Contact - Footer' }
     ];
 
     links.forEach(link => {
@@ -645,7 +656,12 @@ const ssGA4LetsWorkClick = function () {
         { id: 'contact-footer-linkedin-click', label: 'Contact Footer - LinkedIn' },
         { id: 'contact-footer-whatsapp-click', label: 'Contact Footer - WhatsApp' },
         { id: 'contact-footer-call-click', label: 'Contact Footer - Call' },
-        { id: 'contact-footer-instagram-click', label: 'Contact Footer - Instagram' }
+        { id: 'contact-footer-instagram-click', label: 'Contact Footer - Instagram' },
+        { id: 'certificates-footer-email-click', label: 'Certificates Footer - Email' },
+        { id: 'certificates-footer-linkedin-click', label: 'Certificates Footer - LinkedIn' },
+        { id: 'certificates-footer-whatsapp-click', label: 'Certificates Footer - WhatsApp' },
+        { id: 'certificates-footer-call-click', label: 'Certificates Footer - Call' },
+        { id: 'certificates-footer-instagram-click', label: 'Certificates Footer - Instagram' }
     ];
 
     socialLinks.forEach(link => {
@@ -667,7 +683,8 @@ const ssGA4BackToTopClick = function () {
         { id: 'back-to-top-click', label: 'Home Back to Top Button' },
         { id: 'about-to-top-click', label: 'About Back to Top Button' },
         { id: 'services-to-top-click', label: 'Services Back to Top Button' },
-        { id: 'contact-to-top-click', label: 'Contact Back to Top Button' }
+        { id: 'contact-to-top-click', label: 'Contact Back to Top Button' },
+        { id: 'certificates-to-top-click', label: 'Certificates Back to Top Button' }
     ];
 
     buttons.forEach(btn => {
@@ -684,6 +701,44 @@ const ssGA4BackToTopClick = function () {
         }
     });
 };
+    const ssGA4CertificateClicks = function () {
+    const certs = [
+        { id: 'cert-applied-data-science', label: 'Applied Data Science Capstone' },
+        { id: 'cert-code-yourself', label: 'Code Yourself! An Introduction to Programming' },
+        { id: 'cert-data-analysis-python', label: 'Data Analysis with Python' },
+        { id: 'cert-data-visualization-python', label: 'Data Visualization with Python' },
+        { id: 'cert-sql-python', label: 'Databases and SQL for Data Science with Python' },
+        { id: 'cert-improving-dnn', label: 'Improving Deep Neural Networks' },
+        { id: 'cert-learning-how-to-learn', label: 'Learning How to Learn' },
+        { id: 'cert-ml-classification', label: 'ML - Classification' },
+        { id: 'cert-ml-clustering', label: 'ML - Clustering & Retrieval' },
+        { id: 'cert-ml-regression', label: 'ML - Regression' },
+        { id: 'cert-ml-foundations', label: 'ML Foundations - Case Study' },
+        { id: 'cert-nn-deep-learning', label: 'Neural Networks and Deep Learning' },
+        { id: 'cert-python-ai', label: 'Python for Data Science, AI & Dev' },
+        { id: 'cert-python-intro', label: 'Python Programming - Intro' },
+        { id: 'cert-time-series', label: 'Sequences, Time Series & Prediction' },
+        { id: 'cert-statistics-python', label: 'Statistics for DS with Python' },
+        { id: 'cert-ml-structure', label: 'Structuring ML Projects' },
+        { id: 'cert-ml-power', label: 'The Power of ML' },
+        { id: 'cert-tools-ds', label: 'Tools for Data Science' }
+    ];
+
+    certs.forEach(cert => {
+        const el = document.getElementById(cert.id);
+        if (el) {
+            el.addEventListener('click', function () {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'certificate_click', {
+                        event_category: 'certificates',
+                        event_label: cert.label
+                    });
+                }
+            });
+        }
+    });
+};
+
 
 
 
@@ -723,6 +778,8 @@ const ssGA4BackToTopClick = function () {
         ssGA4FooterMenuClicks();
         ssGA4FooterSocialClicks();
         ssGA4BackToTopClick();
+        ssGA4CertificateClicks();
+
 
 
 
