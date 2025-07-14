@@ -4969,3 +4969,33 @@ td:last-child {
     white-space: nowrap;
 	
 }
+.certificate-instructions {
+  max-width: 92vw;
+  margin: 30px auto 40px;
+  padding: 20px 30px;
+  background-color: #fff3cd;
+  color: #856404;
+  font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  text-align: center;
+  border: 1.5px solid #ffeeba;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+  font-family: 'Montaga', serif;
+  user-select: none;
+  transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+.certificate-instructions:hover,
+.certificate-instructions:focus {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  background-color: #ffeeba;
+}
+
+.certificate-instructions::before {
+  content: "⚠️";
+  font-size: 1.5em;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
