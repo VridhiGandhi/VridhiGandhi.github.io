@@ -3518,6 +3518,7 @@ td:last-child {
 .s-intro__content-inner {
 	--col       : 16;
 	--grid-gap-v: var(--vspace-0_5);
+	 height: 100%;
 }
 
 .s-intro__content-text {
