@@ -3498,7 +3498,6 @@ td:last-child {
 	background              : linear-gradient(20deg, hsl(130deg, 8%, 14%) 40%, hsl(0deg, 0%, 13%) 100%);
 	width                   : 100%;
 	height                  : max(var(--content-min-height), 100vh);
-	overflow                : hidden;
 	position                : relative;
 }
 
@@ -3518,7 +3517,6 @@ td:last-child {
 .s-intro__content-inner {
 	--col       : 16;
 	--grid-gap-v: var(--vspace-0_5);
-	 height: 100%;
 }
 
 .s-intro__content-text {
