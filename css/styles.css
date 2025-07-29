@@ -4908,7 +4908,7 @@ td:last-child {
 }
 
 .certificate-instructions::before {
-  content: "⚠️";
+  content: "💡";
   font-size: 1.5em;
   vertical-align: middle;
   margin-right: 8px;
