@@ -1,561 +1,298 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js" >
+<html lang="en">
 <head>
-    <!-- ✅ Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-K75LMHVFNP"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-K75LMHVFNP');
-    </script>
-
-    <!--- basic page needs
-    ================================================== -->
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K75LMHVFNP');</script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Services - Vridhi Gandhi</title>
-
-    <script>
-        document.documentElement.classList.remove('no-js');
-        document.documentElement.classList.add('js');
-    </script>
-
-    <!-- CSS
-    ================================================== -->
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/styles.css">
-
-    <!-- favicons
-    ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/header-logo.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/header-logo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/header-logo.png">
+    <title>Services — Vridhi Gandhi</title>
+    <meta name="description" content="Solution Engineering services — OTT platform engineering, data pipelines, backend systems, AI integration, and web development.">
+    <link rel="icon" type="image/png" href="images/header-logo.png">
     <link rel="manifest" href="site.webmanifest">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    :root{--bg:#030712;--bg2:#0d1117;--bg3:#161b22;--purple:#8b5cf6;--purple-l:#a78bfa;--cyan:#06b6d4;--green:#10b981;--text:#e2e8f0;--muted:#94a3b8;--dim:#64748b;--border:rgba(139,92,246,0.2);--card:rgba(255,255,255,0.03);--card-border:rgba(139,92,246,0.15);}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+    ::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--purple);border-radius:3px;}
+    a{text-decoration:none;color:inherit;}
+    @media(hover:hover){body{cursor:none;}.cursor,.cursor-trail{display:block;}}
+    .cursor{display:none;width:10px;height:10px;background:var(--purple);border-radius:50%;position:fixed;pointer-events:none;z-index:99999;mix-blend-mode:screen;transition:transform .08s ease;}
+    .cursor-trail{display:none;width:36px;height:36px;border:1px solid rgba(139,92,246,.45);border-radius:50%;position:fixed;pointer-events:none;z-index:99998;transition:all .14s ease;}
+    #nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);background:rgba(3,7,18,.82);border-bottom:1px solid var(--border);transition:box-shadow .3s;}
+    .nav-logo img{height:34px;}
+    .nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+    .nav-links a{font-family:'Space Grotesk',sans-serif;font-size:.875rem;font-weight:500;color:var(--muted);padding:8px 16px;border-radius:8px;transition:all .2s;}
+    .nav-links a:hover{color:var(--text);background:rgba(139,92,246,.1);}
+    .nav-links a.active{color:var(--purple-l);}
+    .nav-links .nav-cta{background:var(--purple)!important;color:white!important;font-weight:600;padding:8px 20px;border-radius:8px;}
+    .nav-links .nav-cta:hover{background:var(--purple-l)!important;transform:translateY(-1px);}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px;}
+    .mobile-menu{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(13,17,23,.98);border-bottom:1px solid var(--border);padding:20px 24px;flex-direction:column;gap:4px;backdrop-filter:blur(24px);z-index:999;}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{font-family:'Space Grotesk',sans-serif;font-size:1rem;color:var(--muted);padding:12px 16px;border-radius:8px;transition:all .2s;}
+    .mobile-menu a:hover{color:var(--text);background:rgba(139,92,246,.08);}
+    .page-hero{padding:140px 40px 80px;background:var(--bg2);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(6,182,212,.07) 0%,transparent 70%);top:50%;right:-50px;transform:translateY(-50%);pointer-events:none;}
+    .page-hero-in{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+    .ph-tag{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--cyan);letter-spacing:.22em;text-transform:uppercase;margin-bottom:16px;}
+    .ph-h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.4rem,5vw,3.8rem);font-weight:700;line-height:1.1;margin-bottom:18px;}
+    .grad-text{background:linear-gradient(135deg,var(--purple-l) 0%,var(--cyan) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .ph-sub{font-size:1.1rem;color:var(--muted);max-width:600px;line-height:1.75;}
+    .sec{padding:90px 40px;}
+    .sec-in{max-width:1100px;margin:0 auto;}
+    .sec-tag{display:flex;align-items:center;gap:12px;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--purple);text-transform:uppercase;letter-spacing:.22em;margin-bottom:12px;}
+    .sec-tag::before{content:'';width:36px;height:1px;background:var(--purple);display:block;}
+    .sec-h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;line-height:1.1;margin-bottom:14px;}
+    .sec-sub{font-size:1rem;color:var(--muted);max-width:580px;line-height:1.75;margin-bottom:60px;}
+    .rv{opacity:0;transform:translateY(36px);transition:opacity .7s ease,transform .7s ease;}
+    .rv.on{opacity:1;transform:none;}
+    /* SERVICES GRID */
+    .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+    .svc-card{padding:28px;background:var(--card);border:1px solid var(--card-border);border-radius:16px;transition:all .3s;position:relative;overflow:hidden;}
+    .svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;opacity:0;transition:opacity .3s;}
+    .svc-card:hover{border-color:var(--purple);transform:translateY(-6px);box-shadow:0 14px 50px rgba(139,92,246,.18);}
+    .svc-card:hover::before{opacity:1;}
+    .s1::before{background:linear-gradient(90deg,var(--purple),var(--cyan));}
+    .s2::before{background:linear-gradient(90deg,var(--cyan),var(--green));}
+    .s3::before{background:linear-gradient(90deg,var(--green),var(--purple));}
+    .s4::before{background:linear-gradient(90deg,var(--purple-l),var(--cyan));}
+    .s5::before{background:linear-gradient(90deg,var(--cyan),var(--purple));}
+    .svc-icon{font-size:2rem;margin-bottom:16px;}
+    .svc-title{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:10px;}
+    .svc-desc{font-size:.875rem;color:var(--muted);line-height:1.72;margin-bottom:18px;}
+    .svc-list{list-style:none;display:flex;flex-direction:column;gap:7px;}
+    .svc-list li{font-size:.82rem;color:var(--muted);display:flex;gap:9px;line-height:1.5;}
+    .svc-list li::before{content:'→';color:var(--purple);flex-shrink:0;}
+    .svc-badge{display:inline-flex;align-items:center;gap:5px;font-family:'JetBrains Mono',monospace;font-size:.65rem;padding:3px 9px;border-radius:100px;margin-bottom:14px;}
+    .sb-core{background:rgba(139,92,246,.09);color:var(--purple-l);border:1px solid rgba(139,92,246,.2);}
+    .sb-grow{background:rgba(16,185,129,.09);color:var(--green);border:1px solid rgba(16,185,129,.2);}
+    .sb-supp{background:rgba(6,182,212,.09);color:var(--cyan);border:1px solid rgba(6,182,212,.2);}
+    /* APPROACH */
+    #approach{background:var(--bg2);}
+    .approach-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:54px;}
+    .acard{padding:22px;background:var(--card);border:1px solid var(--card-border);border-radius:14px;transition:all .3s;text-align:center;}
+    .acard:hover{border-color:var(--purple);transform:translateY(-4px);}
+    .acard-num{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,var(--purple-l),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;}
+    .acard-title{font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--text);margin-bottom:8px;}
+    .acard-text{font-size:.8rem;color:var(--muted);line-height:1.65;}
+    /* CTA */
+    #cta-svc{background:var(--bg);text-align:center;padding:110px 40px;position:relative;overflow:hidden;}
+    #cta-svc::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.1) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
+    .cta-in{position:relative;z-index:1;max-width:640px;margin:0 auto;}
+    .cta-tag{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--cyan);letter-spacing:.22em;margin-bottom:22px;}
+    .cta-h{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.1;margin-bottom:20px;}
+    .cta-sub{font-size:1rem;color:var(--muted);margin-bottom:40px;line-height:1.75;}
+    .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+    .btn-p{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:var(--purple);color:white;border:none;border-radius:10px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;transition:all .3s;box-shadow:0 0 28px rgba(139,92,246,.35);}
+    .btn-p:hover{background:var(--purple-l);transform:translateY(-2px);box-shadow:0 0 50px rgba(139,92,246,.55);}
+    .btn-s{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:transparent;color:var(--text);border:1px solid var(--border);border-radius:10px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;transition:all .3s;}
+    .btn-s:hover{border-color:var(--purple);color:var(--purple-l);background:rgba(139,92,246,.06);transform:translateY(-2px);}
+    footer{background:var(--bg3);padding:44px 40px;border-top:1px solid var(--border);}
+    .foot-in{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:22px;}
+    .foot-links{display:flex;gap:20px;list-style:none;flex-wrap:wrap;}
+    .foot-links a{font-size:.85rem;color:var(--muted);transition:color .2s;}
+    .foot-links a:hover{color:var(--purple-l);}
+    .foot-soc{display:flex;gap:10px;}
+    .soc-btn{width:38px;height:38px;border-radius:9px;background:var(--card);border:1px solid var(--card-border);display:flex;align-items:center;justify-content:center;font-size:.95rem;transition:all .25s;color:var(--muted);}
+    .soc-btn:hover{border-color:var(--purple);color:var(--purple-l);transform:translateY(-2px);}
+    .foot-copy{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--dim);}
+    @media(max-width:1024px){.svc-grid{grid-template-columns:1fr 1fr;}.approach-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:768px){.sec{padding:70px 22px;}#nav{padding:14px 22px;}.nav-links{display:none;}.hamburger{display:flex;}.page-hero{padding:110px 22px 60px;}.svc-grid{grid-template-columns:1fr;}.approach-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:480px){.approach-grid{grid-template-columns:1fr;}}
+    </style>
 </head>
+<body>
+<div class="cursor" id="cur"></div>
+<div class="cursor-trail" id="cur-t"></div>
 
+<nav id="nav">
+    <div class="nav-logo"><a href="index.html"><img src="images/Logo.png" alt="Vridhi Gandhi"></a></div>
+    <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="certificates.html">Certificates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1LHYwRn99KIHiLJ03FCHgDaPhYPWlSUh6?usp=sharing" class="nav-cta" target="_blank">Resume ↓</a></li>
+    </ul>
+    <div class="hamburger" id="hbg" onclick="document.getElementById('mmenu').classList.toggle('open')"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mmenu">
+    <a href="about.html">About</a><a href="services.html">Services</a><a href="certificates.html">Certificates</a><a href="contact.html">Contact</a>
+    <a href="https://drive.google.com/drive/folders/1LHYwRn99KIHiLJ03FCHgDaPhYPWlSUh6?usp=sharing" target="_blank">Resume ↓</a>
+</div>
 
-<body id="top">
+<div class="page-hero">
+    <div class="page-hero-in rv">
+        <div class="ph-tag">// Services</div>
+        <h1 class="ph-h1">What I build.<br>What I <span class="grad-text">solve.</span></h1>
+        <p class="ph-sub">I work across the full technical stack — from data pipelines and backend APIs to OTT infrastructure and AI systems. Every engagement is about solving the actual problem, not just the visible one.</p>
+    </div>
+</div>
 
+<!-- SERVICES -->
+<section id="services" class="sec">
+    <div class="sec-in">
+        <div class="rv">
+            <div class="sec-tag">Core Services</div>
+            <h2 class="sec-h2">Where I Deliver</h2>
+            <p class="sec-sub">Five areas where I've built real systems — not demos, not prototypes, but production-level solutions that held up at scale.</p>
+        </div>
+        <div class="svc-grid">
 
-    <!-- preloader
-    ================================================== -->
-    <div id="preloader">
-        <div id="loader" class="dots-fade">
-            <div></div>
-            <div></div>
-            <div></div>
+            <div class="svc-card s1 rv">
+                <div class="svc-icon">🔗</div>
+                <div class="svc-badge sb-core">Core Expertise</div>
+                <div class="svc-title">Solution Engineering & Systems Integration</div>
+                <div class="svc-desc">Connecting disparate systems into coherent, working solutions. Backend APIs, third-party integrations, CMS workflows, data validation, and end-to-end delivery pipelines.</div>
+                <ul class="svc-list">
+                    <li>Backend API design and integration</li>
+                    <li>CMS workflow architecture</li>
+                    <li>Cross-system data validation & logging</li>
+                    <li>DRM and media delivery pipelines</li>
+                    <li>GraphQL APIs and schema design</li>
+                </ul>
+            </div>
+
+            <div class="svc-card s2 rv">
+                <div class="svc-icon">📊</div>
+                <div class="svc-badge sb-core">Core Expertise</div>
+                <div class="svc-title">Data Engineering & Pipeline Architecture</div>
+                <div class="svc-desc">Building the infrastructure that moves, stores, and transforms data reliably. Real-time ingestion, ETL pipelines, dashboards, and the automation that eliminates manual work.</div>
+                <ul class="svc-list">
+                    <li>Real-time streaming (Kafka, NiFi)</li>
+                    <li>PostgreSQL, Snowflake data warehousing</li>
+                    <li>Python-based ETL and ingestion tools</li>
+                    <li>BI dashboards (Power BI, Grafana, Superset)</li>
+                    <li>Device & fleet data automation</li>
+                </ul>
+            </div>
+
+            <div class="svc-card s3 rv">
+                <div class="svc-icon">🤖</div>
+                <div class="svc-badge sb-grow">Growing Fast</div>
+                <div class="svc-title">AI Systems & Recommendation Engines</div>
+                <div class="svc-desc">Applying AI where it has real product impact — recommendation systems, knowledge graphs for content discovery, AI video pipelines, and intelligent automation.</div>
+                <ul class="svc-list">
+                    <li>Recommendation engines (Memgraph + OpenSearch)</li>
+                    <li>Knowledge graph architecture</li>
+                    <li>AI video pipelines (Google Veo)</li>
+                    <li>Prompt engineering for production use</li>
+                    <li>ML model integration in backend systems</li>
+                </ul>
+            </div>
+
+            <div class="svc-card s4 rv">
+                <div class="svc-icon">⚡</div>
+                <div class="svc-badge sb-core">Core Expertise</div>
+                <div class="svc-title">Backend Development & Automation</div>
+                <div class="svc-desc">Building the systems that run behind the product — Flask/Node backends, workflow automation, ERP integrations, and the scripts that eliminate 60–85% of repetitive manual work.</div>
+                <ul class="svc-list">
+                    <li>Flask and Node.js backend development</li>
+                    <li>REST APIs and webhooks</li>
+                    <li>Database architecture and optimization</li>
+                    <li>Workflow automation & ERP integration</li>
+                    <li>CI/CD pipeline setup</li>
+                </ul>
+            </div>
+
+            <div class="svc-card s5 rv">
+                <div class="svc-icon">🌐</div>
+                <div class="svc-badge sb-supp">Also Available</div>
+                <div class="svc-title">Web Development & SEO Optimization</div>
+                <div class="svc-desc">Full-stack web development with a real focus on performance and search visibility. From redesigns to 52+ page builds, I deliver sites that rank and convert — not just look good.</div>
+                <ul class="svc-list">
+                    <li>Full responsive website design & build</li>
+                    <li>React.js frontend development</li>
+                    <li>SEO strategy and technical optimization</li>
+                    <li>Performance audits and improvements</li>
+                    <li>GitHub Pages / cloud hosting & deployment</li>
+                </ul>
+            </div>
+
+            <div class="svc-card rv" style="background:linear-gradient(135deg,rgba(139,92,246,.06),rgba(6,182,212,.04));border-color:rgba(139,92,246,.25);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:16px;">
+                <div style="font-size:2.5rem;">💬</div>
+                <div style="font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:600;color:var(--text);">Not sure which one you need?</div>
+                <div style="font-size:.875rem;color:var(--muted);line-height:1.7;">Most problems span multiple areas. Start a conversation — I'll figure out what the right solution actually is.</div>
+                <a href="contact.html" class="btn-p" style="margin-top:8px;">Let's Talk →</a>
+            </div>
+
         </div>
     </div>
+</section>
 
-
-    <!-- page wrap
-    ================================================== -->
-    <div id="page" class="s-pagewrap">
-
-        <!-- # site header 
-        ================================================== -->
-        <header class="s-header">
-
-            <div class="row s-header__inner width-sixteen-col">
-
-                <div class="s-header__block">
-                    <div class="s-header__logo">
-                        <a id="services-logo-click" class="logo" href="index.html">
-                            <img src="images/Logo.png" alt="Homepage">
-                        </a>
-                    </div>
-
-                    <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
-                </div> <!-- end s-header__block -->
-
-                <nav class="s-header__nav">
-    
-                    <ul class="s-header__menu-links">
-                        <li><a id="services-nav-about" href="about.html">About</a></li>
-                        <li><a id="services-nav-services" href="services.html">Services</a></li>
-                        <!-- <li><a href="blog.html">Journal</a></li> -->
-                        <li><a id="services-nav-certificates" href="certificates.html">Certificates</a></li>
-                        <li><a id="services-nav-contact" href="contact.html">Contact</a></li>
-                    </ul> <!-- s-header__menu-links -->
-
-                    <div class="s-header__contact">
-                        <a id="services-resume-download" href="https://drive.google.com/drive/folders/1LHYwRn99KIHiLJ03FCHgDaPhYPWlSUh6?usp=sharing" class="btn btn--primary s-header__contact-btn">Resume Download<span style="font-size: 1.5em;">↓</span></a>                                               
-                    </div> <!-- s-header__contact -->
-    
-                </nav> <!-- end s-header__nav -->
-
-            </div> <!-- end s-header__inner -->
-
-        </header> 
-        <!-- end s-header -->
-
-        <!-- # site main content
-        ================================================== -->
-        <section id="content" class="s-content">
-
-               <section class="s-pageheader pageheader">
-                    <div class="row">
-                        <div class="column xl-12">
-                            <h1 class="page-title">
-                                <span class="page-title__small-type text-pretitle">Services</span>
-                                High-Impact Services
-                            </h1>
-                            
-                        </div>
-                    </div>
-               </section> <!-- pageheader -->  
-
-               <section class="s-pagecontent pagecontent">
-
-                    <div class="row pageintro">
-                        <div class="column xl-6 lg-12">
-                            <h2 class="text-display-title">High-impact services to help your business</h2>
-                        </div>
-                        <div class="column xl-6 lg-12 u-flexitem-x-right">
-                            <p class="lead">
-                                From decoding data as an Insight Architect to building seamless backend systems and fullstack web experiences, I blend logic with creativity. Whether it’s designing intuitive interfaces, crafting content, exploring AI-powered solutions, or telling stories through travel and photography I thrive where tech meets creativity.
-                            </p>
-                        </div>                       
-                    </div>  <!-- pageintro -->       
-
-                    <div class="row">
-                        <div class="column xl-12 grid-block">             
-                            
-                            <div class="grid-full grid-list-items list-items show-ctr">
-                                
-                                <div class="grid-list-items__item list-items__item">
-                                    <div class="list-items__item-header">
-                                        <h3 class="list-items__item-title">Data Analyst & Insight Architect</h3>
-                                    </div>
-                                    <div class="list-items__item-text">
-                                        <p>
-                                        Turning raw data into visual stories and strategic insights for smarter decisions.
-                                        </p>
-
-                                        <ul class="list-services">
-                                            <li>Data Cleaning & Preprocessing</li>
-                                            <li>Dashboard Creation</li>
-                                            <li>KPI Tracking & Reporting</li>
-                                            <li>User Behavior Mapping</li>
-                                            <li>Research-backed Insight Extraction</li>
-                                        </ul>
-                                    </div>
-                                </div> <!-- end list-items__item -->
-                                <div class="grid-list-items__item list-items__item">
-                                    <div class="list-items__item-header">
-                                        <h3 class="list-items__item-title">Product Automation & Backend Engineering</h3>
-                                    </div>
-                                    <div class="list-items__item-text">
-                                        <p>
-                                        Streamlining workflows and building efficient systems behind the scenes.
-                                        </p>
-
-                                        <ul class="list-services">
-                                            <li>Automation Scripts</li>
-                                            <li>REST APIs & Webhooks</li>
-                                            <li>Database Architecture</li>
-                                            <li>Cron Jobs & Backend Schedulers</li>
-                                            <li>Workflow Optimization Tools</li>
-                                        </ul>
-                                    </div>
-                                </div> <!-- end list-items__item -->
-                                <div class="grid-list-items__item list-items__item">
-                                    <div class="list-items__item-header">
-                                        <h3 class="list-items__item-title">Web Development & Optimization</h3>
-                                    </div>
-                                    <div class="list-items__item-text">
-                                        <p>
-                                        Building elegant, responsive websites from scratch with focus on performance and user experience.
-                                        </p>
-
-                                        <ul class="list-services">
-                                            <li>HTML, CSS, JavaScript Development</li>
-                                            <li>Responsive UI/UX Design</li>
-                                            <li>Theme Toggle, Animations, Carousels</li>
-                                            <li>Performance & SEO Optimization</li>
-                                            <li>Hosting, GitHub Deployment, Maintenance</li>
-                                        </ul>
-                                    </div>
-                                </div> <!-- end list-items__item -->
-                                <div class="grid-list-items__item list-items__item">
-                                    <div class="list-items__item-header">
-                                        <h3 class="list-items__item-title">Design, Content & UI Thinking</h3>
-                                    </div>
-                                    <div class="list-items__item-text">
-                                        <p>
-                                        Fusing logic with aesthetics to build visually appealing and user-friendly interfaces.
-                                        </p>
-
-                                        <ul class="list-services">
-                                            <li>UI Design & Wireframes</li>
-                                            <li>Social Media Creatives</li>
-                                            <li>Reels Scripts & Captions</li>
-                                            <li>Branding Elements (Colors, Fonts, Icons)</li>
-                                        </ul>
-                                    </div>
-                                </div> <!-- end list-items__item -->
-                                <div class="grid-list-items__item list-items__item">
-                                    <div class="list-items__item-header">
-                                        <h3 class="list-items__item-title">AI, Machine Learning & Smart Projects</h3>
-                                    </div>
-                                    <div class="list-items__item-text">
-                                        <p>
-                                        Applying AI to build intelligent, creative, and useful solutions across domains.
-                                        </p>
-
-                                        <ul class="list-services">
-                                            <li>Personalized Recommendation Systems</li>
-                                            <li>ML Model Integration in Apps</li>
-                                            <li>OpenCV & Image Processing</li>
-                                            <li>Chatbots & Natural Language Interfaces</li>
-                                            <li>Experimenting with OpenAI APIs</li>
-                                        </ul>
-                                    </div>
-                                </div> <!-- end list-items__item -->
-                                <div class="grid-list-items__item list-items__item">
-                                    <div class="list-items__item-header">
-                                        <h3 class="list-items__item-title">Travel, Photography & Creative Storytelling</h3>
-                                    </div>
-                                    <div class="list-items__item-text">
-                                        <p>
-                                        Capturing the essence of people, places, and stories through lens and words.
-                                        </p>
-
-                                        <ul class="list-services">
-                                            <li>Travel Photography & Aesthetic Shots</li>
-                                            <li>Visual Feed Planning</li>
-                                            <li>Instagram Stories, Reels & Edits</li>
-                                            <li>Creative Captions & Reflections</li>
-                                            <li>Photo Editing & Retouching</li>
-                                        </ul>
-                                    </div>
-                                </div> <!-- end list-items__item -->
-                                <!-- <div class="grid-list-items__item list-items__item">
-                                    <div class="list-items__item-header">
-                                        <h3 class="list-items__item-title">Email Marketing</h3>
-                                    </div>
-                                    <div class="list-items__item-text">
-                                        <p>
-                                        Rerum quam quos. Aut asperiores 
-                                        sit mollitia. Rem neque et voluptatem eos quia sed eligendi et. Eaque velit eligendi ut 
-                                        magnam. Cumque ducimus laborum doloribus facere maxime vel earum quidem enim suscipit.
-                                        </p>
-
-                                        <ul class="list-services">
-                                            <li>Doloribus</li>
-                                            <li>Mollitia</li>
-                                            <li>Eligendi Et</li>
-                                        </ul>
-                                    </div>
-                                </div>  -->
-                                <!-- end list-items__item -->
-                                <!-- <div class="grid-list-items__item list-items__item">
-                                    <div class="list-items__item-header">
-                                        <h3 class="list-items__item-title">Conversion Rate Optimization</h3>
-                                    </div>
-                                    <div class="list-items__item-text">
-                                        <p>
-                                        Quibusdam quis autem voluptatibus earum vel ex error ea magni. Rerum quam quos. Aut asperiores 
-                                        sit mollitia. Rem neque et voluptatem eos quia sed eligendi et. Eaque velit eligendi ut 
-                                        magnam.
-                                        </p>
-
-                                        <ul class="list-services">
-                                            <li>Cumque Ducimus</li>
-                                            <li>Maxime Vel</li>
-                                            <li>Eligendi Et</li>
-                                        </ul>
-                                    </div>
-                                </div>  -->
-                                <!-- end list-items__item -->
-                                <!-- <div class="grid-list-items__item list-items__item">
-                                    <div class="list-items__item-header">
-                                        <h3 class="list-items__item-title">Web Design</h3>
-                                    </div>
-                                    <div class="list-items__item-text">
-                                        <p>
-                                        Aut asperiores sit mollitia. Rem neque et voluptatem eos quia sed eligendi et. Eaque velit eligendi ut 
-                                        magnam. Cumque ducimus laborum doloribus facere maxime vel earum quidem enim suscipit.
-                                        </p>
-
-                                        <ul class="list-services">
-                                            <li>Suscipit</li>
-                                            <li>Voluptatem</li>
-                                            <li>Eligendi Et</li>
-                                        </ul>
-                                    </div>
-                                </div>  -->
-                                <!-- end list-items__item -->
-    
-                            </div> <!-- grid-list-items -->
-                           
-
-                        </div> <!-- end grid-block-->
-                    </div> <!-- end row -->
-
-               </section> <!-- pagecontent -->
-
-               <!-- <section class="s-testimonials"> -->
-
-                    <!-- <div class="s-testimonials__header row row-x-center text-center">
-                        <div class="column xl-8 lg-12">
-        
-                            <p class="text-pretitle">
-                            Testimonials
-                            </p>
-                            <h3>
-                            Reviews From Real Clients
-                            </h3>                        
-        
-                        </div>
-                    </div>  -->
-                    <!--end s-testimonials__header -->
-
-                    <!-- <div class="row s-testimonials__content"> -->
-                        <!-- <div class="column xl-12 testimonials"> -->
-
-                            <!-- <div class="swiper-container testimonials__slider page-slider"> -->
-
-                                <!-- <div class="swiper-wrapper">
-                                    <div class="testimonials__slide swiper-slide">
-                                        <p>
-                                        Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem. 
-                                        Explicabo a quaerat sint autem dolore ducimus ut consequatur neque. Nisi dolores quaerat fuga rem nihil nostrum.
-                                        Laudantium quia consequatur molestias.
-                                        </p>
-                                        <div class="testimonials__author">
-                                            <img src="images/avatars/user-01.jpg" alt="Author image" class="testimonials__avatar">
-                                            <cite class="testimonials__cite">
-                                                <strong>John Rockefeller</strong>
-                                                <span>Standard Oil Co.</span>
-                                            </cite>
-                                        </div>
-                                    </div>
-                                    <div class="testimonials__slide swiper-slide">
-                                        <p>
-                                        Voluptas tempore rem. Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. 
-                                        Explicabo a quaerat sint autem dolore ducimus ut consequatur neque. Nisi dolores quaerat fuga rem nihil nostrum.
-                                        Laudantium quia consequatur molestias.
-                                        </p>
-                                        <div class="testimonials__author">
-                                            <img src="images/avatars/user-04.jpg" alt="Author image" class="testimonials__avatar">
-                                            <cite class="testimonials__cite">
-                                                <strong>Andrew Carnegie</strong>
-                                                <span>Carnegie Steel Co.</span>
-                                            </cite>
-                                        </div>
-                                    </div>
-                                    <div class="testimonials__slide swiper-slide">
-                                        <p>
-                                        Nisi dolores quaerat fuga rem nihil nostrum. Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. 
-                                        Voluptas tempore rem. Explicabo a quaerat sint autem dolore ducimus ut consequatur neque. 
-                                        Laudantium quia consequatur molestias.
-                                        </p>
-                                        <div class="testimonials__author">
-                                            <img src="images/avatars/user-06.jpg" alt="Author image" class="testimonials__avatar">
-                                            <cite class="testimonials__cite">
-                                                <strong>Henry Ford</strong>
-                                                <span>Ford Motor Co.</span>
-                                            </cite>
-                                        </div>
-                                    </div>
-                                    <div class="testimonials__slide swiper-slide">
-                                        <p>
-                                        Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem. 
-                                        Explicabo a quaerat sint autem dolore ducimus ut consequatur neque. Nisi dolores quaerat fuga rem nihil nostrum.
-                                        Laudantium quia consequatur molestias.
-                                        </p>
-                                        <div class="testimonials__author">
-                                            <img src="images/avatars/user-02.jpg" alt="Author image" class="testimonials__avatar">
-                                            <cite class="testimonials__cite">
-                                                <strong>John Morgan</strong>
-                                                <span>JP Morgan & Co.</span>
-                                            </cite>
-                                        </div>
-                                    </div> 
-                                </div> -->
-                                 <!-- end swiper-wrapper --> 
-
-                                <!-- <div class="swiper-pagination"></div> -->
-
-                            <!-- </div>  -->
-                            <!--end testimonials__slider --> 
-
-                        <!-- </div>  -->
-                        <!-- testimonials -->
-                    <!-- </div> -->
-                     <!--end s-testimonials__content -->
-
-               <!-- </section> -->
-                <!-- end s-testimonials -->
-
-        </section> <!-- s-content-->
-
-        <!-- # cta
-        ================================================== -->
-        <section id="cta" class="s-cta">
-
-            <div class="row row-x-center text-center">
-                <div class="column xl-8 lg-12">
-
-                    <div class="s-cta__content">
-                        <h2 class="text-display-title">
-                        Lets connect.
-                        </h2>
-                        <p class="lead">
-                        Whether you’re looking to build a high-performance website, automate complex workflows, gain meaningful insights from data, or bring a creative idea to life I’m here to help.
-                        I offer personalized consultations to understand your vision, identify opportunities, and deliver tailored solutions that align with your goals. From tech to design, every project starts with a conversation.
-                        </p>
-                        <p class="lead">
-                        📩 Ready to get started? <br>Let’s talk about how we can build something impactful together.
-                        </p>
-                        <a id="services-lets-work-click" href="contact.html" class="btn btn--primary"><b>Let's Work Together</b></a>
-                    </div>
-
-                </div>
+<!-- HOW I WORK -->
+<section id="approach" class="sec">
+    <div class="sec-in">
+        <div class="rv">
+            <div class="sec-tag">My Approach</div>
+            <h2 class="sec-h2">How Every Engagement Works</h2>
+        </div>
+        <div class="approach-grid">
+            <div class="acard rv">
+                <div class="acard-num">01</div>
+                <div class="acard-title">Understand the System</div>
+                <div class="acard-text">Before writing code, I map the full problem — what's upstream, what's downstream, what breaks if I touch the wrong thing. Most solutions fail because this step was skipped.</div>
             </div>
-
-        </section> 
-        <!-- end s-cta -->
-
-
-        <!-- # footer 
-        ================================================== -->
-        <footer class="s-footer">
-            <div class="row s-footer__content">
-                <div class="column xl-6 lg-6 md-12 s-footer__block s-footer__about">                    
-                    <h3>Thanks for stopping by<br>
-                         Let’s stay connected.</h3>
-                    <p>
-                    Whether you’re here out of curiosity or looking to<br>collaborate, I appreciate your time.<br>Feel free to reach out anytime I’d love to hear from you.
-                    </p>               
-                </div>                
-                <div class="column xl-3 lg-6 md-12 s-footer__block s-footer__site-links">
-                    <h3>Site Links</h3>
-                    <ul class="link-list">
-                        <li><a id="services-footer-home" href="index.html">Home</a></li>
-                        <li><a id="services-footer-about" href="about.html">About</a></li>
-                        <li><a id="services-footer-services" href="services.html">Services</a></li>
-                        <!-- <li><a href="blog.html">Journal</a></li> -->
-                        <li><a id="services-footer-certificates" href="certificates.html">Certificates</a></li>
-                        <li><a id="services-footer-contact" href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="column xl-3 lg-6 md-12 tab-12 s-footer__block s-footer__newsletter">
-                    <h3>Socials</h3>
-                    <ul class="s-footer__social social-list">
-                        <li>
-                            <a id="services-footer-email-click" href="mailto:vridhigandhi@gmail.com">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="rgba(0,0,0,1)" viewBox="0 0 24 24">
-                                <path d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.01L12 13l8-8.99V4H4zm16 2.83l-7.07 7.07a1 1 0 0 1-1.42 0L4 6.83V20h16V6.83z"/>
-                                </svg>
-                                <span class="u-screen-reader-text">Email</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a id="services-footer-linkedin-click" href="https://www.linkedin.com/in/vridhi-gandhi/">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0077B5" viewBox="0 0 24 24">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.849-3.037-1.851 0-2.132 1.445-2.132 2.939v5.667H9.358V9h3.414v1.561h.049c.476-.899 1.637-1.848 3.37-1.848 3.602 0 4.267 2.368 4.267 5.455v6.284zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zm1.777 13.019H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.549C0 23.229.792 24 1.771 24h20.451C23.2 24 24 23.229 24 22.271V1.723C24 .771 23.2 0 22.222 0z"/>
-                                </svg>
-                                <span class="u-screen-reader-text">LinkedIn</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a id="services-footer-whatsapp-click" href="https://wa.me/917506520052">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#25D366" viewBox="0 0 16 16">
-                                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
-                                </svg>
-                                <span class="u-screen-reader-text">WhatsApp</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a id="services-footer-call-click" href="tel:+919082391198" target="_blank" rel="noopener">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="rgba(0,0,0,1)" viewBox="0 0 24 24">
-                                <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1C10.07 22 2 13.93 2 4.5A1 1 0 0 1 3 3.5h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2z"/>
-                                </svg>
-                                <span class="u-screen-reader-text">Call</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a id="services-footer-instagram-click" href="https://www.instagram.com/__yomadic__/">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                                </svg>
-                                <span class="u-screen-reader-text">Instagram</span>
-                            </a>
-                        </li>
-
-                    </ul>
-                    <p>
-                    <!-- Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere ratione dignissimos. -->
-                    </p>
-
-                    <div class="subscribe-form">
-                        <form id="mc-form" class="mc-form">
-                            <!-- <input type="email" name="EMAIL" id="mce-EMAIL" class="u-fullwidth text-center" placeholder="Your Email Address" title="The domain portion of the email address is invalid (the portion after the @)." pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" required> -->
-                            <!-- <input type="submit" name="subscribe" value="Subscribe" class="btn btn--primary btn--small u-fullwidth"> -->
-                            <!-- <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_cdb7b577e41181934ed6a6a44_9a91cfe7b3" tabindex="-1" value=""></div> -->
-                            <div class="mc-status"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>    
-            
-            <div class="row s-footer__bottom">
-                <div class="column xl-6 lg-12">
-                    <!-- <ul class="s-footer__social social-list">
-                        <li>
-                            <a href="#0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325,1.42-3.592,3.5-3.592 c0.699-0.002,1.399,0.034,2.095,0.107v2.42h-1.435c-1.128,0-1.348,0.538-1.348,1.325v1.735h2.697l-0.35,2.725h-2.348V21H20 c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z"></path></svg>
-                                <span class="u-screen-reader-text">Facebook</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M19.633,7.997c0.013,0.175,0.013,0.349,0.013,0.523c0,5.325-4.053,11.461-11.46,11.461c-2.282,0-4.402-0.661-6.186-1.809 c0.324,0.037,0.636,0.05,0.973,0.05c1.883,0,3.616-0.636,5.001-1.721c-1.771-0.037-3.255-1.197-3.767-2.793 c0.249,0.037,0.499,0.062,0.761,0.062c0.361,0,0.724-0.05,1.061-0.137c-1.847-0.374-3.23-1.995-3.23-3.953v-0.05 c0.537,0.299,1.16,0.486,1.82,0.511C3.534,9.419,2.823,8.184,2.823,6.787c0-0.748,0.199-1.434,0.548-2.032 c1.983,2.443,4.964,4.04,8.306,4.215c-0.062-0.3-0.1-0.611-0.1-0.923c0-2.22,1.796-4.028,4.028-4.028 c1.16,0,2.207,0.486,2.943,1.272c0.91-0.175,1.782-0.512,2.556-0.973c-0.299,0.935-0.936,1.721-1.771,2.22 c0.811-0.088,1.597-0.312,2.319-0.624C21.104,6.712,20.419,7.423,19.633,7.997z"></path></svg>
-                                <span class="u-screen-reader-text">Twitter</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M11.999,7.377c-2.554,0-4.623,2.07-4.623,4.623c0,2.554,2.069,4.624,4.623,4.624c2.552,0,4.623-2.07,4.623-4.624 C16.622,9.447,14.551,7.377,11.999,7.377L11.999,7.377z M11.999,15.004c-1.659,0-3.004-1.345-3.004-3.003 c0-1.659,1.345-3.003,3.004-3.003s3.002,1.344,3.002,3.003C15.001,13.659,13.658,15.004,11.999,15.004L11.999,15.004z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533,6.111c-0.469-1.209-1.424-2.165-2.633-2.632c-0.699-0.263-1.438-0.404-2.186-0.42 c-0.963-0.042-1.268-0.054-3.71-0.054s-2.755,0-3.71,0.054C7.548,3.074,6.809,3.215,6.11,3.479C4.9,3.946,3.945,4.902,3.477,6.111 c-0.263,0.7-0.404,1.438-0.419,2.186c-0.043,0.962-0.056,1.267-0.056,3.71c0,2.442,0,2.753,0.056,3.71 c0.015,0.748,0.156,1.486,0.419,2.187c0.469,1.208,1.424,2.164,2.634,2.632c0.696,0.272,1.435,0.426,2.185,0.45 c0.963,0.042,1.268,0.055,3.71,0.055s2.755,0,3.71-0.055c0.747-0.015,1.486-0.157,2.186-0.419c1.209-0.469,2.164-1.424,2.633-2.633 c0.263-0.7,0.404-1.438,0.419-2.186c0.043-0.962,0.056-1.267,0.056-3.71s0-2.753-0.056-3.71C20.941,7.57,20.801,6.819,20.533,6.111z M19.315,15.643c-0.007,0.576-0.111,1.147-0.311,1.688c-0.305,0.787-0.926,1.409-1.712,1.711c-0.535,0.199-1.099,0.303-1.67,0.311 c-0.95,0.044-1.218,0.055-3.654,0.055c-2.438,0-2.687,0-3.655-0.055c-0.569-0.007-1.135-0.112-1.669-0.311 c-0.789-0.301-1.414-0.923-1.719-1.711c-0.196-0.534-0.302-1.099-0.311-1.669c-0.043-0.95-0.053-1.218-0.053-3.654 c0-2.437,0-2.686,0.053-3.655c0.007-0.576,0.111-1.146,0.311-1.687c0.305-0.789,0.93-1.41,1.719-1.712 c0.534-0.198,1.1-0.303,1.669-0.311c0.951-0.043,1.218-0.055,3.655-0.055c2.437,0,2.687,0,3.654,0.055 c0.571,0.007,1.135,0.112,1.67,0.311c0.786,0.303,1.407,0.925,1.712,1.712c0.196,0.534,0.302,1.099,0.311,1.669 c0.043,0.951,0.054,1.218,0.054,3.655c0,2.436,0,2.698-0.043,3.654H19.315z"></path></svg>
-                                <span class="u-screen-reader-text">Instagram</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M20.66 6.98a9.932 9.932 0 0 0-3.641-3.64C15.486 2.447 13.813 2 12 2s-3.486.447-5.02 1.34c-1.533.893-2.747 2.107-3.64 3.64S2 10.187 2 12s.446 3.487 1.34 5.02a9.924 9.924 0 0 0 3.641 3.64C8.514 21.553 10.187 22 12 22s3.486-.447 5.02-1.34a9.932 9.932 0 0 0 3.641-3.64C21.554 15.487 22 13.813 22 12s-.446-3.487-1.34-5.02zM12 3.66c2 0 3.772.64 5.32 1.919-.92 1.174-2.286 2.14-4.1 2.9-1.002-1.813-2.088-3.327-3.261-4.54A7.715 7.715 0 0 1 12 3.66zM5.51 6.8a8.116 8.116 0 0 1 2.711-2.22c1.212 1.201 2.325 2.7 3.34 4.5-2 .6-4.114.9-6.341.9-.573 0-1.006-.013-1.3-.04A8.549 8.549 0 0 1 5.51 6.8zM3.66 12c0-.054.003-.12.01-.2.007-.08.01-.146.01-.2.254.014.641.02 1.161.02 2.666 0 5.146-.367 7.439-1.1.187.373.381.793.58 1.26-1.32.293-2.674 1.006-4.061 2.14S6.4 16.247 5.76 17.5c-1.4-1.587-2.1-3.42-2.1-5.5zM12 20.34c-1.894 0-3.594-.587-5.101-1.759.601-1.187 1.524-2.322 2.771-3.401 1.246-1.08 2.483-1.753 3.71-2.02a29.441 29.441 0 0 1 1.56 6.62 8.166 8.166 0 0 1-2.94.56zm7.08-3.96a8.351 8.351 0 0 1-2.58 2.621c-.24-2.08-.7-4.107-1.379-6.081.932-.066 1.765-.1 2.5-.1.799 0 1.686.034 2.659.1a8.098 8.098 0 0 1-1.2 3.46zm-1.24-5c-1.16 0-2.233.047-3.22.14a27.053 27.053 0 0 0-.68-1.62c2.066-.906 3.532-2.006 4.399-3.3 1.2 1.414 1.854 3.027 1.96 4.84-.812-.04-1.632-.06-2.459-.06z"></path></svg>
-                                <span class="u-screen-reader-text">Dribbble</span>
-                            </a>
-                        </li>
-                    </ul> -->
-                     <!-- end s-footer__social -->
-                </div>
-                <div class="column xl-6 lg-12">
-                    <p class="ss-copyright">
-                        <span>© Copyright Vridhi Gandhi 2025</span> 
-                        <span>Design by Vridhi Gandhi</span>
-                    </p>
-                </div>
-
-                <div class="ss-go-top">
-                    <a  id="services-to-top-click" class="smoothscroll" title="Back to Top" href="#top">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#ffffff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">&lt;!--!  Atomicons Free 1.00 by @atisalab License - https://atomicons.com/license/ (Icons: CC BY 4.0) Copyright 2021 Atomicons --&gt;<polyline points="17 11 12 6 7 11"></polyline><line x1="12" y1="18" x2="12" y2="6"></line></svg>
-                    </a>
-                </div> <!-- end ss-go-top -->
+            <div class="acard rv">
+                <div class="acard-num">02</div>
+                <div class="acard-title">Design to Last</div>
+                <div class="acard-text">Quick fixes create future work. I design for the scale you're heading to, not just the problem you have today — clean architecture, documented decisions, testable outputs.</div>
             </div>
-            
-        </footer> 
-        <!-- end s-footer -->
+            <div class="acard rv">
+                <div class="acard-num">03</div>
+                <div class="acard-title">Build and Validate</div>
+                <div class="acard-text">I build in stages with validation at every step. Pipelines get tested against real data. APIs get verified end-to-end. Systems get load-tested before they go live.</div>
+            </div>
+            <div class="acard rv">
+                <div class="acard-num">04</div>
+                <div class="acard-title">Ship with Confidence</div>
+                <div class="acard-text">Delivery includes documentation, monitoring hooks, and a handoff that makes sense. I don't disappear after launch — I make sure the solution actually holds up in production.</div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    </div> <!-- end page-wrap -->
+<!-- CTA -->
+<section id="cta-svc">
+    <div class="cta-in rv">
+        <div class="cta-tag">// Start a Conversation</div>
+        <h2 class="cta-h">Ready to build<br>something <span class="grad-text">real?</span></h2>
+        <p class="cta-sub">Whether you need OTT infrastructure, a data pipeline, backend automation, or AI integration — I bring the technical depth to solve it properly.</p>
+        <div class="cta-btns">
+            <a href="contact.html" class="btn-p">Get In Touch →</a>
+            <a href="about.html" class="btn-s">About Me</a>
+        </div>
+    </div>
+</section>
 
-    <!-- Java Script
-    ================================================== -->
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+<footer>
+    <div class="foot-in">
+        <img src="images/Logo.png" alt="Vridhi Gandhi" style="height:30px;filter:brightness(.65)">
+        <ul class="foot-links">
+            <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="certificates.html">Certificates</a></li><li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="foot-soc">
+            <a href="mailto:vridhigandhi@gmail.com" class="soc-btn">✉️</a>
+            <a href="https://www.linkedin.com/in/vridhi-gandhi/" class="soc-btn" target="_blank">💼</a>
+            <a href="https://wa.me/917506520052" class="soc-btn" target="_blank">💬</a>
+            <a href="https://www.instagram.com/__yomadic__/" class="soc-btn" target="_blank">📸</a>
+        </div>
+        <div class="foot-copy">© 2025 Vridhi Gandhi</div>
+    </div>
+</footer>
 
+<script>
+const cur=document.getElementById('cur'),curT=document.getElementById('cur-t');
+let mx=0,my=0,tx=0,ty=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=(mx-5)+'px';cur.style.top=(my-5)+'px';});
+(function a(){tx+=(mx-tx)*.14;ty+=(my-ty)*.14;curT.style.left=(tx-18)+'px';curT.style.top=(ty-18)+'px';requestAnimationFrame(a);})();
+document.querySelectorAll('a,button,.svc-card,.acard').forEach(el=>{el.addEventListener('mouseenter',()=>cur.style.transform='scale(2.4)');el.addEventListener('mouseleave',()=>cur.style.transform='scale(1)');});
+window.addEventListener('scroll',()=>{document.getElementById('nav').style.boxShadow=window.scrollY>60?'0 4px 30px rgba(0,0,0,.5)':'none';});
+const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('on'),i*80);obs.unobserve(e.target);}});},{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>

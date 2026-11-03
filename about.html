@@ -1,453 +1,383 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js" >
+<html lang="en">
 <head>
-    <!-- ✅ Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-K75LMHVFNP"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-K75LMHVFNP');
-    </script>
-
-    <!--- basic page needs
-    ================================================== -->
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K75LMHVFNP');</script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>About - Vridhi Gandhi</title>
-
-    <script>
-        document.documentElement.classList.remove('no-js');
-        document.documentElement.classList.add('js');
-    </script>
-
-    <!-- CSS
-    ================================================== -->
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/styles.css">
-
-    <!-- favicons
-    ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/header-logo.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/header-logo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/header-logo.png">
+    <title>About — Vridhi Gandhi</title>
+    <meta name="description" content="Solution Engineer at Lionsgate Play. My journey from data engineering and backend systems to OTT platform engineering.">
+    <link rel="icon" type="image/png" href="images/header-logo.png">
     <link rel="manifest" href="site.webmanifest">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    :root{
+        --bg:#030712;--bg2:#0d1117;--bg3:#161b22;
+        --purple:#8b5cf6;--purple-l:#a78bfa;--purple-d:#6d28d9;
+        --cyan:#06b6d4;--cyan-l:#22d3ee;--green:#10b981;
+        --text:#e2e8f0;--muted:#94a3b8;--dim:#64748b;
+        --border:rgba(139,92,246,0.2);--card:rgba(255,255,255,0.03);--card-border:rgba(139,92,246,0.15);
+    }
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+    ::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--purple);border-radius:3px;}
+    a{text-decoration:none;color:inherit;}
+    @media(hover:hover){body{cursor:none;}.cursor,.cursor-trail{display:block;}}
+    .cursor{display:none;width:10px;height:10px;background:var(--purple);border-radius:50%;position:fixed;pointer-events:none;z-index:99999;mix-blend-mode:screen;transition:transform .08s ease;}
+    .cursor-trail{display:none;width:36px;height:36px;border:1px solid rgba(139,92,246,.45);border-radius:50%;position:fixed;pointer-events:none;z-index:99998;transition:all .14s ease;}
+    /* NAV */
+    #nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);background:rgba(3,7,18,.82);border-bottom:1px solid var(--border);transition:box-shadow .3s;}
+    .nav-logo img{height:34px;}
+    .nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+    .nav-links a{font-family:'Space Grotesk',sans-serif;font-size:.875rem;font-weight:500;color:var(--muted);padding:8px 16px;border-radius:8px;transition:all .2s;}
+    .nav-links a:hover{color:var(--text);background:rgba(139,92,246,.1);}
+    .nav-links a.active{color:var(--purple-l);}
+    .nav-links .nav-cta{background:var(--purple)!important;color:white!important;font-weight:600;padding:8px 20px;border-radius:8px;}
+    .nav-links .nav-cta:hover{background:var(--purple-l)!important;transform:translateY(-1px);}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px;}
+    .mobile-menu{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(13,17,23,.98);border-bottom:1px solid var(--border);padding:20px 24px;flex-direction:column;gap:4px;backdrop-filter:blur(24px);z-index:999;}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{font-family:'Space Grotesk',sans-serif;font-size:1rem;color:var(--muted);padding:12px 16px;border-radius:8px;transition:all .2s;}
+    .mobile-menu a:hover{color:var(--text);background:rgba(139,92,246,.08);}
+    /* PAGE HEADER */
+    .page-hero{padding:140px 40px 80px;background:var(--bg2);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.08) 0%,transparent 70%);top:50%;right:-100px;transform:translateY(-50%);pointer-events:none;}
+    .page-hero-in{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+    .ph-tag{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--cyan);letter-spacing:.22em;text-transform:uppercase;margin-bottom:16px;}
+    .ph-h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.4rem,5vw,3.8rem);font-weight:700;line-height:1.1;margin-bottom:18px;}
+    .grad-text{background:linear-gradient(135deg,var(--purple-l) 0%,var(--cyan) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .ph-sub{font-size:1.1rem;color:var(--muted);max-width:580px;line-height:1.75;}
+    /* SECTIONS */
+    .sec{padding:90px 40px;}
+    .sec-in{max-width:1100px;margin:0 auto;}
+    .sec-tag{display:flex;align-items:center;gap:12px;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--purple);text-transform:uppercase;letter-spacing:.22em;margin-bottom:12px;}
+    .sec-tag::before{content:'';width:36px;height:1px;background:var(--purple);display:block;}
+    .sec-h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;line-height:1.1;margin-bottom:14px;}
+    /* REVEAL */
+    .rv{opacity:0;transform:translateY(36px);transition:opacity .7s ease,transform .7s ease;}
+    .rvl{opacity:0;transform:translateX(-36px);transition:opacity .7s ease,transform .7s ease;}
+    .rvr{opacity:0;transform:translateX(36px);transition:opacity .7s ease,transform .7s ease;}
+    .rv.on,.rvl.on,.rvr.on{opacity:1;transform:none;}
+    /* STORY SECTION */
+    #story{background:var(--bg);}
+    .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:56px;}
+    .story-p{color:var(--muted);line-height:1.82;margin-bottom:18px;font-size:1rem;}
+    .story-p strong{color:var(--text);}
+    .story-img-wrap{position:relative;}
+    .story-img{width:100%;border-radius:16px;object-fit:cover;border:1px solid var(--card-border);filter:saturate(.9);}
+    .story-img-badge{position:absolute;bottom:-18px;left:20px;padding:10px 18px;background:var(--bg3);border:1px solid var(--border);border-radius:12px;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--green);backdrop-filter:blur(12px);}
+    /* NARRATIVE / GROWTH PATH */
+    #growth{background:var(--bg2);}
+    .growth-intro{max-width:660px;margin-bottom:60px;}
+    .growth-intro p{color:var(--muted);line-height:1.82;font-size:1rem;}
+    .gpath{display:flex;flex-direction:column;gap:0;}
+    .gstep{display:grid;grid-template-columns:56px 1fr;gap:0;position:relative;}
+    .gstep-left{display:flex;flex-direction:column;align-items:center;}
+    .gstep-dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--purple);background:var(--bg2);box-shadow:0 0 16px rgba(139,92,246,.4);flex-shrink:0;margin-top:20px;}
+    .gstep-dot.cur{border-color:var(--green);box-shadow:0 0 22px rgba(16,185,129,.6);animation:nowG 2s infinite;}
+    @keyframes nowG{0%,100%{box-shadow:0 0 12px rgba(16,185,129,.4)}50%{box-shadow:0 0 28px rgba(16,185,129,.85)}}
+    .gstep-line{width:1px;flex:1;background:linear-gradient(to bottom,var(--purple),rgba(139,92,246,.2));margin-top:4px;}
+    .gstep:last-child .gstep-line{display:none;}
+    .gcard{margin:10px 0 24px 18px;padding:22px;background:var(--card);border:1px solid var(--card-border);border-radius:16px;transition:all .3s;position:relative;overflow:hidden;}
+    .gcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--purple),var(--cyan));opacity:0;transition:opacity .3s;}
+    .gcard:hover{border-color:var(--purple);transform:translateX(6px);box-shadow:0 8px 40px rgba(139,92,246,.15);}
+    .gcard:hover::before{opacity:1;}
+    .gc-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:10px;}
+    .gc-title{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:600;color:var(--text);}
+    .gc-date{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--cyan);background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.2);padding:3px 9px;border-radius:100px;}
+    .gc-co{font-size:.83rem;color:var(--purple-l);margin-bottom:12px;}
+    .gc-story{font-size:.875rem;color:var(--muted);line-height:1.72;margin-bottom:14px;}
+    .gc-story strong{color:var(--text);}
+    .gc-skills{display:flex;flex-wrap:wrap;gap:5px;}
+    .sk{padding:2px 9px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:5px;font-family:'JetBrains Mono',monospace;font-size:.67rem;color:var(--dim);}
+    .gc-badge-cur{display:inline-flex;align-items:center;gap:5px;font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--green);background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);padding:3px 9px;border-radius:100px;margin-bottom:10px;}
+    .gbdot{width:5px;height:5px;background:var(--green);border-radius:50%;animation:blink2 2s infinite;}
+    @keyframes blink2{0%,100%{opacity:1}50%{opacity:.3}}
+    /* VALUES */
+    #values{background:var(--bg);}
+    .val-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:54px;}
+    .vcard{padding:26px;background:var(--card);border:1px solid var(--card-border);border-radius:16px;transition:all .3s;position:relative;overflow:hidden;}
+    .vcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--purple),var(--cyan));opacity:0;transition:opacity .3s;}
+    .vcard:hover{border-color:var(--purple);transform:translateY(-4px);box-shadow:0 12px 40px rgba(139,92,246,.15);}
+    .vcard:hover::before{opacity:1;}
+    .vcard-icon{font-size:1.8rem;margin-bottom:14px;}
+    .vcard-title{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:600;color:var(--text);margin-bottom:10px;}
+    .vcard-text{font-size:.875rem;color:var(--muted);line-height:1.72;}
+    /* EDUCATION */
+    #education{background:var(--bg2);}
+    .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:54px;}
+    .ecard{padding:26px;background:var(--card);border:1px solid var(--card-border);border-radius:16px;transition:all .3s;}
+    .ecard:hover{border-color:var(--purple);transform:translateY(-4px);box-shadow:0 10px 40px rgba(139,92,246,.15);}
+    .ec-icon{font-size:2rem;margin-bottom:16px;}
+    .ec-deg{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:600;color:var(--text);margin-bottom:6px;}
+    .ec-school{font-size:.875rem;color:var(--purple-l);margin-bottom:10px;}
+    .ec-meta{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px;}
+    .ebadge{font-family:'JetBrains Mono',monospace;font-size:.68rem;padding:3px 10px;border-radius:100px;}
+    .eb-p{background:rgba(139,92,246,.09);color:var(--purple-l);border:1px solid rgba(139,92,246,.2);}
+    .eb-g{background:rgba(16,185,129,.09);color:var(--green);border:1px solid rgba(16,185,129,.2);}
+    .eb-c{background:rgba(6,182,212,.09);color:var(--cyan);border:1px solid rgba(6,182,212,.2);}
+    .ec-desc{font-size:.84rem;color:var(--muted);line-height:1.7;}
+    /* CTA */
+    #cta-about{background:var(--bg);text-align:center;padding:110px 40px;position:relative;overflow:hidden;}
+    #cta-about::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.1) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
+    .cta-in{position:relative;z-index:1;max-width:640px;margin:0 auto;}
+    .cta-tag{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--cyan);letter-spacing:.22em;margin-bottom:22px;}
+    .cta-h{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.1;margin-bottom:20px;}
+    .cta-sub{font-size:1rem;color:var(--muted);margin-bottom:40px;line-height:1.75;}
+    .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+    .btn-p{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:var(--purple);color:white;border:none;border-radius:10px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;transition:all .3s;box-shadow:0 0 28px rgba(139,92,246,.35);}
+    .btn-p:hover{background:var(--purple-l);transform:translateY(-2px);box-shadow:0 0 50px rgba(139,92,246,.55);}
+    .btn-s{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:transparent;color:var(--text);border:1px solid var(--border);border-radius:10px;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;transition:all .3s;}
+    .btn-s:hover{border-color:var(--purple);color:var(--purple-l);background:rgba(139,92,246,.06);transform:translateY(-2px);}
+    /* FOOTER */
+    footer{background:var(--bg3);padding:44px 40px;border-top:1px solid var(--border);}
+    .foot-in{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:22px;}
+    .foot-links{display:flex;gap:20px;list-style:none;flex-wrap:wrap;}
+    .foot-links a{font-size:.85rem;color:var(--muted);transition:color .2s;}
+    .foot-links a:hover{color:var(--purple-l);}
+    .foot-soc{display:flex;gap:10px;}
+    .soc-btn{width:38px;height:38px;border-radius:9px;background:var(--card);border:1px solid var(--card-border);display:flex;align-items:center;justify-content:center;font-size:.95rem;transition:all .25s;color:var(--muted);}
+    .soc-btn:hover{border-color:var(--purple);color:var(--purple-l);transform:translateY(-2px);}
+    .foot-copy{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--dim);}
+    /* RESPONSIVE */
+    @media(max-width:1024px){.story-grid{grid-template-columns:1fr;gap:44px;}.val-grid{grid-template-columns:1fr;}.edu-grid{grid-template-columns:1fr;}}
+    @media(max-width:768px){.sec{padding:70px 22px;}#nav{padding:14px 22px;}.nav-links{display:none;}.hamburger{display:flex;}.page-hero{padding:110px 22px 60px;}}
+    </style>
 </head>
+<body>
+<div class="cursor" id="cur"></div>
+<div class="cursor-trail" id="cur-t"></div>
 
+<nav id="nav">
+    <div class="nav-logo"><a href="index.html"><img src="images/Logo.png" alt="Vridhi Gandhi"></a></div>
+    <ul class="nav-links">
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="certificates.html">Certificates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1LHYwRn99KIHiLJ03FCHgDaPhYPWlSUh6?usp=sharing" class="nav-cta" target="_blank">Resume ↓</a></li>
+    </ul>
+    <div class="hamburger" id="hbg" onclick="document.getElementById('mmenu').classList.toggle('open')"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mmenu">
+    <a href="about.html">About</a><a href="services.html">Services</a><a href="certificates.html">Certificates</a><a href="contact.html">Contact</a>
+    <a href="https://drive.google.com/drive/folders/1LHYwRn99KIHiLJ03FCHgDaPhYPWlSUh6?usp=sharing" target="_blank">Resume ↓</a>
+</div>
 
-<body id="top">
+<!-- PAGE HERO -->
+<div class="page-hero">
+    <div class="page-hero-in rv">
+        <div class="ph-tag">// About Me</div>
+        <h1 class="ph-h1">Built for the<br><span class="grad-text">intersection.</span></h1>
+        <p class="ph-sub">I'm a Solution Engineer at Lionsgate Play. I've always worked where data meets systems, where backend meets product, and where problems meet solutions — that's the only place I find interesting.</p>
+    </div>
+</div>
 
-
-    <!-- preloader
-    ================================================== -->
-    <div id="preloader">
-        <div id="loader" class="dots-fade">
-            <div></div>
-            <div></div>
-            <div></div>
+<!-- MY STORY -->
+<section id="story" class="sec">
+    <div class="sec-in">
+        <div class="story-grid">
+            <div class="rvl">
+                <div class="sec-tag">My Story</div>
+                <h2 class="sec-h2">How I Got Here</h2>
+                <p class="story-p">As a kid I was obsessed with how things connected — patterns in games, logic in math, systems hidden inside everyday things. That instinct didn't go away. It became my career.</p>
+                <p class="story-p">I studied <strong>Computer Engineering with an AI specialization</strong> and graduated with <strong>Honours in Data Science & Analysis (A+)</strong> from NMIMS. But my real education happened in the messy, real-world spaces where nothing is clean and everything is interconnected.</p>
+                <p class="story-p">Every role I've taken — from streaming millions of events at Merkle, to automating 10,000 devices at Streambox, to building the backend and recommendation engine at Lionsgate — has been about the same thing: <strong>bridging technical complexity into working solutions.</strong></p>
+                <p class="story-p">That's what Solution Engineering is. I just didn't have the title for it until recently.</p>
+            </div>
+            <div class="rvr">
+                <div class="story-img-wrap">
+                    <img src="images/me3.jpg" alt="Vridhi Gandhi" class="story-img">
+                    <div class="story-img-badge">🎬 Currently building at Lionsgate Play</div>
+                </div>
+            </div>
         </div>
     </div>
+</section>
 
-
-    <!-- page wrap
-    ================================================== -->
-    <div id="page" class="s-pagewrap">
-
-
-        <!-- # site header 
-        ================================================== -->
-        <header class="s-header">
-
-            <div class="row s-header__inner width-sixteen-col">
-
-                <div class="s-header__block">
-                    <div class="s-header__logo">
-                        <a id-"about-logo-click" class="logo" href="index.html">
-                            <img src="images/Logo.png" alt="Homepage">
-                        </a>
-                    </div>
-
-                    <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
-                </div> <!-- end s-header__block -->
-
-                <nav class="s-header__nav">
-    
-                    <ul class="s-header__menu-links">
-                        <li><a id="about-nav-about" href="about.html">About</a></li>
-                        <li><a id="about-nav-services" href="services.html">Services</a></li>
-                        <!-- <li><a href="blog.html">Journal</a></li> -->
-                        <li><a id="about-nav-certificates" href="certificates.html">Certificates</a></li>
-                        <li><a id="about-nav-contact" href="contact.html">Contact</a></li>
-                    </ul> <!-- s-header__menu-links -->
-
-                    <div class="s-header__contact">
-                        <a id="about-resume-download" href="https://drive.google.com/drive/folders/1LHYwRn99KIHiLJ03FCHgDaPhYPWlSUh6?usp=sharing" class="btn btn--primary s-header__contact-btn">Resume Download<span style="font-size: 1.5em;">↓</span></a>                                              
-                    </div> <!-- s-header__contact -->
-    
-                </nav> <!-- end s-header__nav -->
-
-            </div> <!-- end s-header__inner -->
-
-        </header> 
-        <!-- end s-header -->
-
-
-        <!-- # site main content
-        ================================================== -->
-        <section id="content" class="s-content">
-
-               <section class="s-pageheader pageheader">
-                    <div class="row">
-                        <div class="column xl-12">
-                            <h1 class="page-title">
-                                <span class="page-title__small-type text-pretitle">About</span>
-                                Hi, I'm Vridhi
-                            </h1>
-                            
-                        </div>
-                    </div>
-               </section> <!-- end pageheader --> 
-
-               <section class="s-pagecontent pagecontent">
-
-                    <div class="row pageintro">
-                        <div class="column xl-6 lg-12">
-                            <h2 class="text-display-title">Creative Solutions.<br>Clear Insights.<br>Clean Code.</h2>
-                        </div>
-                        <div class="column xl-6 lg-12 u-flexitem-x-right">
-                            <p class="lead">
-                            I'm a tech-driven problem solver with a focus on data analysis and web development. I create clean, responsive websites and tech solutions that solve real business problems. With a strong eye for detail, I blend functionality with design and occasionally channel my creativity through content writing and graphic design.
-                            </p>
-                        </div>                       
-                    </div> <!-- end pageintro -->   
-                    
-                    <div class="row pagemedia">
-                        <d class="column xl-12">
-                            <figure class="page-media" style="width: 100%; margin: 0 auto;">
-                                <img src="images/me3.jpg" alt="About Me Image" style="width: 100%; height: auto; display: block;">                              
-                            </figure>
-                        </d>
-                    </div> <!-- end pagemedia -->
-
-                    <div class="row width-narrower pagemain">
-                        <div class="column xl-12"> 
-
-                            <h2>How I Got Here</h2>
-                            <p>As a kid, I was always drawn to patterns whether in games, stories, math, or logic. That curiosity naturally led me into the world of technology, where solving problems felt just as thrilling as discovering hidden connections. Over time, what started as a fascination grew into a passion.</p>
-                            <p>I pursued a Bachelor's degree in Computer Engineering with a specialization in Artificial Intelligence, and graduated with honors in Data Science and Analysis. Along the way, I built projects, explored real-world applications, and discovered how tech can be both smart and meaningful.</p>
-                            <p> Now, I get to do what I love: build responsive websites, analyze data to uncover insights, and design solutions that blend logic with creativity.</p>
-
-                            <h2 class="u-add-bottom">My Values & Beliefs</h2>
-
-                            <div class="grid-list-items list-items">
-                                <div class="grid-list-items__item list-items__item u-remove-bottom">
-                                    <div class="list-items__item-header">
-                                        <h6 class="list-items__item-small-title">Curiosity Fuels Growth</h6>
-                                    </div>
-                                    <p>Since childhood, I've asked why before how. That curiosity hasn't just stayed with me it’s what led me into tech, AI, data, and design. I believe asking the right questions opens doors to the right solutions.</p>
-                                </div>
-                                <div class="grid-list-items__item list-items__item u-remove-bottom">
-                                    <div class="list-items__item-header">
-                                        <h6 class="list-items__item-small-title">Built with Intent</h6>
-                                    </div>
-                                    <p>Every website I build or product I analyze isn’t just about function it’s about meaning. I care about how people feel when they use something I’ve worked on. Good design solves problems. Great design connects people.</p>
-                                </div>
-                                <div class="grid-list-items__item list-items__item u-remove-bottom">
-                                    <div class="list-items__item-header">
-                                        <h6 class="list-items__item-small-title">Learn, Unlearn, Repeat</h6>
-                                    </div>
-                                    <p>My academic background in Computer Engineering, AI, and Data Science gave me strong foundations. But real growth came when I stepped beyond them. I believe in staying teachable, especially in a field that evolves every day.</p>
-                                </div>
-                                <div class="grid-list-items__item list-items__item u-remove-bottom">
-                                    <div class="list-items__item-header">
-                                        <h6 class="list-items__item-small-title">Creativity Belongs Everywhere</h6>
-                                    </div>
-                                    <p>Even in logic, there’s imagination. Whether I’m coding, analyzing data, or designing something visual, I bring creativity to the table. It’s not a separate skill it’s how I approach problems, people, and possibilities.</p>
-                                </div>
-                            </div> <!--grid-list-items -->
-
-                            <h2>Why Work With Me</h2>
-                            <p>
-                            When I take on a project whether it’s building a product, analyzing user journeys, or just untangling the chaos behind the scenes I dive in fully. I like understanding the “why” behind things, not just ticking boxes. I enjoy solving problems that matter, improving what already exists, and making sure every piece fits with intention. I’m curious by default, and detail-oriented by choice. I work fast, but I never rush what’s important.
-                            </p>
-
-                            <p>
-                            Behind all of that is a mindset rooted in accountability. I believe in doing the work properly, communicating clearly, and staying honest even when it’s inconvenient. I don’t cut corners, and I don’t disappear when things get tough. I care about people I work with how they feel, how they’re impacted, and how well we move forward together. That’s how I show up: with consistency, clarity, and care always.
-                            </p>                   
-
-                            <!-- <h2>A Few More Words About Myself</h2>
-                            <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et assumenda debitis aut quidem ad voluptates quibusdam soluta temporibus, 
-                            eveniet nobis tempore sunt, provident sapiente accusamus dignissimos voluptatum fugiat nulla dicta nihil molestiae aspernatur error in. 
-                            Ut quo porro voluptatum delectus asperiores culpa non cum facere minima nesciunt assumenda, praesentium reprehenderit accusamus, quam 
-                            repellat nobis nemo? Ut magnam unde culpa pariatur possimus sunt fugiat ea maxime praesentium eaque quo odio sed eligendi harum dolor, 
-                            repellendus reprehenderit facere nihil quam. Saepe, magni.
-                            </p> -->
-
-                        </div> <!-- end grid-block-->
-                    </div> <!-- end pagemain -->
-
-               </section> <!-- pagecontent -->
-
-               <!-- <section class="s-testimonials"> -->
-
-                    <!-- <div class="s-testimonials__header row row-x-center text-center">
-                        <div class="column xl-8 lg-12">
-        
-                            <p class="text-pretitle">
-                            Testimonials
-                            </p>
-                            <h3>
-                            Reviews From Real Clients
-                            </h3>                        
-        
-                        </div>
-                    </div>  -->
-                    <!--end s-testimonials__header -->
-
-                    <!-- <div class="row s-testimonials__content"> -->
-                        <!-- <div class="column xl-12 testimonials"> -->
-
-                            <!-- <div class="swiper-container testimonials__slider page-slider"> -->
-
-                                <!-- <div class="swiper-wrapper">
-                                    <div class="testimonials__slide swiper-slide">
-                                        <p>
-                                        Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem. 
-                                        Explicabo a quaerat sint autem dolore ducimus ut consequatur neque. Nisi dolores quaerat fuga rem nihil nostrum.
-                                        Laudantium quia consequatur molestias.
-                                        </p>
-                                        <div class="testimonials__author">
-                                            <img src="images/avatars/user-01.jpg" alt="Author image" class="testimonials__avatar">
-                                            <cite class="testimonials__cite">
-                                                <strong>John Rockefeller</strong>
-                                                <span>Standard Oil Co.</span>
-                                            </cite>
-                                        </div>
-                                    </div>
-                                    <div class="testimonials__slide swiper-slide">
-                                        <p>
-                                        Voluptas tempore rem. Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. 
-                                        Explicabo a quaerat sint autem dolore ducimus ut consequatur neque. Nisi dolores quaerat fuga rem nihil nostrum.
-                                        Laudantium quia consequatur molestias.
-                                        </p>
-                                        <div class="testimonials__author">
-                                            <img src="images/avatars/user-04.jpg" alt="Author image" class="testimonials__avatar">
-                                            <cite class="testimonials__cite">
-                                                <strong>Andrew Carnegie</strong>
-                                                <span>Carnegie Steel Co.</span>
-                                            </cite>
-                                        </div>
-                                    </div>
-                                    <div class="testimonials__slide swiper-slide">
-                                        <p>
-                                        Nisi dolores quaerat fuga rem nihil nostrum. Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. 
-                                        Voluptas tempore rem. Explicabo a quaerat sint autem dolore ducimus ut consequatur neque. 
-                                        Laudantium quia consequatur molestias.
-                                        </p>
-                                        <div class="testimonials__author">
-                                            <img src="images/avatars/user-06.jpg" alt="Author image" class="testimonials__avatar">
-                                            <cite class="testimonials__cite">
-                                                <strong>Henry Ford</strong>
-                                                <span>Ford Motor Co.</span>
-                                            </cite>
-                                        </div>
-                                    </div>
-                                    <div class="testimonials__slide swiper-slide">
-                                        <p>
-                                        Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem. 
-                                        Explicabo a quaerat sint autem dolore ducimus ut consequatur neque. Nisi dolores quaerat fuga rem nihil nostrum.
-                                        Laudantium quia consequatur molestias.
-                                        </p>
-                                        <div class="testimonials__author">
-                                            <img src="images/avatars/user-02.jpg" alt="Author image" class="testimonials__avatar">
-                                            <cite class="testimonials__cite">
-                                                <strong>John Morgan</strong>
-                                                <span>JP Morgan & Co.</span>
-                                            </cite>
-                                        </div>
-                                    </div> 
-                                </div>  -->
-                                <!-- end swiper-wrapper --> 
-
-                                <!-- <div class="swiper-pagination"></div> -->
-
-                            <!-- </div>  -->
-                            <!--end testimonials__slider --> 
-
-                        <!-- </div>  -->
-                        <!-- testimonials -->
-                    <!-- </div>  -->
-                    <!--end s-testimonials__content -->
-
-               <!-- </section>  -->
-               <!-- end s-testimonials -->
-
-        </section> <!-- s-content-->
-
-        <!-- # cta
-        ================================================== -->
-        <section id="cta" class="s-cta">
-
-            <div class="row row-x-center text-center">
-                <div class="column xl-8 lg-12">
-
-                    <div class="s-cta__content">
-                        <h2 class="text-display-title">
-                        Lets connect.
-                        </h2>
-                        <p class="lead">
-                        Whether you’re looking to build a high-performance website, automate complex workflows, gain meaningful insights from data, or bring a creative idea to life I’m here to help.
-                        I offer personalized consultations to understand your vision, identify opportunities, and deliver tailored solutions that align with your goals. From tech to design, every project starts with a conversation.
-                        </p>
-                        <p class="lead">
-                        📩 Ready to get started? <br>Let’s talk about how we can build something impactful together.
-                        </p>
-                        <a id="about-lets-work-click" href="contact.html" class="btn btn--primary"><b>Let's Work Together</b></a>
-                    </div>
-
+<!-- GROWTH NARRATIVE -->
+<section id="growth" class="sec">
+    <div class="sec-in">
+        <div class="rv">
+            <div class="sec-tag">Career Arc</div>
+            <h2 class="sec-h2">One Direction.<br>Always Growing.</h2>
+        </div>
+        <div class="growth-intro rv">
+            <p>Every role tells the same story — someone who builds end-to-end systems, bridges technical complexity, and makes things work at scale. The title changed. The direction never did.</p>
+        </div>
+        <div class="gpath">
+            <!-- Merkle -->
+            <div class="gstep rv">
+                <div class="gstep-left"><div class="gstep-dot"></div><div class="gstep-line"></div></div>
+                <div class="gcard">
+                    <div class="gc-head"><span class="gc-title">Data Scientist Intern — Merkle</span><span class="gc-date">Jan–Jun 2022</span></div>
+                    <div class="gc-co">First exposure to enterprise-scale data pipelines</div>
+                    <div class="gc-story">Built an <strong>Apache NiFi + Kafka → Snowflake streaming pipeline</strong> handling millions of events daily. Set up auto-scaling on AWS EC2 for improved analytics throughput. Was awarded <strong>"Problem Solver"</strong> — not for being the loudest, but for delivering consistently when it mattered. This was where I learned that a system's value is in its reliability, not its complexity.</div>
+                    <div class="gc-skills"><span class="sk">Kafka</span><span class="sk">Apache NiFi</span><span class="sk">Snowflake</span><span class="sk">AWS EC2</span></div>
                 </div>
             </div>
-
-        </section> 
-        <!-- end s-cta -->
-
-        <!-- # footer 
-        ================================================== -->
-        <footer class="s-footer">
-            <div class="row s-footer__content">
-                <div class="column xl-6 lg-6 md-12 s-footer__block s-footer__about">                    
-                    <h3>Thanks for stopping by<br>
-                         Let’s stay connected.</h3>
-                    <p>
-                    Whether you’re here out of curiosity or looking to<br>collaborate, I appreciate your time.<br>Feel free to reach out anytime I’d love to hear from you.
-                    </p>               
-                </div>                
-                <div class="column xl-3 lg-6 md-12 s-footer__block s-footer__site-links">
-                    <h3>Site Links</h3>
-                    <ul class="link-list">
-                        <li><a id="about-footer-home" href="index.html">Home</a></li>
-                        <li><a id="about-footer-about" href="about.html">About</a></li>
-                        <li><a id="about-footer-services" href="services.html">Services</a></li>
-                        <!-- <li><a href="blog.html">Journal</a></li> -->
-                        <li><a id="about-footer-certificates" href="certificates.html">Certificates</a></li>
-                        <li><a id="about-footer-contact" href="contact.html">Contact</a></li>
-                    </ul>
+            <!-- Finqy -->
+            <div class="gstep rv">
+                <div class="gstep-left"><div class="gstep-dot"></div><div class="gstep-line"></div></div>
+                <div class="gcard">
+                    <div class="gc-head"><span class="gc-title">Data Analyst Intern — Finqy / E-Revbay</span><span class="gc-date">May–Oct 2023</span></div>
+                    <div class="gc-co">Expanded from data to full-stack solution delivery</div>
+                    <div class="gc-story">Built a <strong>Business Portal from scratch</strong> using React, Node.js, Sequelize, and Azure with multi-role access control and CI/CD. Designed a <strong>real-time PayInPayOut data ingestion pipeline</strong> for 1M+ daily records. This wasn't just analysis — it was understanding a product's entire data flow and engineering the infrastructure to support it reliably.</div>
+                    <div class="gc-skills"><span class="sk">React</span><span class="sk">Node.js</span><span class="sk">Azure</span><span class="sk">SQL</span><span class="sk">CI/CD</span></div>
                 </div>
-                <div class="column xl-3 lg-6 md-12 tab-12 s-footer__block s-footer__newsletter">
-                    <h3>Socials</h3>
-                    <ul class="s-footer__social social-list">
-                        <li>
-                            <a id="about-footer-email-click" href="mailto:vridhigandhi@gmail.com">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="rgba(0,0,0,1)" viewBox="0 0 24 24">
-                                <path d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.01L12 13l8-8.99V4H4zm16 2.83l-7.07 7.07a1 1 0 0 1-1.42 0L4 6.83V20h16V6.83z"/>
-                                </svg>
-                                <span class="u-screen-reader-text">Email</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a id="about-footer-linkedin-click" href="https://www.linkedin.com/in/vridhi-gandhi/">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0077B5" viewBox="0 0 24 24">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.849-3.037-1.851 0-2.132 1.445-2.132 2.939v5.667H9.358V9h3.414v1.561h.049c.476-.899 1.637-1.848 3.37-1.848 3.602 0 4.267 2.368 4.267 5.455v6.284zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zm1.777 13.019H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.549C0 23.229.792 24 1.771 24h20.451C23.2 24 24 23.229 24 22.271V1.723C24 .771 23.2 0 22.222 0z"/>
-                                </svg>
-                                <span class="u-screen-reader-text">LinkedIn</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a id="about-footer-whatsapp-click" href="https://wa.me/917506520052">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#25D366" viewBox="0 0 16 16">
-                                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
-                                </svg>
-                                <span class="u-screen-reader-text">WhatsApp</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a id="about-footer-call-click" href="tel:+919082391198" target="_blank" rel="noopener">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="rgba(0,0,0,1)" viewBox="0 0 24 24">
-                                <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1C10.07 22 2 13.93 2 4.5A1 1 0 0 1 3 3.5h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2z"/>
-                                </svg>
-                                <span class="u-screen-reader-text">Call</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a id="about-footer-instagram-click" href="https://www.instagram.com/__yomadic__/">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                                </svg>
-                                <span class="u-screen-reader-text">Instagram</span>
-                            </a>
-                        </li>
-
-                    </ul>
-                    <p>
-                    <!-- Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere ratione dignissimos. -->
-                    </p>
-
-                    <div class="subscribe-form">
-                        <form id="mc-form" class="mc-form">
-                            <!-- <input type="email" name="EMAIL" id="mce-EMAIL" class="u-fullwidth text-center" placeholder="Your Email Address" title="The domain portion of the email address is invalid (the portion after the @)." pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" required> -->
-                            <!-- <input type="submit" name="subscribe" value="Subscribe" class="btn btn--primary btn--small u-fullwidth"> -->
-                            <!-- <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_cdb7b577e41181934ed6a6a44_9a91cfe7b3" tabindex="-1" value=""></div> -->
-                            <div class="mc-status"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>    
-            
-            <div class="row s-footer__bottom">
-                <div class="column xl-6 lg-12">
-                    <!-- <ul class="s-footer__social social-list">
-                        <li>
-                            <a href="#0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325,1.42-3.592,3.5-3.592 c0.699-0.002,1.399,0.034,2.095,0.107v2.42h-1.435c-1.128,0-1.348,0.538-1.348,1.325v1.735h2.697l-0.35,2.725h-2.348V21H20 c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z"></path></svg>
-                                <span class="u-screen-reader-text">Facebook</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M19.633,7.997c0.013,0.175,0.013,0.349,0.013,0.523c0,5.325-4.053,11.461-11.46,11.461c-2.282,0-4.402-0.661-6.186-1.809 c0.324,0.037,0.636,0.05,0.973,0.05c1.883,0,3.616-0.636,5.001-1.721c-1.771-0.037-3.255-1.197-3.767-2.793 c0.249,0.037,0.499,0.062,0.761,0.062c0.361,0,0.724-0.05,1.061-0.137c-1.847-0.374-3.23-1.995-3.23-3.953v-0.05 c0.537,0.299,1.16,0.486,1.82,0.511C3.534,9.419,2.823,8.184,2.823,6.787c0-0.748,0.199-1.434,0.548-2.032 c1.983,2.443,4.964,4.04,8.306,4.215c-0.062-0.3-0.1-0.611-0.1-0.923c0-2.22,1.796-4.028,4.028-4.028 c1.16,0,2.207,0.486,2.943,1.272c0.91-0.175,1.782-0.512,2.556-0.973c-0.299,0.935-0.936,1.721-1.771,2.22 c0.811-0.088,1.597-0.312,2.319-0.624C21.104,6.712,20.419,7.423,19.633,7.997z"></path></svg>
-                                <span class="u-screen-reader-text">Twitter</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M11.999,7.377c-2.554,0-4.623,2.07-4.623,4.623c0,2.554,2.069,4.624,4.623,4.624c2.552,0,4.623-2.07,4.623-4.624 C16.622,9.447,14.551,7.377,11.999,7.377L11.999,7.377z M11.999,15.004c-1.659,0-3.004-1.345-3.004-3.003 c0-1.659,1.345-3.003,3.004-3.003s3.002,1.344,3.002,3.003C15.001,13.659,13.658,15.004,11.999,15.004L11.999,15.004z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533,6.111c-0.469-1.209-1.424-2.165-2.633-2.632c-0.699-0.263-1.438-0.404-2.186-0.42 c-0.963-0.042-1.268-0.054-3.71-0.054s-2.755,0-3.71,0.054C7.548,3.074,6.809,3.215,6.11,3.479C4.9,3.946,3.945,4.902,3.477,6.111 c-0.263,0.7-0.404,1.438-0.419,2.186c-0.043,0.962-0.056,1.267-0.056,3.71c0,2.442,0,2.753,0.056,3.71 c0.015,0.748,0.156,1.486,0.419,2.187c0.469,1.208,1.424,2.164,2.634,2.632c0.696,0.272,1.435,0.426,2.185,0.45 c0.963,0.042,1.268,0.055,3.71,0.055s2.755,0,3.71-0.055c0.747-0.015,1.486-0.157,2.186-0.419c1.209-0.469,2.164-1.424,2.633-2.633 c0.263-0.7,0.404-1.438,0.419-2.186c0.043-0.962,0.056-1.267,0.056-3.71s0-2.753-0.056-3.71C20.941,7.57,20.801,6.819,20.533,6.111z M19.315,15.643c-0.007,0.576-0.111,1.147-0.311,1.688c-0.305,0.787-0.926,1.409-1.712,1.711c-0.535,0.199-1.099,0.303-1.67,0.311 c-0.95,0.044-1.218,0.055-3.654,0.055c-2.438,0-2.687,0-3.655-0.055c-0.569-0.007-1.135-0.112-1.669-0.311 c-0.789-0.301-1.414-0.923-1.719-1.711c-0.196-0.534-0.302-1.099-0.311-1.669c-0.043-0.95-0.053-1.218-0.053-3.654 c0-2.437,0-2.686,0.053-3.655c0.007-0.576,0.111-1.146,0.311-1.687c0.305-0.789,0.93-1.41,1.719-1.712 c0.534-0.198,1.1-0.303,1.669-0.311c0.951-0.043,1.218-0.055,3.655-0.055c2.437,0,2.687,0,3.654,0.055 c0.571,0.007,1.135,0.112,1.67,0.311c0.786,0.303,1.407,0.925,1.712,1.712c0.196,0.534,0.302,1.099,0.311,1.669 c0.043,0.951,0.054,1.218,0.054,3.655c0,2.436,0,2.698-0.043,3.654H19.315z"></path></svg>
-                                <span class="u-screen-reader-text">Instagram</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M20.66 6.98a9.932 9.932 0 0 0-3.641-3.64C15.486 2.447 13.813 2 12 2s-3.486.447-5.02 1.34c-1.533.893-2.747 2.107-3.64 3.64S2 10.187 2 12s.446 3.487 1.34 5.02a9.924 9.924 0 0 0 3.641 3.64C8.514 21.553 10.187 22 12 22s3.486-.447 5.02-1.34a9.932 9.932 0 0 0 3.641-3.64C21.554 15.487 22 13.813 22 12s-.446-3.487-1.34-5.02zM12 3.66c2 0 3.772.64 5.32 1.919-.92 1.174-2.286 2.14-4.1 2.9-1.002-1.813-2.088-3.327-3.261-4.54A7.715 7.715 0 0 1 12 3.66zM5.51 6.8a8.116 8.116 0 0 1 2.711-2.22c1.212 1.201 2.325 2.7 3.34 4.5-2 .6-4.114.9-6.341.9-.573 0-1.006-.013-1.3-.04A8.549 8.549 0 0 1 5.51 6.8zM3.66 12c0-.054.003-.12.01-.2.007-.08.01-.146.01-.2.254.014.641.02 1.161.02 2.666 0 5.146-.367 7.439-1.1.187.373.381.793.58 1.26-1.32.293-2.674 1.006-4.061 2.14S6.4 16.247 5.76 17.5c-1.4-1.587-2.1-3.42-2.1-5.5zM12 20.34c-1.894 0-3.594-.587-5.101-1.759.601-1.187 1.524-2.322 2.771-3.401 1.246-1.08 2.483-1.753 3.71-2.02a29.441 29.441 0 0 1 1.56 6.62 8.166 8.166 0 0 1-2.94.56zm7.08-3.96a8.351 8.351 0 0 1-2.58 2.621c-.24-2.08-.7-4.107-1.379-6.081.932-.066 1.765-.1 2.5-.1.799 0 1.686.034 2.659.1a8.098 8.098 0 0 1-1.2 3.46zm-1.24-5c-1.16 0-2.233.047-3.22.14a27.053 27.053 0 0 0-.68-1.62c2.066-.906 3.532-2.006 4.399-3.3 1.2 1.414 1.854 3.027 1.96 4.84-.812-.04-1.632-.06-2.459-.06z"></path></svg>
-                                <span class="u-screen-reader-text">Dribbble</span>
-                            </a>
-                        </li>
-                    </ul> -->
-                     <!-- end s-footer__social -->
-                </div>
-                <div class="column xl-6 lg-12">
-                    <p class="ss-copyright">
-                        <span>© Copyright Vridhi Gandhi 2025</span> 
-                        <span>Design by Vridhi Gandhi</span>
-                    </p>
-                </div>
-
-                <div class="ss-go-top">
-                    <a  id="about-to-top-click" class="smoothscroll" title="Back to Top" href="#top">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#ffffff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">&lt;!--!  Atomicons Free 1.00 by @atisalab License - https://atomicons.com/license/ (Icons: CC BY 4.0) Copyright 2021 Atomicons --&gt;<polyline points="17 11 12 6 7 11"></polyline><line x1="12" y1="18" x2="12" y2="6"></line></svg>
-                    </a>
-                </div> <!-- end ss-go-top -->
             </div>
-            
-        </footer> 
-        <!-- end s-footer -->
+            <!-- AARI -->
+            <div class="gstep rv">
+                <div class="gstep-left"><div class="gstep-dot"></div><div class="gstep-line"></div></div>
+                <div class="gcard">
+                    <div class="gc-head"><span class="gc-title">Full-Stack Developer — AARI (Freelance)</span><span class="gc-date">Nov 2023–May 2024</span></div>
+                    <div class="gc-co">End-to-end ownership of a technical product</div>
+                    <div class="gc-story">Took full ownership of a client's web presence — <strong>redesigned 52+ pages from scratch</strong>, optimized for performance and SEO, and achieved <strong>top-5 rankings for high-intent keywords</strong>. Running a project solo means being the solution engineer yourself: requirements, architecture, execution, delivery.</div>
+                    <div class="gc-skills"><span class="sk">Web Dev</span><span class="sk">SEO</span><span class="sk">UX Design</span><span class="sk">Performance</span></div>
+                </div>
+            </div>
+            <!-- Streambox -->
+            <div class="gstep rv">
+                <div class="gstep-left"><div class="gstep-dot"></div><div class="gstep-line"></div></div>
+                <div class="gcard">
+                    <div class="gc-head"><span class="gc-title">Data Scientist — Streambox Media</span><span class="gc-date">Jun 2024–May 2025</span></div>
+                    <div class="gc-co">First full-time role in a product engineering environment</div>
+                    <div class="gc-story">Automated OS and app deployments across <strong>10,000+ devices</strong> using Radix MDM. Built Python ingestion tools that centralized data into PostgreSQL and cut <strong>60–85% of manual effort</strong>. Developed a Flask backend for ERP data flow and built dashboards across Power BI, Grafana, Superset, and Tableau. A role where the data, the infra, and the product were all mine to own and optimize.</div>
+                    <div class="gc-skills"><span class="sk">Python</span><span class="sk">PostgreSQL</span><span class="sk">Flask</span><span class="sk">Radix MDM</span><span class="sk">Power BI</span></div>
+                </div>
+            </div>
+            <!-- Lionsgate AI -->
+            <div class="gstep rv">
+                <div class="gstep-left"><div class="gstep-dot"></div><div class="gstep-line"></div></div>
+                <div class="gcard">
+                    <div class="gc-head"><span class="gc-title">AI & Data Engineer — Lionsgate Play</span><span class="gc-date">Sep–Oct 2025</span></div>
+                    <div class="gc-co">Exploring AI as a production engineering tool</div>
+                    <div class="gc-story">Built an end-to-end <strong>AI video pipeline using Google Veo</strong> — researched true stories, adapted scripts for Indian audiences, engineered scene-by-scene JSON prompts, and produced a <strong>9+ minute cinematic film</strong>. Managed visual continuity, quality control, and multi-model testing. This was AI as engineering, not experimentation.</div>
+                    <div class="gc-skills"><span class="sk">Google Veo</span><span class="sk">Prompt Engineering</span><span class="sk">AI Video Gen</span></div>
+                </div>
+            </div>
+            <!-- Lionsgate SE (current) -->
+            <div class="gstep rv">
+                <div class="gstep-left"><div class="gstep-dot cur"></div><div class="gstep-line"></div></div>
+                <div class="gcard">
+                    <div class="gc-badge-cur"><span class="gbdot"></span>Current Role</div>
+                    <div class="gc-head"><span class="gc-title">Solution Engineer — Lionsgate Play</span><span class="gc-date">Oct 2025–Present</span></div>
+                    <div class="gc-co">Where all the threads converge</div>
+                    <div class="gc-story">Building CMS workflows, backend API integrations, a <strong>recommendation engine using Memgraph + OpenSearch</strong>, and supporting the OTT video pipeline — ingestion, DRM, processing, and delivery. This is the role where data engineering, backend systems, AI, and product all connect. It didn't happen overnight. It was the logical end of every decision before it.</div>
+                    <div class="gc-skills"><span class="sk">GraphQL</span><span class="sk">Memgraph</span><span class="sk">OpenSearch</span><span class="sk">DRM</span><span class="sk">Signoz</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    </div> <!-- end page-wrap -->
+<!-- VALUES -->
+<section id="values" class="sec">
+    <div class="sec-in">
+        <div class="rv">
+            <div class="sec-tag">How I Work</div>
+            <h2 class="sec-h2">What I Actually Believe</h2>
+        </div>
+        <div class="val-grid">
+            <div class="vcard rv">
+                <div class="vcard-icon">🔍</div>
+                <div class="vcard-title">Systems Over Symptoms</div>
+                <div class="vcard-text">I don't patch what I don't understand. Before writing a line of code, I want to know why the problem exists, where it lives in the system, and what breaks if I fix it the wrong way. That instinct is what makes the difference between a band-aid and a real solution.</div>
+            </div>
+            <div class="vcard rv">
+                <div class="vcard-icon">⚡</div>
+                <div class="vcard-title">Precision over Speed</div>
+                <div class="vcard-text">I work fast. But I never rush what matters. When something is running at scale — streaming pipelines, OTT infrastructure, automated device fleets — a careless shortcut becomes a production incident at 2 AM. I build things that hold up.</div>
+            </div>
+            <div class="vcard rv">
+                <div class="vcard-icon">🌉</div>
+                <div class="vcard-title">Bridge the Gap</div>
+                <div class="vcard-text">The most valuable work happens at the seam between systems — where data meets product, where backend meets user, where engineering meets business logic. I'm most useful right there, translating between layers that don't naturally talk to each other.</div>
+            </div>
+            <div class="vcard rv">
+                <div class="vcard-icon">🌱</div>
+                <div class="vcard-title">Learn to Stay Current</div>
+                <div class="vcard-text">From Kafka to GraphQL to Veo — the stack shifts constantly. I don't hold onto tools I've outgrown or avoid ones I haven't touched yet. The skill isn't knowing everything. It's knowing how to learn fast, apply well, and move on when something better exists.</div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- Java Script
-    ================================================== -->
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+<!-- EDUCATION -->
+<section id="education" class="sec">
+    <div class="sec-in">
+        <div class="rv">
+            <div class="sec-tag">Education</div>
+            <h2 class="sec-h2">Academic Foundation</h2>
+        </div>
+        <div class="edu-grid">
+            <div class="ecard rv">
+                <div class="ec-icon">🎓</div>
+                <div class="ec-deg">BTech Computer Engineering + AI</div>
+                <div class="ec-school">Mukesh Patel School of Technology Management & Engineering, NMIMS</div>
+                <div class="ec-meta">
+                    <span class="ebadge eb-p">2018 – 2024</span>
+                    <span class="ebadge eb-g">GPA 3.74</span>
+                    <span class="ebadge eb-c">AI Specialization</span>
+                </div>
+                <div class="ec-desc">Deep foundations in algorithms, systems design, machine learning, and distributed computing — the technical base for everything I've built since.</div>
+            </div>
+            <div class="ecard rv">
+                <div class="ec-icon">🏅</div>
+                <div class="ec-deg">Honours in Data Science & Analysis</div>
+                <div class="ec-school">Narsee Monjee Institute of Management Studies</div>
+                <div class="ec-meta">
+                    <span class="ebadge eb-p">2021 – 2024</span>
+                    <span class="ebadge eb-g">Grade A+</span>
+                    <span class="ebadge eb-c">Dual Degree</span>
+                </div>
+                <div class="ec-desc">Specialized in statistical modeling, data pipelines, and analytics — completed alongside the engineering degree with an A+. Proof that understanding data is its own discipline.</div>
+            </div>
+        </div>
+    </div>
+</section>
 
+<!-- CTA -->
+<section id="cta-about">
+    <div class="cta-in rv">
+        <div class="cta-tag">// Let's Build Together</div>
+        <h2 class="cta-h">Have a problem<br>that needs <span class="grad-text">solving?</span></h2>
+        <p class="cta-sub">Whether it's OTT infrastructure, data pipelines, backend systems, or something that spans all three — that's exactly where I work best.</p>
+        <div class="cta-btns">
+            <a href="contact.html" class="btn-p">Get In Touch →</a>
+            <a href="services.html" class="btn-s">View Services</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="foot-in">
+        <img src="images/Logo.png" alt="Vridhi Gandhi" style="height:30px;filter:brightness(.65)">
+        <ul class="foot-links">
+            <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="certificates.html">Certificates</a></li><li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="foot-soc">
+            <a href="mailto:vridhigandhi@gmail.com" class="soc-btn">✉️</a>
+            <a href="https://www.linkedin.com/in/vridhi-gandhi/" class="soc-btn" target="_blank">💼</a>
+            <a href="https://wa.me/917506520052" class="soc-btn" target="_blank">💬</a>
+            <a href="https://www.instagram.com/__yomadic__/" class="soc-btn" target="_blank">📸</a>
+        </div>
+        <div class="foot-copy">© 2025 Vridhi Gandhi</div>
+    </div>
+</footer>
+
+<script>
+const cur=document.getElementById('cur'),curT=document.getElementById('cur-t');
+let mx=0,my=0,tx=0,ty=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=(mx-5)+'px';cur.style.top=(my-5)+'px';});
+(function a(){tx+=(mx-tx)*.14;ty+=(my-ty)*.14;curT.style.left=(tx-18)+'px';curT.style.top=(ty-18)+'px';requestAnimationFrame(a);})();
+document.querySelectorAll('a,button,.vcard,.gcard,.ecard').forEach(el=>{el.addEventListener('mouseenter',()=>cur.style.transform='scale(2.4)');el.addEventListener('mouseleave',()=>cur.style.transform='scale(1)');});
+window.addEventListener('scroll',()=>{document.getElementById('nav').style.boxShadow=window.scrollY>60?'0 4px 30px rgba(0,0,0,.5)':'none';});
+const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('on'),i*80);obs.unobserve(e.target);}});},{threshold:.08});
+document.querySelectorAll('.rv,.rvl,.rvr').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>
