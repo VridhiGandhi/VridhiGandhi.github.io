@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js" >
 <head>
-    <!-- Google Analytics -->
+    <!-- ✅ Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-K75LMHVFNP"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -9,1454 +9,753 @@
         gtag('js', new Date());
         gtag('config', 'G-K75LMHVFNP');
     </script>
+
+    <!--- basic page needs
+    ================================================== -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vridhi Gandhi — Solution Engineer</title>
-    <meta name="description" content="Solution Engineer at Lionsgate Play. Building OTT infrastructure, AI systems, recommendation engines, and data pipelines.">
+    <title>Vridhi Gandhi</title>
+
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- favicons
+    ================================================== -->
     <link rel="apple-touch-icon" sizes="180x180" href="images/header-logo.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/header-logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/header-logo.png">
     <link rel="manifest" href="site.webmanifest">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-    /* ==========================================
-       RESET & ROOT
-    ========================================== */
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-        --bg:           #1e2232;
-        --bg2:          #2d3142;
-        --bg3:          #353a52;
-        --purple:       #ef8354;
-        --purple-l:     #f4a07a;
-        --purple-d:     #c95c2e;
-        --cyan:         #4f5d75;
-        --cyan-l:       #bfc0c0;
-        --green:        #ef8354;
-        --text:         #ffffff;
-        --muted:        #bfc0c0;
-        --dim:          #7a8599;
-        --border:       rgba(239,131,84,0.2);
-        --card:         rgba(255,255,255,0.03);
-        --card-border:  rgba(239,131,84,0.15);
-    }
-    html { scroll-behavior: smooth; }
-    body {
-        font-family: 'Inter', sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        overflow-x: hidden;
-    }
-    ::-webkit-scrollbar { width: 5px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 3px; }
-    a { text-decoration: none; color: inherit; }
 
-    /* ==========================================
-       CURSOR (desktop only)
-    ========================================== */
-    @media (hover: hover) {
-        body { cursor: none; }
-        .cursor, .cursor-trail { display: block; }
-    }
-    .cursor {
-        display: none;
-        width: 10px; height: 10px;
-        background: var(--purple);
-        border-radius: 50%;
-        position: fixed;
-        pointer-events: none;
-        z-index: 99999;
-        mix-blend-mode: screen;
-        transition: transform 0.08s ease;
-    }
-    .cursor-trail {
-        display: none;
-        width: 36px; height: 36px;
-        border: 1px solid rgba(239,131,84,0.45);
-        border-radius: 50%;
-        position: fixed;
-        pointer-events: none;
-        z-index: 99998;
-        transition: all 0.14s ease;
-    }
 
-    /* ==========================================
-       LOADING SCREEN
-    ========================================== */
-    #loader {
-        position: fixed; inset: 0;
-        background: var(--bg);
-        z-index: 10000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 18px;
-    }
-    .loader-name {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 1.8rem;
-        font-weight: 700;
-        background: linear-gradient(135deg, var(--purple-l), var(--cyan));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-    .loader-status {
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 0.72rem;
-        color: var(--purple);
-        letter-spacing: 0.25em;
-        min-width: 160px;
-        text-align: center;
-    }
-    .loader-bar-bg {
-        width: 220px; height: 2px;
-        background: rgba(239,131,84,0.18);
-        border-radius: 1px;
-        overflow: hidden;
-    }
-    .loader-bar {
-        height: 100%;
-        background: linear-gradient(90deg, var(--purple), var(--cyan));
-        animation: ldBar 1.9s ease forwards;
-        transform-origin: left;
-    }
-    @keyframes ldBar { 0%{width:0} 100%{width:100%} }
-
-    /* ==========================================
-       NAVIGATION
-    ========================================== */
-    #nav {
-        position: fixed; top: 0; left: 0; right: 0;
-        z-index: 1000;
-        padding: 18px 40px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
-        background: rgba(3,7,18,0.82);
-        border-bottom: 1px solid var(--border);
-        transition: box-shadow 0.3s;
-    }
-    .nav-logo img { height: 34px; }
-    .nav-links {
-        display: flex; align-items: center;
-        gap: 4px; list-style: none;
-    }
-    .nav-links a {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 0.875rem; font-weight: 500;
-        color: var(--muted);
-        padding: 8px 16px;
-        border-radius: 8px;
-        transition: all 0.2s;
-    }
-    .nav-links a:hover { color: var(--text); background: rgba(239,131,84,0.1); }
-    .nav-links .nav-cta {
-        background: var(--purple) !important;
-        color: white !important;
-        font-weight: 600;
-        padding: 8px 20px;
-        border-radius: 8px;
-    }
-    .nav-links .nav-cta:hover { background: var(--purple-l) !important; transform: translateY(-1px); }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: 0.3s; }
-    .mobile-menu {
-        display: none;
-        position: fixed; top: 70px; left: 0; right: 0;
-        background: rgba(45,49,66,0.98);
-        border-bottom: 1px solid var(--border);
-        padding: 20px 24px;
-        flex-direction: column; gap: 4px;
-        backdrop-filter: blur(24px);
-        z-index: 999;
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 1rem; color: var(--muted);
-        padding: 12px 16px; border-radius: 8px;
-        transition: all 0.2s;
-    }
-    .mobile-menu a:hover { color: var(--text); background: rgba(239,131,84,0.08); }
-
-    /* ==========================================
-       HERO
-    ========================================== */
-    #hero {
-        position: relative;
-        min-height: 100vh;
-        display: flex; align-items: center; justify-content: center;
-        padding: 110px 40px 70px;
-        overflow: hidden;
-    }
-    #pcanvas { position: absolute; inset: 0; opacity: 0.55; }
-    .hero-glow {
-        position: absolute;
-        width: 700px; height: 700px;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(239,131,84,0.12) 0%, transparent 70%);
-        top: 50%; left: 30%;
-        transform: translate(-50%, -50%);
-        pointer-events: none;
-        animation: glowPulse 6s ease-in-out infinite;
-    }
-    @keyframes glowPulse {
-        0%,100% { opacity: 0.7; transform: translate(-50%,-50%) scale(1); }
-        50%      { opacity: 1;   transform: translate(-50%,-50%) scale(1.15); }
-    }
-    .hero-inner {
-        position: relative; z-index: 2;
-        max-width: 1100px; width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 420px;
-        gap: 70px; align-items: center;
-    }
-    /* left side */
-    .hero-badge {
-        display: inline-flex; align-items: center; gap: 8px;
-        padding: 6px 14px;
-        background: rgba(239,131,84,0.1);
-        border: 1px solid rgba(239,131,84,0.3);
-        border-radius: 100px;
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 0.72rem; color: var(--purple-l);
-        margin-bottom: 22px;
-        animation: fadeUp 0.6s ease 0.3s both;
-    }
-    .bdot {
-        width: 6px; height: 6px;
-        background: var(--green); border-radius: 50%;
-        animation: blink2 2s infinite;
-    }
-    @keyframes blink2 { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
-    .hero-pre {
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 0.85rem; color: var(--cyan);
-        margin-bottom: 14px;
-        animation: fadeUp 0.6s ease 0.4s both;
-    }
-    .hero-h1 {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: clamp(2.6rem, 5vw, 4.2rem);
-        font-weight: 700; line-height: 1.08;
-        margin-bottom: 22px;
-        animation: fadeUp 0.6s ease 0.5s both;
-    }
-    .grad-text {
-        background: linear-gradient(135deg, var(--purple-l) 0%, var(--cyan) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-    .typewriter-row {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: clamp(1.05rem, 2vw, 1.3rem);
-        color: var(--muted);
-        margin-bottom: 36px; min-height: 2em;
-        animation: fadeUp 0.6s ease 0.6s both;
-    }
-    .tw-prefix { color: var(--text); }
-    #tw {
-        color: var(--cyan);
-        border-right: 2px solid var(--cyan);
-        animation: twBlink 0.7s infinite;
-    }
-    @keyframes twBlink { 0%,100%{border-color:var(--cyan)} 50%{border-color:transparent} }
-    .hero-stats {
-        display: flex; gap: 40px;
-        margin-bottom: 40px;
-        animation: fadeUp 0.6s ease 0.7s both;
-    }
-    .hstat-num {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 2rem; font-weight: 700;
-        display: block; line-height: 1;
-    }
-    .hstat-lbl {
-        font-size: 0.7rem; color: var(--muted);
-        text-transform: uppercase; letter-spacing: 0.12em;
-        margin-top: 4px; display: block;
-    }
-    .hero-btns {
-        display: flex; gap: 14px; flex-wrap: wrap;
-        animation: fadeUp 0.6s ease 0.8s both;
-    }
-    .btn-p {
-        display: inline-flex; align-items: center; gap: 8px;
-        padding: 14px 28px;
-        background: var(--purple); color: white;
-        border: none; border-radius: 10px;
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 0.9rem; font-weight: 600;
-        cursor: pointer; transition: all 0.3s;
-        box-shadow: 0 0 28px rgba(239,131,84,0.35);
-    }
-    .btn-p:hover { background: var(--purple-l); transform: translateY(-2px); box-shadow: 0 0 50px rgba(239,131,84,0.55); }
-    .btn-s {
-        display: inline-flex; align-items: center; gap: 8px;
-        padding: 14px 28px;
-        background: transparent; color: var(--text);
-        border: 1px solid var(--border); border-radius: 10px;
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 0.9rem; font-weight: 600;
-        cursor: pointer; transition: all 0.3s;
-    }
-    .btn-s:hover { border-color: var(--purple); color: var(--purple-l); background: rgba(239,131,84,0.06); transform: translateY(-2px); }
-
-    /* right: photo ring */
-    .hero-photo-wrap {
-        display: flex; justify-content: center; align-items: center;
-        animation: fadeRight 0.8s ease 0.5s both;
-        position: relative;
-    }
-    .photo-ring {
-        position: relative;
-        width: 360px; height: 360px;
-    }
-    .photo-ring::before {
-        content: '';
-        position: absolute; inset: -3px;
-        border-radius: 50%;
-        background: conic-gradient(var(--purple), var(--cyan), var(--purple-l), var(--purple));
-        animation: spinRing 5s linear infinite;
-    }
-    .photo-ring::after {
-        content: ''; position: absolute; inset: 0;
-        border-radius: 50%; background: var(--bg); z-index: 1;
-    }
-    @keyframes spinRing { from{transform:rotate(0)} to{transform:rotate(360deg)} }
-    .photo-ring img {
-        position: absolute; inset: 5px;
-        border-radius: 50%; object-fit: cover;
-        z-index: 2;
-        width: calc(100% - 10px);
-        height: calc(100% - 10px);
-    }
-    .ftag {
-        position: absolute; z-index: 10;
-        padding: 7px 14px;
-        background: rgba(45,49,66,0.95);
-        border-radius: 10px;
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 0.72rem;
-        backdrop-filter: blur(12px);
-        white-space: nowrap;
-        border: 1px solid transparent;
-    }
-    .ftag1 { top: 16px; right: -16px; color: var(--purple-l); border-color: rgba(239,131,84,0.35); animation: flt1 3s ease-in-out infinite; }
-    .ftag2 { bottom: 70px; left: -28px; color: var(--cyan); border-color: rgba(6,182,212,0.35); animation: flt2 3.6s ease-in-out infinite; }
-    .ftag3 { bottom: 18px; right: 0; color: var(--green); border-color: rgba(239,131,84,0.35); animation: flt3 4.1s ease-in-out infinite; }
-    @keyframes flt1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
-    @keyframes flt2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(9px)} }
-    @keyframes flt3 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
-
-    .scroll-hint {
-        position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
-        display: flex; flex-direction: column; align-items: center; gap: 8px;
-        color: var(--dim); font-family: 'JetBrains Mono', monospace; font-size: 0.7rem;
-        animation: fadeUp 1s ease 2s both;
-    }
-    .sm { width: 20px; height: 34px; border: 1.5px solid var(--dim); border-radius: 10px; display:flex; justify-content:center; padding-top: 5px; }
-    .sw { width: 3px; height: 6px; background: var(--purple); border-radius: 2px; animation: swAnim 2s ease infinite; }
-    @keyframes swAnim { 0%{opacity:1;transform:translateY(0)} 100%{opacity:0;transform:translateY(10px)} }
-
-    /* ==========================================
-       SECTION COMMONS
-    ========================================== */
-    .sec { padding: 100px 40px; }
-    .sec-in { max-width: 1100px; margin: 0 auto; }
-    .sec-tag {
-        display: flex; align-items: center; gap: 12px;
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 0.72rem; color: var(--purple);
-        text-transform: uppercase; letter-spacing: 0.22em;
-        margin-bottom: 12px;
-    }
-    .sec-tag::before { content:''; width:36px; height:1px; background:var(--purple); display:block; }
-    .sec-h2 {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: clamp(1.9rem, 4vw, 2.9rem);
-        font-weight: 700; line-height: 1.1;
-        margin-bottom: 14px;
-    }
-    .sec-sub { font-size: 1.05rem; color: var(--muted); max-width: 580px; line-height: 1.75; }
-    /* reveal animations */
-    .rv  { opacity:0; transform:translateY(36px);  transition: opacity .7s ease, transform .7s ease; }
-    .rvl { opacity:0; transform:translateX(-36px); transition: opacity .7s ease, transform .7s ease; }
-    .rvr { opacity:0; transform:translateX(36px);  transition: opacity .7s ease, transform .7s ease; }
-    .rv.on, .rvl.on, .rvr.on { opacity:1; transform:none; }
-
-    /* ==========================================
-       ABOUT
-    ========================================== */
-    #about { background: var(--bg2); }
-    .about-grid {
-        display: grid; grid-template-columns: 1fr 1fr;
-        gap: 80px; align-items: center; margin-top: 60px;
-    }
-    .about-p { color: var(--muted); line-height: 1.82; margin-bottom: 18px; font-size: 1rem; }
-    .about-p strong { color: var(--text); }
-    .value-chips { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
-    .vchip {
-        display: flex; align-items: center; gap: 10px;
-        padding: 11px 15px;
-        background: var(--card); border: 1px solid var(--card-border);
-        border-radius: 10px; font-size: 0.84rem; color: var(--muted);
-        transition: all 0.25s;
-    }
-    .vchip:hover { border-color: var(--purple); color: var(--text); background: rgba(239,131,84,0.06); }
-    /* code card */
-    .code-card {
-        background: var(--bg3); border: 1px solid var(--card-border);
-        border-radius: 16px; overflow: hidden;
-        box-shadow: 0 0 60px rgba(239,131,84,0.15);
-    }
-    .cc-head {
-        padding: 14px 20px; border-bottom: 1px solid var(--border);
-        display: flex; align-items: center; gap: 10px;
-    }
-    .ccdots { display:flex; gap:6px; }
-    .ccdot { width:11px; height:11px; border-radius:50%; }
-    .cr{background:#ff5f57} .cy{background:#febc2e} .cg{background:#28c840}
-    .ccfile { font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--dim); margin-left:8px; }
-    .cc-body {
-        padding: 22px 24px;
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 0.78rem; line-height: 2.1;
-    }
-    .ck  { color: var(--purple-l); }
-    .cs  { color: #bfc0c0; }
-    .cp  { color: var(--green); }
-    .cv  { color: #ef8354; }
-    .cb  { color: var(--muted); }
-    .cm  { color: #4f5d75; }
-
-    /* ==========================================
-       EXPERIENCE TIMELINE
-    ========================================== */
-    #experience { background: var(--bg); }
-    .timeline { position: relative; margin-top: 64px; }
-    .timeline::before {
-        content: '';
-        position: absolute; left: 50%; top: 0; bottom: 0;
-        width: 1px;
-        background: linear-gradient(to bottom, transparent, var(--purple) 15%, var(--cyan) 85%, transparent);
-        transform: translateX(-50%);
-    }
-    .titem {
-        display: grid;
-        grid-template-columns: 1fr 56px 1fr;
-        margin-bottom: 44px;
-        align-items: start;
-    }
-    .tdot-col { display:flex; justify-content:center; padding-top:22px; }
-    .tdot {
-        width: 15px; height: 15px; border-radius: 50%;
-        background: var(--bg); border: 2px solid var(--purple);
-        box-shadow: 0 0 18px rgba(239,131,84,0.5);
-        flex-shrink: 0;
-    }
-    .tdot.now {
-        border-color: var(--green);
-        box-shadow: 0 0 22px rgba(239,131,84,0.6);
-        animation: nowGlow 2s infinite;
-    }
-    @keyframes nowGlow { 0%,100%{box-shadow:0 0 12px rgba(239,131,84,.5)} 50%{box-shadow:0 0 30px rgba(239,131,84,.85)} }
-    .tcard {
-        background: var(--card); border: 1px solid var(--card-border);
-        border-radius: 16px; padding: 22px;
-        transition: all 0.3s; position: relative; overflow: hidden;
-    }
-    .tcard::before {
-        content: ''; position: absolute; top:0;left:0;right:0; height:2px;
-        background: linear-gradient(90deg,var(--purple),var(--cyan));
-        opacity:0; transition:opacity .3s;
-    }
-    .tcard:hover { border-color: var(--purple); transform: translateY(-4px); box-shadow: 0 12px 50px rgba(239,131,84,0.18); }
-    .tcard:hover::before { opacity:1; }
-    .tco { display:flex; align-items:center; gap:12px; margin-bottom:14px; }
-    .tco-icon {
-        width:38px; height:38px; border-radius:8px;
-        background: rgba(239,131,84,0.1); border:1px solid var(--border);
-        display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0;
-    }
-    .trole { font-family:'Space Grotesk',sans-serif; font-size:.95rem; font-weight:600; color:var(--text); }
-    .tcompany { font-size:.82rem; color:var(--purple-l); }
-    .tmeta { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
-    .tbadge {
-        padding: 3px 9px; border-radius: 100px;
-        font-family:'JetBrains Mono',monospace; font-size:.68rem;
-    }
-    .tb-date { background:rgba(6,182,212,.09); color:var(--cyan); border:1px solid rgba(6,182,212,.2); }
-    .tb-cur  { background:rgba(239,131,84,.09); color:var(--green); border:1px solid rgba(239,131,84,.2); }
-    .tb-type { background:rgba(239,131,84,.09); color:var(--purple-l); border:1px solid rgba(239,131,84,.2); }
-    .tbuls { list-style:none; display:flex; flex-direction:column; gap:7px; }
-    .tbuls li { font-size:.83rem; color:var(--muted); display:flex; gap:10px; line-height:1.5; }
-    .tbuls li::before { content:'→'; color:var(--purple); flex-shrink:0; }
-    .tskills { display:flex; flex-wrap:wrap; gap:5px; margin-top:14px; }
-    .sk {
-        padding:2px 9px; background:rgba(255,255,255,.04);
-        border:1px solid rgba(255,255,255,.07);
-        border-radius:5px; font-family:'JetBrains Mono',monospace;
-        font-size:.67rem; color:var(--dim);
-    }
-    .tempty { /* placeholder col */ }
-
-    /* ==========================================
-       TECH STACK
-    ========================================== */
-    #stack { background: var(--bg2); }
-    .stack-cats { margin-top: 60px; display: flex; flex-direction: column; gap: 40px; }
-    .cat-lbl {
-        font-family: 'JetBrains Mono', monospace;
-        font-size: .72rem; color: var(--dim);
-        text-transform: uppercase; letter-spacing: .18em;
-        margin-bottom: 14px;
-    }
-    .stack-row { display:flex; flex-wrap:wrap; gap:10px; }
-    .sitem {
-        display:flex; align-items:center; gap:9px;
-        padding:11px 18px;
-        background:var(--card); border:1px solid var(--card-border);
-        border-radius:11px; font-size:.875rem; color:var(--muted);
-        transition:all .3s; cursor:default;
-    }
-    .sitem:hover {
-        border-color: var(--purple); color: var(--text);
-        background: rgba(239,131,84,.07);
-        transform: translateY(-4px);
-        box-shadow: 0 8px 28px rgba(239,131,84,.18);
-    }
-    .si { font-size:1rem; }
-
-    /* ==========================================
-       PROJECTS
-    ========================================== */
-    #projects { background: var(--bg); }
-    .pgrid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:58px; }
-    .pcard {
-        background: var(--card); border: 1px solid var(--card-border);
-        border-radius: 16px; padding: 26px;
-        transition: all .3s; position: relative; overflow: hidden;
-    }
-    .pcard::after {
-        content:''; position:absolute; inset:0;
-        background: radial-gradient(circle at 50% 0%, rgba(239,131,84,.07) 0%, transparent 60%);
-        opacity:0; transition:opacity .3s;
-    }
-    .pcard:hover { border-color:var(--purple); transform:translateY(-8px); box-shadow:0 20px 60px rgba(239,131,84,.18); }
-    .pcard:hover::after { opacity:1; }
-    .pctag {
-        display:inline-flex; align-items:center; gap:5px;
-        padding:3px 11px; border-radius:100px;
-        font-family:'JetBrains Mono',monospace; font-size:.68rem;
-        margin-bottom:18px;
-    }
-    .tc-lion  { background:rgba(239,131,84,.1); color:var(--purple-l); border:1px solid rgba(239,131,84,.22); }
-    .tc-strm  { background:rgba(6,182,212,.1);  color:var(--cyan);     border:1px solid rgba(6,182,212,.22); }
-    .tc-mrk   { background:rgba(239,131,84,.1); color:var(--green);    border:1px solid rgba(239,131,84,.22); }
-    .tc-fnq   { background:rgba(251,191,36,.1); color:#ef8354;         border:1px solid rgba(251,191,36,.22); }
-    .tc-aari  { background:rgba(244,114,182,.1);color:#ef8354;         border:1px solid rgba(244,114,182,.22); }
-    .ptitle {
-        font-family:'Space Grotesk',sans-serif;
-        font-size:1.05rem; font-weight:600; color:var(--text);
-        margin-bottom:10px; position:relative; z-index:1;
-    }
-    .pdesc { font-size:.84rem; color:var(--muted); line-height:1.7; margin-bottom:18px; position:relative; z-index:1; }
-    .pstat { display:flex; align-items:baseline; gap:8px; margin-bottom:14px; }
-    .pstat-big { font-family:'Space Grotesk',sans-serif; font-size:1.7rem; font-weight:700; color:var(--purple-l); }
-    .pstat-desc { font-size:.78rem; color:var(--muted); }
-    .ptags { display:flex; flex-wrap:wrap; gap:5px; position:relative; z-index:1; }
-
-    /* ==========================================
-       CLIENTS
-    ========================================== */
-    #clients { background: var(--bg2); padding: 80px 40px; }
-    .clients-in { max-width:1100px; margin:0 auto; }
-    .clients-head { text-align:center; margin-bottom:56px; }
-    .clients-row { display:flex; align-items:center; justify-content:center; gap:24px; flex-wrap:wrap; }
-    .cli {
-        padding: 18px 28px;
-        background: var(--card); border: 1px solid var(--card-border);
-        border-radius: 12px; transition: all .3s;
-        display:flex; align-items:center;
-    }
-    .cli img { height: 28px; filter: grayscale(1) brightness(.65); transition: all .3s; }
-    .cli:hover { border-color:var(--purple); background:rgba(239,131,84,.05); box-shadow:0 0 30px rgba(239,131,84,.15); }
-    .cli:hover img { filter:grayscale(0) brightness(1); }
-
-    /* ==========================================
-       CTA
-    ========================================== */
-    #cta {
-        background: var(--bg); text-align:center;
-        padding: 120px 40px; position:relative; overflow:hidden;
-    }
-    #cta::before {
-        content:''; position:absolute;
-        width:700px; height:700px; border-radius:50%;
-        background: radial-gradient(circle, rgba(239,131,84,.11) 0%, transparent 70%);
-        top:50%; left:50%; transform:translate(-50%,-50%);
-        pointer-events:none;
-        animation: ctaGlow 7s ease-in-out infinite;
-    }
-    @keyframes ctaGlow { 0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)} 50%{opacity:1;transform:translate(-50%,-50%) scale(1.2)} }
-    .cta-in { position:relative; z-index:1; max-width:680px; margin:0 auto; }
-    .cta-tag { font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--cyan); letter-spacing:.22em; margin-bottom:22px; }
-    .cta-h { font-family:'Space Grotesk',sans-serif; font-size:clamp(2.4rem,5vw,3.8rem); font-weight:700; line-height:1.1; margin-bottom:22px; }
-    .cta-sub { font-size:1.05rem; color:var(--muted); margin-bottom:46px; line-height:1.75; }
-    .cta-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
-
-    /* ==========================================
-       FOOTER
-    ========================================== */
-    footer {
-        background: var(--bg3); padding: 44px 40px;
-        border-top: 1px solid var(--border);
-    }
-    .foot-in {
-        max-width: 1100px; margin: 0 auto;
-        display: flex; align-items: center; justify-content: space-between;
-        flex-wrap: wrap; gap: 22px;
-    }
-    .foot-links { display:flex; gap:20px; list-style:none; flex-wrap:wrap; }
-    .foot-links a { font-size:.85rem; color:var(--muted); transition:color .2s; }
-    .foot-links a:hover { color:var(--purple-l); }
-    .foot-soc { display:flex; gap:10px; }
-    .soc-btn {
-        width:38px; height:38px; border-radius:9px;
-        background:var(--card); border:1px solid var(--card-border);
-        display:flex; align-items:center; justify-content:center;
-        font-size:.95rem; transition:all .25s; color:var(--muted);
-    }
-    .soc-btn:hover { border-color:var(--purple); color:var(--purple-l); transform:translateY(-2px); }
-    .foot-copy { font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--dim); }
-
-    /* ==========================================
-       AI CHATBOT
-    ========================================== */
-    .chat-widget { position:fixed; bottom:28px; right:28px; z-index:5000; }
-    .chat-toggle {
-        width:58px; height:58px; border-radius:50%;
-        background: linear-gradient(135deg, var(--purple), var(--cyan));
-        border:none; cursor:pointer;
-        display:flex; align-items:center; justify-content:center;
-        font-size:1.5rem;
-        box-shadow: 0 6px 30px rgba(239,131,84,.45);
-        transition: all .3s;
-        animation: ctogPulse 3s ease-in-out infinite;
-    }
-    @keyframes ctogPulse {
-        0%,100%{box-shadow:0 6px 30px rgba(239,131,84,.45)}
-        50%{box-shadow:0 6px 55px rgba(239,131,84,.75)}
-    }
-    .chat-toggle:hover { transform:scale(1.1) rotate(8deg); }
-    .chat-panel {
-        position:absolute; bottom:74px; right:0;
-        width:350px;
-        background:var(--bg3); border:1px solid var(--border);
-        border-radius:20px; overflow:hidden;
-        box-shadow:0 24px 80px rgba(0,0,0,.55), 0 0 60px rgba(239,131,84,.12);
-        display:none; flex-direction:column; max-height:500px;
-    }
-    .chat-panel.open { display:flex; animation:cpUp .3s ease; }
-    @keyframes cpUp { from{opacity:0;transform:translateY(16px) scale(.96)} to{opacity:1;transform:none} }
-    .cp-head {
-        padding:14px 18px;
-        background:linear-gradient(135deg,rgba(239,131,84,.13),rgba(6,182,212,.09));
-        border-bottom:1px solid var(--border);
-        display:flex; align-items:center; gap:11px; flex-shrink:0;
-    }
-    .cp-av {
-        width:34px; height:34px; border-radius:50%;
-        background:linear-gradient(135deg,var(--purple),var(--cyan));
-        display:flex; align-items:center; justify-content:center;
-        font-size:.95rem; flex-shrink:0;
-    }
-    .cp-name { font-family:'Space Grotesk',sans-serif; font-size:.88rem; font-weight:600; color:var(--text); }
-    .cp-status { display:flex; align-items:center; gap:5px; font-family:'JetBrains Mono',monospace; font-size:.65rem; color:var(--green); }
-    .cp-sdot { width:5px; height:5px; background:var(--green); border-radius:50%; animation:blink2 2s infinite; }
-    .cp-close { margin-left:auto; background:none; border:none; color:var(--muted); cursor:pointer; font-size:1.1rem; line-height:1; transition:color .2s; }
-    .cp-close:hover { color:var(--text); }
-    .cp-msgs {
-        flex:1; overflow-y:auto; padding:14px;
-        display:flex; flex-direction:column; gap:10px;
-        min-height:260px;
-    }
-    .cp-msgs::-webkit-scrollbar { width:3px; }
-    .cp-msgs::-webkit-scrollbar-thumb { background:var(--border); }
-    .cmsg {
-        max-width:87%; padding:9px 13px;
-        border-radius:12px; font-size:.83rem; line-height:1.55;
-        animation:msgAnim .28s ease;
-    }
-    @keyframes msgAnim { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
-    .cmsg-bot { background:rgba(239,131,84,.09); border:1px solid rgba(239,131,84,.18); color:var(--text); align-self:flex-start; border-bottom-left-radius:3px; }
-    .cmsg-usr { background:var(--purple); color:white; align-self:flex-end; border-bottom-right-radius:3px; }
-    .typing {
-        display:none; align-items:center; gap:3px;
-        padding:9px 13px;
-        background:rgba(239,131,84,.09); border:1px solid rgba(239,131,84,.18);
-        border-radius:12px; border-bottom-left-radius:3px;
-        align-self:flex-start; width:fit-content; flex-shrink:0;
-    }
-    .typing.on { display:flex; }
-    .td { width:5px; height:5px; background:var(--purple-l); border-radius:50%; animation:tdBounce 1.2s infinite; }
-    .td:nth-child(2){animation-delay:.2s} .td:nth-child(3){animation-delay:.4s}
-    @keyframes tdBounce { 0%,100%{transform:translateY(0);opacity:.5} 50%{transform:translateY(-4px);opacity:1} }
-    .cp-chips {
-        padding:8px 14px; display:flex; gap:7px; overflow-x:auto;
-        border-top:1px solid var(--border); flex-shrink:0;
-    }
-    .cp-chips::-webkit-scrollbar { display:none; }
-    .cchip {
-        padding:4px 11px;
-        background:rgba(239,131,84,.07); border:1px solid rgba(239,131,84,.18);
-        border-radius:100px; font-family:'JetBrains Mono',monospace;
-        font-size:.68rem; color:var(--purple-l); cursor:pointer; white-space:nowrap;
-        transition:all .2s;
-    }
-    .cchip:hover { background:rgba(239,131,84,.14); }
-    .cp-input-row {
-        padding:10px 14px; border-top:1px solid var(--border);
-        display:flex; gap:9px; align-items:center; flex-shrink:0;
-    }
-    #cinput {
-        flex:1;
-        background:rgba(255,255,255,.05); border:1px solid var(--border);
-        border-radius:9px; padding:9px 13px;
-        color:var(--text); font-size:.83rem; font-family:'Inter',sans-serif;
-        outline:none; transition:border-color .2s;
-    }
-    #cinput:focus { border-color:var(--purple); }
-    #cinput::placeholder { color:var(--dim); }
-    .csend {
-        width:36px; height:36px; border-radius:9px;
-        background:var(--purple); border:none; cursor:pointer;
-        display:flex; align-items:center; justify-content:center;
-        color:white; font-size:.95rem; transition:all .2s; flex-shrink:0;
-    }
-    .csend:hover { background:var(--purple-l); transform:scale(1.05); }
-
-    /* ==========================================
-       KEYFRAMES
-    ========================================== */
-    @keyframes fadeUp   { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:none} }
-    @keyframes fadeRight{ from{opacity:0;transform:translateX(36px)} to{opacity:1;transform:none} }
-
-    /* ==========================================
-       RESPONSIVE
-    ========================================== */
-    @media (max-width: 1024px) {
-        .hero-inner { grid-template-columns:1fr; text-align:center; gap:48px; }
-        .hero-photo-wrap { order:-1; }
-        .photo-ring { width:270px; height:270px; }
-        .hero-stats { justify-content:center; }
-        .hero-btns { justify-content:center; }
-        .about-grid { grid-template-columns:1fr; gap:44px; }
-        .pgrid { grid-template-columns:1fr 1fr; }
-        .timeline::before { left:22px; }
-        .titem { grid-template-columns:44px 1fr; }
-        .tempty { display:none !important; }
-        .titem:nth-child(even) .tcard { grid-column:2; grid-row:1; }
-        .titem:nth-child(even) .tdot-col { grid-column:1; grid-row:1; }
-    }
-    @media (max-width: 768px) {
-        .sec { padding:70px 22px; }
-        #nav { padding:14px 22px; }
-        .nav-links { display:none; }
-        .hamburger { display:flex; }
-        .pgrid { grid-template-columns:1fr; }
-        .hero-stats { flex-direction:column; gap:18px; align-items:center; }
-        .value-chips { grid-template-columns:1fr; }
-        .chat-panel { width:300px; }
-        #clients { padding:60px 22px; }
-    }
-    @media (max-width: 480px) {
-        .hero-h1 { font-size:2.1rem; }
-        .photo-ring { width:220px; height:220px; }
-        .ftag1, .ftag2, .ftag3 { display:none; }
-    }
-    </style>
 </head>
-<body>
 
-<!-- CURSOR -->
-<div class="cursor" id="cur"></div>
-<div class="cursor-trail" id="cur-t"></div>
 
-<!-- LOADER -->
-<div id="loader">
-    <div class="loader-name">Vridhi Gandhi</div>
-    <div class="loader-bar-bg"><div class="loader-bar"></div></div>
-    <div class="loader-status" id="ldpct">Loading...</div>
-</div>
+<body id="top">
 
-<!-- NAV -->
-<nav id="nav">
-    <div class="nav-logo"><a href="index.html"><img src="images/Logo.png" alt="Vridhi Gandhi"></a></div>
-    <ul class="nav-links">
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="certificates.html">Certificates</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="https://drive.google.com/drive/folders/1LHYwRn99KIHiLJ03FCHgDaPhYPWlSUh6?usp=sharing" class="nav-cta" target="_blank">Resume ↓</a></li>
-    </ul>
-    <div class="hamburger" id="hbg" onclick="toggleMenu()"><span></span><span></span><span></span></div>
-</nav>
-<div class="mobile-menu" id="mmenu">
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="certificates.html">Certificates</a>
-    <a href="contact.html">Contact</a>
-    <a href="https://drive.google.com/drive/folders/1LHYwRn99KIHiLJ03FCHgDaPhYPWlSUh6?usp=sharing" target="_blank">Resume ↓</a>
-</div>
-
-<!-- HERO -->
-<section id="hero">
-    <canvas id="pcanvas"></canvas>
-    <div class="hero-glow"></div>
-    <div class="hero-inner">
-        <!-- Left -->
-        <div>
-            <div class="hero-badge"><span class="bdot"></span>Currently @ Lionsgate — Solution Engineer</div>
-            <div class="hero-pre">// Hello, I'm</div>
-            <h1 class="hero-h1"><span class="grad-text">Vridhi Gandhi</span></h1>
-            <div class="typewriter-row">
-                <span class="tw-prefix">I build </span><span id="tw"></span>
-            </div>
-            <div class="hero-stats">
-                <div>
-                    <span class="hstat-num"><span class="cnt" data-t="1">0</span>M+</span>
-                    <span class="hstat-lbl">Events / Day</span>
-                </div>
-                <div>
-                    <span class="hstat-num"><span class="cnt" data-t="10">0</span>K+</span>
-                    <span class="hstat-lbl">Devices Managed</span>
-                </div>
-                <div>
-                    <span class="hstat-num"><span class="cnt" data-t="5">0</span>+</span>
-                    <span class="hstat-lbl">Companies</span>
-                </div>
-                <div>
-                    <span class="hstat-num"><span class="cnt" data-t="85">0</span>%</span>
-                    <span class="hstat-lbl">Effort Saved</span>
-                </div>
-            </div>
-            <div class="hero-btns">
-                <a href="contact.html" class="btn-p">Let's Work Together →</a>
-                <a href="services.html" class="btn-s">View Services</a>
-            </div>
-        </div>
-        <!-- Right: photo -->
-        <div class="hero-photo-wrap">
-            <div class="photo-ring">
-                <img src="images/me.jpg" alt="Vridhi Gandhi">
-                <div class="ftag ftag1">🎬 Solution Engineer @ Lionsgate</div>
-                <div class="ftag ftag2">🤖 AI &amp; OTT Systems</div>
-                <div class="ftag ftag3">📊 Data + Backend</div>
-            </div>
+    
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
     </div>
-    <div class="scroll-hint"><div class="sm"><div class="sw"></div></div><span>scroll</span></div>
-</section>
 
-<!-- ABOUT -->
-<section id="about" class="sec">
-    <div class="sec-in">
-        <div class="about-grid">
-            <div class="rvl">
-                <div class="sec-tag">About Me</div>
-                <h2 class="sec-h2">Creative Solutions.<br>Clean Code.<br>Clear Insights.</h2>
-                <p class="about-p">I'm a <strong>Solution Engineer at Lionsgate Play</strong> working at the intersection of OTT platforms, AI systems, and data engineering. I build the infrastructure behind what people watch, discover, and stream.</p>
-                <p class="about-p">My foundation is a <strong>BTech in Computer Engineering with specialization in AI</strong> from NMIMS, plus Honours in Data Science &amp; Analysis with an A+. I've shipped production systems across backend API development, recommendation engines, video pipelines, and large-scale data automation.</p>
-                <p class="about-p">I don't limit myself to one layer of the stack. The best problems span all of them — so I work across all of them.</p>
-                <div class="value-chips">
-                    <div class="vchip">🔍 Curious by default</div>
-                    <div class="vchip">⚡ Detail-oriented</div>
-                    <div class="vchip">🎯 Built with intent</div>
-                    <div class="vchip">🌱 Always learning</div>
+
+    <!-- page wrap
+    ================================================== -->
+    <div id="page" class="s-pagewrap ss-home">
+
+
+        <!-- # site header 
+        ================================================== -->
+        <header class="s-header">
+
+            <div class="row s-header__inner width-sixteen-col">
+
+                <div class="s-header__block">
+                    <div class="s-header__logo">
+                        <a class="logo" href="index.html" id="home-logo-click">
+                            <img src="images/Logo.png" alt="Homepage">
+                        </a>
+                    </div>
+
+                    <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+                </div> <!-- end s-header__block -->
+
+                <nav class="s-header__nav">
+    
+                    <ul class="s-header__menu-links">
+                        <li><a id="home-nav-about" href="about.html">About</a></li>
+                        <li><a id="home-nav-services" href="services.html">Services</a></li>
+                        <!-- <li><a href="blog.html">Journal</a></li> -->
+                        <li><a id="home-nav-certificates" href="certificates.html">Certificates</a></li>
+                        <li><a id="home-nav-contact" href="contact.html">Contact</a></li>
+                    </ul> <!-- s-header__menu-links -->
+
+                    <div class="s-header__contact">
+                        <a id="home-resume-download" href="https://drive.google.com/drive/folders/1LHYwRn99KIHiLJ03FCHgDaPhYPWlSUh6?usp=sharing" class="btn btn--primary s-header__contact-btn">Resume Download<span style="font-size: 1.5em;">↓</span></a>                       
+                    </div> <!-- s-header__contact -->
+    
+                </nav> <!-- end s-header__nav -->
+
+            </div> <!-- end s-header__inner -->
+
+        </header> <!-- end s-header -->
+
+
+        <!-- # site main content
+        ================================================== -->
+        <section id="content" class="s-content">
+
+            <!-- intro
+            ----------------------------------------------- -->
+            <section id="intro" class="s-intro">
+
+                <div class="row s-intro__content width-sixteen-col">
+
+                    <div class="column lg-12 s-intro__content-inner grid-block">
+                        
+                        <div class="s-intro__content-text">
+                            <div class="s-intro__content-pretitle text-pretitle">Hello, I'm Vridhi Gandhi</div>
+                            <h1 class="s-intro__content-title">
+                            I build<br>smart systems,<br>scalable websites,<br>and meaningful visual stories.</h1>
+                            <!-- all powered by data, design,<br> </h3>
+                            and a hint of caffeine. <br> -->
+                           
+                        </div> <!-- s-intro__content-text -->
+
+                        <div class="s-intro__content-media"> 
+                            <div class="s-intro__content-media-inner">                               
+                                <img src="images/me.jpg" srcset="images/me.jpg 1x, images/me.jpg 2x" alt="">
+                                <div class="lines">                               
+                                    <span></span>                                  
+                                </div>
+                            </div>
+                        </div> <!-- s-intro__content-media -->                      
+
+                        <div class="s-intro__scroll-down">
+                            <a id="home-scroll-click" href="#about" class="smoothscroll">
+                                <div class="scroll-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#97b34a" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">&lt;!--!  Atomicons Free 1.00 by @atisalab License - https://atomicons.com/license/ (Icons: CC BY 4.0) Copyright 2021 Atomicons --&gt;<polyline points="7 13 12 18 17 13"></polyline><line x1="12" y1="18" x2="12" y2="6"></line></svg>
+                                </div>
+                                <span>Scroll for more</span>
+                            </a>
+                        </div> <!-- s-intro__scroll-down -->
+                        
+                    </div> <!-- s-intro__content-inner -->
+
+                </div> <!-- s-intro__content -->
+
+            </section> <!-- end s-intro -->
+
+            <!-- about
+            ----------------------------------------------- -->
+            <section id="about" class="s-about target-section">
+
+                <div class="row s-about__content width-sixteen-col">
+                    <div class="column grid-block grid-section-split">
+
+                        <img src="images/geometric_shape.svg" alt="" class="s-about__content-imgbg">
+
+                        <div class="section-header grid-section-split__header">
+                            <div class="text-pretitle">About</div>                           
+                            <h2 class="text-display-title">
+                            Crafting Digital Experiences with Code, Curiosity & Coffee
+                            </h2>
+                                                       
+                        </div> <!-- end section-header -->
+
+                        <div class="s-about__content-main grid-section-split__primary">
+                            <p class="attention-getter">
+                            Hi, I’m Vridhi a curious mind at the intersection of technology, design, and storytelling.
+                            </p>
+
+                            <p class="attention-getter">
+                            With a foundation in Artificial Intelligence and a passion for building meaningful digital experiences, I bring a unique blend of analytical thinking and creative insight to every project I touch. Whether it's uncovering patterns in data, streamlining backend processes, designing seamless user journeys, or crafting narratives through content and photography I believe in creating systems that make sense, serve purpose, and spark emotion.
+                            </p>
+
+                            <p class="attention-getter">
+                            I thrive on challenges that blend logic with empathy. From building full-stack applications to designing dashboards that drive decisions, I enjoy wearing multiple hats Data Analyst, Backend Engineer, Web Developer, Designer, and sometimes, just a storyteller with a camera in hand. My work isn’t just about code or visuals it’s about impact.
+                            </p>
+
+                            <p class="attention-getter">
+                            At the core of everything I do is: create with clarity, build with intention, and tell stories that stay.
+                            </p>
+                        </div> <!-- end s-about__content-main -->
+
+                        <div class="s-about__content-btn grid-section-split__bottom">
+                            <a id="home-about-more-click" href="about.html" class="btn btn--stroke u-fullwidth">More About Me</a>
+
+                            <ul class="s-about__social social-list">
+                                <li>
+                                    <a id="home-about-email-click" href="mailto:vridhigandhi@gmail.com">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="rgba(0,0,0,1)" viewBox="0 0 24 24">
+                                        <path d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.01L12 13l8-8.99V4H4zm16 2.83l-7.07 7.07a1 1 0 0 1-1.42 0L4 6.83V20h16V6.83z"/>
+                                        </svg>
+                                        <span class="u-screen-reader-text">Email</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="home-about-linkedin-click" href="https://www.linkedin.com/in/vridhi-gandhi/">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0077B5" viewBox="0 0 24 24">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.849-3.037-1.851 0-2.132 1.445-2.132 2.939v5.667H9.358V9h3.414v1.561h.049c.476-.899 1.637-1.848 3.37-1.848 3.602 0 4.267 2.368 4.267 5.455v6.284zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zm1.777 13.019H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.549C0 23.229.792 24 1.771 24h20.451C23.2 24 24 23.229 24 22.271V1.723C24 .771 23.2 0 22.222 0z"/>
+                                        </svg>
+                                        <span class="u-screen-reader-text">LinkedIn</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="home-about-whatsapp-click" href="https://wa.me/917506520052">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#25D366" viewBox="0 0 16 16">
+                                        <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                                        </svg>
+                                        <span class="u-screen-reader-text">WhatsApp</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="home-about-call-click" href="tel:+919082391198" target="_blank" rel="noopener">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="rgba(0,0,0,1)" viewBox="0 0 24 24">
+                                        <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1C10.07 22 2 13.93 2 4.5A1 1 0 0 1 3 3.5h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2z"/>
+                                        </svg>
+                                        <span class="u-screen-reader-text">Call</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="home-about-instagram-click" href="https://www.instagram.com/__yomadic__/">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                                        </svg>
+                                        <span class="u-screen-reader-text">Instagram</span>
+                                    </a>
+                                </li>
+                            </ul> <!-- end s-footer__social -->
+
+                        </div> <!-- end s-about__content-btn -->
+                    
+                    </div> <!-- content-inner -->
+                </div>
+                
+            </section> <!-- end s-about -->
+
+            <!-- expertise
+            ----------------------------------------------- -->
+            <section id="expertise" class="s-expertise">
+
+                <div class="row s-expertise__content width-sixteen-col">
+                    <div class="column xl-12 grid-block grid-section-split">
+
+                        <div class="section-header grid-section-split__header">
+                            <div class="text-pretitle">Expertise</div>                           
+                            <h2 class="text-display-title">
+                            My key areas of expertise.
+                            </h2>     
+
+                            <p class="lead">
+                            <ol>
+                                <ul><strong>01.</strong> Data Analyst & Insight Architect</ul>
+                                <ul><strong>02.</strong> Product Automation & Backend Engineering</ul>
+                                <ul><strong>03.</strong> Fullstack Web Development & Optimization</ul>
+                                <ul><strong>04.</strong> Design, Content & UI Thinking</ul>
+                                <ul><strong>05.</strong> AI, Machine Learning & Smart Projects</ul>
+                                <ul><strong>06.</strong> Travel, Photography & Creative Storytelling</ul>
+                            </ol>
+                            </p>
+
+
+                        </div> <!-- end section-header -->
+
+                        <div class="s-expertise__content-main grid-section-split__primary">
+
+                            <div class="grid-list-items list-items show-ctr">
+                                <div class="grid-list-items__item list-items__item">
+                                    <div class="grid-list-items__title list-items__item-header">
+                                        <h3 class="list-items__item-title">Data Analyst & Insight Architect</h3>
+                                    </div>
+                                    <div class="grid-list-items__text list-items__item-text">
+                                        <p>
+                                        At the heart of what I do is turning data into direction. I’ve built automated pipelines that stream over 1M+ events daily, crafted real-time reporting systems, and centralized insights across teams. My dashboards in Power BI, Superset, and Tableau don't just display numbers they drive decisions. From ETL to storytelling, I make data meaningful.
+                                        </p>
+                                    </div>
+                                </div> <!-- list-item -->
+                                <div class="grid-list-items__item list-items__item">
+                                    <div class="grid-list-items__title list-items__item-header">
+                                        <h3 class="list-items__item-title">Product Automation & Backend Engineering</h3>
+                                    </div>
+                                    <div class="grid-list-items__text list-items__item-text">
+                                        <p>
+                                        I design systems that think for themselves. From automating OS and app deployments on 10,000+ devices to building Python-based ingestion tools, my work has saved teams 60–85% in manual effort. Using Radix MDM, Flask, and CI/CD workflows, I bring stability and scale to backend operations.
+                                        </p>
+                                    </div>
+                                </div> <!-- list-expertise__item -->
+                                <div class="grid-list-items__item list-items__item">
+                                    <div class="grid-list-items__title list-items__item-header">
+                                        <h3 class="list-items__item-title">Fullstack Web Development & Optimization</h3>
+                                    </div>
+                                    <div class="grid-list-items__text list-items__item-text">
+                                        <p>
+                                        I develop websites that are not just beautiful — they’re fast, responsive, and user-focused. I specialize in building performance-driven platforms with a mobile-first and SEO-optimized approach, ensuring smooth experiences across all devices. Whether it’s React, Node.js, or just clean HTML/CSS — I code with intention and clarity.
+                                        </p>
+                                    </div>
+                                </div> <!-- list-expertise__item -->
+                                <div class="grid-list-items__item list-items__item">
+                                    <div class="grid-list-items__title list-items__item-header">
+                                        <h3 class="list-items__item-title">Design, Content & UI Thinking...</h3>
+                                    </div>
+                                    <!-- <div class="grid-list-items__text list-items__item-text">
+                                        <p>
+                                        I blend storytelling and strategy into every design. From CMS systems built for simplicity to content that clicks with users, my work lives at the intersection of aesthetics and clarity. With tools like Figma, WordPress, and a deep understanding of UX, I create interfaces that speak.
+                                        </p>
+                                    </div> -->
+                                </div>
+                                <!-- <div class="grid-list-items__item list-items__item">
+                                    <div class="grid-list-items__title list-items__item-header">
+                                        <h3 class="list-items__item-title">AI, Machine Learning & Smart Projects</h3>
+                                    </div>
+                                    <div class="grid-list-items__text list-items__item-text">
+                                        <p>
+                                        From music recommendations to facial recognition and cybersecurity tools — I build with intelligence. Backed by a BTech in AI and hands-on experience, I apply machine learning to create practical, ethical, and user-centric solutions that matter.
+                                        </p>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="grid-list-items__item list-items__item">
+                                    <div class="grid-list-items__title list-items__item-header">
+                                        <h3 class="list-items__item-title">Travel, Photography & Creative Storytelling</h3>
+                                    </div>
+                                    <div class="grid-list-items__text list-items__item-text">
+                                        <p>
+                                        Beyond the logic, I’m also a lens-lover and a storyteller. My travel page showcases edited captures from places like Jibhi, woven together with reflections and emotional narratives. Every frame I share has a story behind it — often one that blends both tech and heart.
+                                        </p>
+                                    </div>
+                                </div> -->
+
+                            </div> <!-- grid-list-items -->
+                        </div> <!-- end s-expertise__content-main -->
+
+                        <div class="s-expertise__content-btn grid-section-split__bottom">
+                            <a id="home-services-view-click" href="services.html" class="btn btn--stroke u-fullwidth">View All Services</a>
+                        </div> <!-- end s-about__content-btn -->
+
+                    </div> <!-- end grid-block-->
+                </div> <!-- end s-expertise__content -->
+
+            </section> <!-- end s-expertise -->
+
+            <!-- clients
+            ----------------------------------------------- -->
+            <section id="clients" class="s-clients">          
+
+                <div class="row s-clients__content-block width-sixteen-col">
+                    <div class="column xl-12 grid-block grid-section-split">
+                    
+                        <div class="section-header grid-section-split__header">
+                            <div class="text-pretitle">Company & Clients</div>                           
+                            <h2 class="text-display-title">
+                            I have had the privilege of working with these incredible Companies & Clients.
+                            </h2>       
+                        </div> <!-- end section-header -->
+                    
+                        <div class="grid-section-split__primary">
+                            <p>
+                            I’ve had the privilege of working with diverse clients across industries each with a unique story, challenge, and goal. From established businesses to emerging startups, I’ve built digital solutions that not only solve problems but also elevate user experience and business performance.
+                            </p>   
+
+                            <p>
+                           Whether it was creating seamless e-commerce platforms, designing responsive websites, or delivering data-driven insights, I’ve always approached each project with clarity, creativity, and commitment. My collaborations are rooted in trust, and I take pride in being a long-term partner not just a service provider.
+                            </p>
+
+                            <p>
+                            Every client I’ve worked with has helped me grow, push boundaries, and refine my craft. Their satisfaction and success are what drive me to keep learning, evolving, and delivering work that matters.
+                           </p>
+                        </div> <!-- end grid-section-split__primary -->
+                    
+                    </div> <!-- end column -->
+                </div> <!-- end row -->
+
+                <div class="row s-clients__content-block width-sixteen-col">
+                    <div class="column xl-12">
+                    
+                        <div class="clients-list">                            
+                            <!-- <div class="clients-list__item">
+                                <a href="#0">
+                                    <img src="images/clients/flash.svg" alt="">
+                                </a>
+                            </div> -->
+                            <!-- <div class="clients-list__item">
+                                <a href="#0">
+                                    <img src="images/clients/rise.svg" alt="">
+                                </a>
+                            </div> -->
+                            <!-- <div class="clients-list__item">
+                                <a href="#0">
+                                    <img src="images/clients/cactus.svg" alt="">
+                                </a>
+                            </div> -->
+                            <!-- <div class="clients-list__item">
+                                <a href="#0">
+                                    <img src="images/clients/pinpoint.svg" alt="">
+                                </a>
+                            </div> -->
+                            <!-- <div class="clients-list__item">
+                                <a href="#0">
+                                    <img src="images/clients/proline.svg" alt="">
+                                </a>
+                            </div> -->
+                            <div class="clients-list__item">
+                                <a id="home-client-streambox" href="https://www.linkedin.com/company/streamboxmedia/">
+                                    <img src="images/clients/StreamBox.png" alt="">
+                                </a>
+                            </div>
+                            <div class="clients-list__item">
+                                <a id="home-client-aari" href="https://www.linkedin.com/company/aari/">
+                                    <img src="images/clients/AARI.png" alt="">
+                                </a>
+                            </div>
+                            <div class="clients-list__item">
+                                <a id="home-client-finqy" href="https://www.linkedin.com/products/e-revbay-private-limited-finqy/">
+                                    <img src="images/clients/FINQY.png" alt="">
+                                </a>
+                            </div>
+                            <div class="clients-list__item">
+                                <a id="home-client-enpointe" href="https://www.linkedin.com/company/enpointe-india/">
+                                    <img src="images/clients/Enpointe.png" alt="">
+                                </a>
+                            </div>
+                            <div class="clients-list__item">
+                                <a id="home-client-merkle" href="https://www.linkedin.com/company/merkle/">
+                                    <img src="images/clients/Merkle.png" alt="">
+                                </a>
+                            </div>
+                        </div> <!-- end clients-list -->
+
+                    </div> <!-- end column -->
+                </div> <!-- end row -->
+                
+                <br>
+                <!-- <div class="row s-clients__content-block width-sixteen-col">
+                    <div class="column xl-12 testimonials">
+                    
+                        <div class="swiper-container testimonials__slider home-slider"> -->
+
+                            <!-- <div class="swiper-wrapper">
+                                <div class="testimonials__slide swiper-slide">
+                                    <p>
+                                    Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem. 
+                                    Explicabo a quaerat sint autem dolore ducimus ut consequatur neque. Nisi dolores quaerat fuga rem nihil nostrum.
+                                    Laudantium quia consequatur molestias.
+                                    </p>
+                                    <div class="testimonials__author">
+                                        <img src="images/avatars/user-01.jpg" alt="Author image" class="testimonials__avatar">
+                                        <cite class="testimonials__cite">
+                                            <strong>John Rockefeller</strong>
+                                            <span>Standard Oil Co.</span>
+                                        </cite>
+                                    </div>
+                                </div>
+                                <div class="testimonials__slide swiper-slide">
+                                    <p>
+                                    Nisi dolores quaerat fuga rem nihil nostrum. Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. 
+                                    Voluptas tempore rem. Laudantium quia consequatur molestias.
+                                    Explicabo a quaerat sint autem dolore ducimus ut consequatur neque.
+                                    </p>
+                                    <div class="testimonials__author">
+                                        <img src="images/avatars/user-04.jpg" alt="Author image" class="testimonials__avatar">
+                                        <cite class="testimonials__cite">
+                                            <strong>Andrew Carnegie</strong>
+                                            <span>Carnegie Steel Co.</span>
+                                        </cite>
+                                    </div>
+                                </div>
+                                <div class="testimonials__slide swiper-slide">
+                                    <p>
+                                    Voluptas tempore rem. Molestiae incidunt consequatur quis ipsa autem nam sit enim magni.  
+                                    Explicabo a quaerat sint autem dolore ducimus ut consequatur neque. 
+                                    Nisi dolores quaerat fuga rem nihil nostrum. Laudantium quia consequatur molestias.
+                                    </p>
+                                    <div class="testimonials__author">
+                                        <img src="images/avatars/user-06.jpg" alt="Author image" class="testimonials__avatar">
+                                        <cite class="testimonials__cite">
+                                            <strong>Henry Ford</strong>
+                                            <span>Ford Motor Co.</span>
+                                        </cite>
+                                    </div>
+                                </div>
+                                <div class="testimonials__slide swiper-slide">
+                                    <p>
+                                    Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem. 
+                                    Explicabo a quaerat sint autem dolore ducimus ut consequatur neque. Nisi dolores quaerat fuga rem nihil nostrum.
+                                    Laudantium quia consequatur molestias.
+                                    </p>
+                                    <div class="testimonials__author">
+                                        <img src="images/avatars/user-02.jpg" alt="Author image" class="testimonials__avatar">
+                                        <cite class="testimonials__cite">
+                                            <strong>John Morgan</strong>
+                                            <span>JP Morgan & Co.</span>
+                                        </cite>
+                                    </div>
+                                </div> 
+                            </div>  -->
+                            <!-- end swiper-wrapper --> 
+
+                            <!-- <div class="swiper-pagination"></div> -->
+
+                        <!-- </div> -->
+                        <!--end testimonials__slider -->                    
+                    
+                    <!-- </div> -->
+                     <!-- end column -->
+                <!-- </div>  -->
+                <!-- end row -->
+
+
+            </section>
+             <!-- end s-clients -->            
+
+        </section>
+        <!-- s-content-->
+
+        <!-- # cta
+        ================================================== -->
+        <section id="cta" class="s-cta">
+
+            <div class="row row-x-center text-center">
+                <div class="column xl-8 lg-12">
+
+                    <div class="s-cta__content">
+                        <h2 class="text-display-title">
+                        Lets connect.
+                        </h2>
+                        <p class="lead">
+                        Whether you’re looking to build a high-performance website, automate complex workflows, gain meaningful insights from data, or bring a creative idea to life I’m here to help.
+                        I offer personalized consultations to understand your vision, identify opportunities, and deliver tailored solutions that align with your goals. From tech to design, every project starts with a conversation.
+                        </p>
+                        <p class="lead">
+                        📩 Ready to get started? <br>Let’s talk about how we can build something impactful together.
+                        </p>
+                        <a id="home-lets-work-click" href="contact.html" class="btn btn--primary"><b>Let's Work Together</b></a>
+                    </div>
+
                 </div>
             </div>
-            <div class="rvr">
-                <div class="code-card">
-                    <div class="cc-head">
-                        <div class="ccdots"><div class="ccdot cr"></div><div class="ccdot cy"></div><div class="ccdot cg"></div></div>
-                        <span class="ccfile">vridhi.profile.json</span>
-                    </div>
-                    <div class="cc-body">
-<span class="cb">{</span><br>
-&nbsp;&nbsp;<span class="cp">"name"</span><span class="cb">:</span> <span class="cs">"Vridhi Gandhi"</span><span class="cb">,</span><br>
-&nbsp;&nbsp;<span class="cp">"role"</span><span class="cb">:</span> <span class="cs">"Solution Engineer"</span><span class="cb">,</span><br>
-&nbsp;&nbsp;<span class="cp">"company"</span><span class="cb">:</span> <span class="cs">"Lionsgate Play"</span><span class="cb">,</span><br>
-&nbsp;&nbsp;<span class="cp">"location"</span><span class="cb">:</span> <span class="cs">"Mumbai, India"</span><span class="cb">,</span><br>
-&nbsp;&nbsp;<span class="cp">"degree"</span><span class="cb">:</span> <span class="cs">"BTech AI + DS Honours"</span><span class="cb">,</span><br>
-&nbsp;&nbsp;<span class="cp">"focus"</span><span class="cb">: [</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs">"OTT Platform Engineering"</span><span class="cb">,</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs">"Recommendation Systems"</span><span class="cb">,</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs">"Data Pipelines &amp; AI"</span><span class="cb">,</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs">"Backend Development"</span><br>
-&nbsp;&nbsp;<span class="cb">],</span><br>
-&nbsp;&nbsp;<span class="cp">"status"</span><span class="cb">:</span> <span class="cv">"open_to_collaborate"</span><br>
-<span class="cb">}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- EXPERIENCE -->
-<section id="experience" class="sec">
-    <div class="sec-in">
-        <div class="rv">
-            <div class="sec-tag">Experience</div>
-            <h2 class="sec-h2">Where I've Built Things</h2>
-            <p class="sec-sub">From data pipelines to OTT infrastructure — a career built on solving real problems at scale.</p>
-        </div>
-        <div class="timeline">
-            <!-- 1: Lionsgate SE (odd → left) -->
-            <div class="titem rv">
-                <div class="tcard">
-                    <div class="tco"><div class="tco-icon">🎬</div><div><div class="trole">Solution Engineer</div><div class="tcompany">Lionsgate Play</div></div></div>
-                    <div class="tmeta">
-                        <span class="tbadge tb-date">Oct 2025 – Present</span>
-                        <span class="tbadge tb-cur">● Current</span>
-                        <span class="tbadge tb-type">Full-Time</span>
-                    </div>
-                    <ul class="tbuls">
-                        <li>Built CMS workflows for content metadata, media assets &amp; publishing operations</li>
-                        <li>Developed recommendation engine with Memgraph knowledge graph + OpenSearch</li>
-                        <li>Backend API integrations with data validation, logging, caching &amp; DRM workflows</li>
-                        <li>Supported OTT video pipeline: ingestion, processing &amp; delivery</li>
+        </section> <!-- end s-cta -->
+
+        <!-- # journal
+        ================================================== -->
+        <!-- <section id="journal" class="s-journal">
+
+            <div class="row s-journal__content width-sixteen-col">
+                <div class="column xl-12 grid-block">
+
+                    <div class="grid-full section-header text-center">
+                        <div class="text-pretitle">Recent Articles</div>                           
+                        <h2 class="text-display-title">
+                        Latest articles from my blog.
+                        </h2>  
+                    </div>  -->
+                    <!-- end section-header --> 
+
+                    <!-- <div class="grid-full s-journal__content-main grid-list-items"> -->
+
+                        <!-- <div class="grid-list-items__item blog-card">
+                            <div class="blog-card__header">
+                                <div class="blog-card__cat-links">
+                                    <a href="https://www.dreamhost.com/r.cgi?287326">Sponsored</a>
+                                </div>
+                                <h3 class="blog-card__title"><a href="https://www.dreamhost.com/r.cgi?287326">Need Web Hosting for Your Websites?</a></h3>
+                            </div>
+                            <div class="blog-card__text">
+                                <p>
+                                Need hosting for your website? We would highly recommend <a href="https://www.dreamhost.com/r.cgi?287326">DreamHost</a>.
+                                Enjoy 100% in-house support, guaranteed performance and uptime, 1-click installs, and a super-intuitive control 
+                                panel to make managing your websites and projects easy. <a href="https://www.dreamhost.com/r.cgi?287326">Sign up</a> now to get started.
+                                </p>
+                            </div>
+                        </div>  -->
+                        <!-- end blog-card -->
+                        <!-- <div class="grid-list-items__item blog-card">
+                            <div class="blog-card__header">
+                                <div class="blog-card__cat-links">
+                                    <a href="blog.html">Productivity</a>
+                                </div>
+                                <h3 class="blog-card__title"><a href="single.html">5 Marketing Productivity Apps for Your Team</a></h3>
+                            </div>
+                            <div class="blog-card__text">
+                                <p>
+                                Rerum quam quos. Quibusdam quis autem voluptatibus earum vel ex error ea magni. Aut asperiores 
+                                sit mollitia. Rem neque et voluptatem eos quia sed eligendi et. Eaque velit eligendi ut 
+                                magnam. Cumque ducimus laborum doloribus facere maxime vel earum quidem enim suscipit.
+                                </p>
+                            </div>
+                        </div> -->
+                         <!-- end blog-card -->
+                        <!-- <div class="grid-list-items__item blog-card">
+                            <div class="blog-card__header">
+                                <div class="blog-card__cat-links">
+                                    <a href="blog.html">SEO</a>
+                                </div>
+                                <h3 class="blog-card__title"><a href="single.html">7 SEO Factors to Consider for Better Website Ranking</a></h3>
+                            </div>
+                            <div class="blog-card__text">
+                                <p>
+                                Quibusdam quis autem voluptatibus earum vel ex error ea magni. Rerum quam quos. Aut asperiores 
+                                sit mollitia. Rem neque et voluptatem eos quia sed eligendi et. Eaque velit eligendi ut 
+                                magnam. Cumque ducimus laborum doloribus facere maxime vel earum quidem enim suscipit.
+                                </p>
+                            </div>
+                        </div>  -->
+                        <!-- end blog card -->
+                        <!-- <div class="grid-list-items__item blog-card">
+                            <div class="blog-card__header">
+                                <div class="blog-card__cat-links">
+                                    <a href="blog.html">Productivity</a>
+                                </div>
+                                <h3 class="blog-card__title"><a href="single.html">5 Effective Web Design Principles</a></h3>
+                            </div>
+                            <div class="blog-card__text">
+                                <p>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum ullam et laborum aperiam. 
+                                Dignissimos quae voluptatibus ullam esse sapiente fugiat, rerum labore cupiditate obcaecati 
+                                dolore necessitatibus id magni rem officia dolor nam sit laudantium. Quo eaque eveniet quibusdam unde. 
+                                </p>
+                            </div>
+                        </div>  -->
+                        <!-- end blog-card -->
+
+                    <!-- </div> -->
+                     <!-- end grid-list-items -->
+
+                <!-- </div>  -->
+                <!-- end grid-block-->
+            <!-- </div>  -->
+            <!-- end s-journal__content -->
+
+        <!-- </section>  -->
+        <!-- end s-journal -->
+
+
+        <!-- # footer 
+        ================================================== -->
+        <footer class="s-footer">
+            <div class="row s-footer__content">
+                <div class="column xl-6 lg-6 md-12 s-footer__block s-footer__about">                    
+                    <h3>Thanks for stopping by<br>
+                         Let’s stay connected.</h3>
+                    <p>
+                    Whether you’re here out of curiosity or looking to<br>collaborate, I appreciate your time.<br>Feel free to reach out anytime I’d love to hear from you.
+                    </p>               
+                </div>                
+                <div class="column xl-3 lg-6 md-12 s-footer__block s-footer__site-links">
+                    <h3>Site Links</h3>
+                    <ul class="link-list">
+                        <li><a id="home-footer-home" href="index.html">Home</a></li>
+                        <li><a id="home-footer-about" href="about.html">About</a></li>
+                        <li><a id="home-footer-services" href="services.html">Services</a></li>
+                        <!-- <li><a href="blog.html">Journal</a></li> -->
+                        <li><a id="home-footer-certificates" href="certificates.html">Certificates</a></li>
+                        <li><a id="home-footer-contact" href="contact.html">Contact</a></li>
                     </ul>
-                    <div class="tskills"><span class="sk">GraphQL</span><span class="sk">Memgraph</span><span class="sk">OpenSearch</span><span class="sk">DRM</span><span class="sk">Signoz</span></div>
                 </div>
-                <div class="tdot-col"><div class="tdot now"></div></div>
-                <div class="tempty"></div>
-            </div>
-            <!-- 2: Lionsgate AI (even → right) -->
-            <div class="titem rv">
-                <div class="tempty"></div>
-                <div class="tdot-col"><div class="tdot"></div></div>
-                <div class="tcard">
-                    <div class="tco"><div class="tco-icon">🤖</div><div><div class="trole">AI &amp; Data Engineer</div><div class="tcompany">Lionsgate Play</div></div></div>
-                    <div class="tmeta">
-                        <span class="tbadge tb-date">Sep 2025 – Oct 2025</span>
-                        <span class="tbadge tb-type">Full-Time</span>
-                    </div>
-                    <ul class="tbuls">
-                        <li>Built AI video pipeline using Google Veo — Indian story adaptation</li>
-                        <li>Scripted and prompted a 9+ min cinematic film with scene-wise JSON prompts</li>
-                        <li>Managed visual continuity, quality control &amp; multi-platform model testing</li>
+                <div class="column xl-3 lg-6 md-12 tab-12 s-footer__block s-footer__newsletter">
+                    <h3>Socials</h3>
+                    <ul class="s-footer__social social-list">
+                        <li>
+                            <a id="home-footer-email-click" href="mailto:vridhigandhi@gmail.com">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="rgba(0,0,0,1)" viewBox="0 0 24 24">
+                                <path d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.01L12 13l8-8.99V4H4zm16 2.83l-7.07 7.07a1 1 0 0 1-1.42 0L4 6.83V20h16V6.83z"/>
+                                </svg>
+                                <span class="u-screen-reader-text">Email</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="home-footer-linkedin-click" href="https://www.linkedin.com/in/vridhi-gandhi/">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0077B5" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.849-3.037-1.851 0-2.132 1.445-2.132 2.939v5.667H9.358V9h3.414v1.561h.049c.476-.899 1.637-1.848 3.37-1.848 3.602 0 4.267 2.368 4.267 5.455v6.284zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zm1.777 13.019H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.549C0 23.229.792 24 1.771 24h20.451C23.2 24 24 23.229 24 22.271V1.723C24 .771 23.2 0 22.222 0z"/>
+                                </svg>
+                                <span class="u-screen-reader-text">LinkedIn</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="home-footer-whatsapp-click" href="https://wa.me/917506520052">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#25D366" viewBox="0 0 16 16">
+                                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                                </svg>
+                                <span class="u-screen-reader-text">WhatsApp</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="home-footer-call-click" href="tel:+919082391198" target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="rgba(0,0,0,1)" viewBox="0 0 24 24">
+                                <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1C10.07 22 2 13.93 2 4.5A1 1 0 0 1 3 3.5h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2z"/>
+                                </svg>
+                                <span class="u-screen-reader-text">Call</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="home-footer-instagram-click" href="https://www.instagram.com/__yomadic__/">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                                </svg>
+                                <span class="u-screen-reader-text">Instagram</span>
+                            </a>
+                        </li>
+
                     </ul>
-                    <div class="tskills"><span class="sk">Google Veo</span><span class="sk">Prompt Engineering</span><span class="sk">AI Video Gen</span></div>
-                </div>
-            </div>
-            <!-- 3: Streambox (odd → left) -->
-            <div class="titem rv">
-                <div class="tcard">
-                    <div class="tco"><div class="tco-icon">📡</div><div><div class="trole">Data Scientist</div><div class="tcompany">Streambox Media Pvt Ltd.</div></div></div>
-                    <div class="tmeta">
-                        <span class="tbadge tb-date">Jun 2024 – May 2025</span>
-                        <span class="tbadge tb-type">Full-Time · 1 yr</span>
+                    <p>
+                    <!-- Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere ratione dignissimos. -->
+                    </p>
+
+                    <div class="subscribe-form">
+                        <form id="mc-form" class="mc-form">
+                            <!-- <input type="email" name="EMAIL" id="mce-EMAIL" class="u-fullwidth text-center" placeholder="Your Email Address" title="The domain portion of the email address is invalid (the portion after the @)." pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" required> -->
+                            <!-- <input type="submit" name="subscribe" value="Subscribe" class="btn btn--primary btn--small u-fullwidth"> -->
+                            <!-- <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_cdb7b577e41181934ed6a6a44_9a91cfe7b3" tabindex="-1" value=""></div> -->
+                            <div class="mc-status"></div>
+                        </form>
                     </div>
-                    <ul class="tbuls">
-                        <li>Automated OS &amp; app deployments on 10,000+ devices via Radix MDM</li>
-                        <li>Python ingestion tools centralizing data into PostgreSQL — 60–85% less manual effort</li>
-                        <li>Built dashboards in Power BI, Apache Superset, Grafana &amp; Tableau</li>
-                        <li>Developed Flask-based backend for ERP data flow automation</li>
-                    </ul>
-                    <div class="tskills"><span class="sk">Python</span><span class="sk">PostgreSQL</span><span class="sk">Flask</span><span class="sk">Radix MDM</span><span class="sk">Power BI</span></div>
                 </div>
-                <div class="tdot-col"><div class="tdot"></div></div>
-                <div class="tempty"></div>
-            </div>
-            <!-- 4: AARI (even → right) -->
-            <div class="titem rv">
-                <div class="tempty"></div>
-                <div class="tdot-col"><div class="tdot"></div></div>
-                <div class="tcard">
-                    <div class="tco"><div class="tco-icon">🌐</div><div><div class="trole">Full-Stack Web Developer</div><div class="tcompany">AARI · Freelance</div></div></div>
-                    <div class="tmeta">
-                        <span class="tbadge tb-date">Nov 2023 – May 2024</span>
-                        <span class="tbadge tb-type">Freelance · 7 mos</span>
-                    </div>
-                    <ul class="tbuls">
-                        <li>Complete redesign from scratch — 52+ pages, top-5 SEO for high-intent keywords</li>
-                        <li>Web performance analysis, UX improvements &amp; responsive design</li>
-                    </ul>
-                    <div class="tskills"><span class="sk">Web Dev</span><span class="sk">SEO</span><span class="sk">UX Design</span></div>
+            </div>    
+            
+            <div class="row s-footer__bottom">
+                <div class="column xl-6 lg-12">
+                    <!-- <ul class="s-footer__social social-list">
+                        <li>
+                            <a href="#0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325,1.42-3.592,3.5-3.592 c0.699-0.002,1.399,0.034,2.095,0.107v2.42h-1.435c-1.128,0-1.348,0.538-1.348,1.325v1.735h2.697l-0.35,2.725h-2.348V21H20 c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z"></path></svg>
+                                <span class="u-screen-reader-text">Facebook</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M19.633,7.997c0.013,0.175,0.013,0.349,0.013,0.523c0,5.325-4.053,11.461-11.46,11.461c-2.282,0-4.402-0.661-6.186-1.809 c0.324,0.037,0.636,0.05,0.973,0.05c1.883,0,3.616-0.636,5.001-1.721c-1.771-0.037-3.255-1.197-3.767-2.793 c0.249,0.037,0.499,0.062,0.761,0.062c0.361,0,0.724-0.05,1.061-0.137c-1.847-0.374-3.23-1.995-3.23-3.953v-0.05 c0.537,0.299,1.16,0.486,1.82,0.511C3.534,9.419,2.823,8.184,2.823,6.787c0-0.748,0.199-1.434,0.548-2.032 c1.983,2.443,4.964,4.04,8.306,4.215c-0.062-0.3-0.1-0.611-0.1-0.923c0-2.22,1.796-4.028,4.028-4.028 c1.16,0,2.207,0.486,2.943,1.272c0.91-0.175,1.782-0.512,2.556-0.973c-0.299,0.935-0.936,1.721-1.771,2.22 c0.811-0.088,1.597-0.312,2.319-0.624C21.104,6.712,20.419,7.423,19.633,7.997z"></path></svg>
+                                <span class="u-screen-reader-text">Twitter</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M11.999,7.377c-2.554,0-4.623,2.07-4.623,4.623c0,2.554,2.069,4.624,4.623,4.624c2.552,0,4.623-2.07,4.623-4.624 C16.622,9.447,14.551,7.377,11.999,7.377L11.999,7.377z M11.999,15.004c-1.659,0-3.004-1.345-3.004-3.003 c0-1.659,1.345-3.003,3.004-3.003s3.002,1.344,3.002,3.003C15.001,13.659,13.658,15.004,11.999,15.004L11.999,15.004z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533,6.111c-0.469-1.209-1.424-2.165-2.633-2.632c-0.699-0.263-1.438-0.404-2.186-0.42 c-0.963-0.042-1.268-0.054-3.71-0.054s-2.755,0-3.71,0.054C7.548,3.074,6.809,3.215,6.11,3.479C4.9,3.946,3.945,4.902,3.477,6.111 c-0.263,0.7-0.404,1.438-0.419,2.186c-0.043,0.962-0.056,1.267-0.056,3.71c0,2.442,0,2.753,0.056,3.71 c0.015,0.748,0.156,1.486,0.419,2.187c0.469,1.208,1.424,2.164,2.634,2.632c0.696,0.272,1.435,0.426,2.185,0.45 c0.963,0.042,1.268,0.055,3.71,0.055s2.755,0,3.71-0.055c0.747-0.015,1.486-0.157,2.186-0.419c1.209-0.469,2.164-1.424,2.633-2.633 c0.263-0.7,0.404-1.438,0.419-2.186c0.043-0.962,0.056-1.267,0.056-3.71s0-2.753-0.056-3.71C20.941,7.57,20.801,6.819,20.533,6.111z M19.315,15.643c-0.007,0.576-0.111,1.147-0.311,1.688c-0.305,0.787-0.926,1.409-1.712,1.711c-0.535,0.199-1.099,0.303-1.67,0.311 c-0.95,0.044-1.218,0.055-3.654,0.055c-2.438,0-2.687,0-3.655-0.055c-0.569-0.007-1.135-0.112-1.669-0.311 c-0.789-0.301-1.414-0.923-1.719-1.711c-0.196-0.534-0.302-1.099-0.311-1.669c-0.043-0.95-0.053-1.218-0.053-3.654 c0-2.437,0-2.686,0.053-3.655c0.007-0.576,0.111-1.146,0.311-1.687c0.305-0.789,0.93-1.41,1.719-1.712 c0.534-0.198,1.1-0.303,1.669-0.311c0.951-0.043,1.218-0.055,3.655-0.055c2.437,0,2.687,0,3.654,0.055 c0.571,0.007,1.135,0.112,1.67,0.311c0.786,0.303,1.407,0.925,1.712,1.712c0.196,0.534,0.302,1.099,0.311,1.669 c0.043,0.951,0.054,1.218,0.054,3.655c0,2.436,0,2.698-0.043,3.654H19.315z"></path></svg>
+                                <span class="u-screen-reader-text">Instagram</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M20.66 6.98a9.932 9.932 0 0 0-3.641-3.64C15.486 2.447 13.813 2 12 2s-3.486.447-5.02 1.34c-1.533.893-2.747 2.107-3.64 3.64S2 10.187 2 12s.446 3.487 1.34 5.02a9.924 9.924 0 0 0 3.641 3.64C8.514 21.553 10.187 22 12 22s3.486-.447 5.02-1.34a9.932 9.932 0 0 0 3.641-3.64C21.554 15.487 22 13.813 22 12s-.446-3.487-1.34-5.02zM12 3.66c2 0 3.772.64 5.32 1.919-.92 1.174-2.286 2.14-4.1 2.9-1.002-1.813-2.088-3.327-3.261-4.54A7.715 7.715 0 0 1 12 3.66zM5.51 6.8a8.116 8.116 0 0 1 2.711-2.22c1.212 1.201 2.325 2.7 3.34 4.5-2 .6-4.114.9-6.341.9-.573 0-1.006-.013-1.3-.04A8.549 8.549 0 0 1 5.51 6.8zM3.66 12c0-.054.003-.12.01-.2.007-.08.01-.146.01-.2.254.014.641.02 1.161.02 2.666 0 5.146-.367 7.439-1.1.187.373.381.793.58 1.26-1.32.293-2.674 1.006-4.061 2.14S6.4 16.247 5.76 17.5c-1.4-1.587-2.1-3.42-2.1-5.5zM12 20.34c-1.894 0-3.594-.587-5.101-1.759.601-1.187 1.524-2.322 2.771-3.401 1.246-1.08 2.483-1.753 3.71-2.02a29.441 29.441 0 0 1 1.56 6.62 8.166 8.166 0 0 1-2.94.56zm7.08-3.96a8.351 8.351 0 0 1-2.58 2.621c-.24-2.08-.7-4.107-1.379-6.081.932-.066 1.765-.1 2.5-.1.799 0 1.686.034 2.659.1a8.098 8.098 0 0 1-1.2 3.46zm-1.24-5c-1.16 0-2.233.047-3.22.14a27.053 27.053 0 0 0-.68-1.62c2.066-.906 3.532-2.006 4.399-3.3 1.2 1.414 1.854 3.027 1.96 4.84-.812-.04-1.632-.06-2.459-.06z"></path></svg>
+                                <span class="u-screen-reader-text">Dribbble</span>
+                            </a>
+                        </li>
+                    </ul> -->
+                     <!-- end s-footer__social -->
                 </div>
-            </div>
-            <!-- 5: Finqy (odd → left) -->
-            <div class="titem rv">
-                <div class="tcard">
-                    <div class="tco"><div class="tco-icon">💹</div><div><div class="trole">Data Analyst Intern</div><div class="tcompany">E-Revbay / Finqy</div></div></div>
-                    <div class="tmeta">
-                        <span class="tbadge tb-date">May 2023 – Oct 2023</span>
-                        <span class="tbadge tb-type">Internship · 6 mos</span>
-                    </div>
-                    <ul class="tbuls">
-                        <li>Built Business Portal with React, Node.js, Sequelize &amp; Azure — multi-role access, CI/CD</li>
-                        <li>Designed real-time PayInPayOut data ingestion pipeline for 1M+ daily records</li>
-                    </ul>
-                    <div class="tskills"><span class="sk">React</span><span class="sk">Node.js</span><span class="sk">Azure</span><span class="sk">SQL</span><span class="sk">CI/CD</span></div>
+                <div class="column xl-6 lg-12">
+                    <p class="ss-copyright">
+                        <span>© Copyright Vridhi Gandhi 2025</span> 
+                        <span>Design by Vridhi Gandhi</span>
+                    </p>
                 </div>
-                <div class="tdot-col"><div class="tdot"></div></div>
-                <div class="tempty"></div>
+
+                <div class="ss-go-top">
+                    <a id="back-to-top-click" class="smoothscroll" title="Back to Top" href="#top">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#ffffff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">&lt;!--!  Atomicons Free 1.00 by @atisalab License - https://atomicons.com/license/ (Icons: CC BY 4.0) Copyright 2021 Atomicons --&gt;<polyline points="17 11 12 6 7 11"></polyline><line x1="12" y1="18" x2="12" y2="6"></line></svg>
+                    </a>
+                </div> <!-- end ss-go-top -->
             </div>
-            <!-- 6: Merkle (even → right) -->
-            <div class="titem rv">
-                <div class="tempty"></div>
-                <div class="tdot-col"><div class="tdot"></div></div>
-                <div class="tcard">
-                    <div class="tco"><div class="tco-icon">🏆</div><div><div class="trole">Data Scientist Intern</div><div class="tcompany">Merkle</div></div></div>
-                    <div class="tmeta">
-                        <span class="tbadge tb-date">Jan 2022 – Jun 2022</span>
-                        <span class="tbadge tb-type">Internship · 6 mos</span>
-                    </div>
-                    <ul class="tbuls">
-                        <li>Built Apache NiFi + Kafka → Snowflake pipeline streaming millions of events daily</li>
-                        <li>Enabled auto-scaling Snowflake on AWS EC2 for improved analytics performance</li>
-                        <li>Awarded <strong style="color:var(--text)">"Problem Solver"</strong> title for impactful, consistent delivery</li>
-                    </ul>
-                    <div class="tskills"><span class="sk">Apache Kafka</span><span class="sk">NiFi</span><span class="sk">Snowflake</span><span class="sk">AWS EC2</span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+            
+        </footer> <!-- end s-footer -->
 
-<!-- TECH STACK -->
-<section id="stack" class="sec">
-    <div class="sec-in">
-        <div class="rv">
-            <div class="sec-tag">Tech Stack</div>
-            <h2 class="sec-h2">Tools of the Trade</h2>
-            <p class="sec-sub">The technologies I use to build, analyze, automate, and ship at scale.</p>
-        </div>
-        <div class="stack-cats">
-            <div class="rv">
-                <div class="cat-lbl">// Data &amp; Analytics</div>
-                <div class="stack-row">
-                    <div class="sitem"><span class="si">🐍</span>Python</div>
-                    <div class="sitem"><span class="si">🐘</span>PostgreSQL</div>
-                    <div class="sitem"><span class="si">❄️</span>Snowflake</div>
-                    <div class="sitem"><span class="si">📊</span>Power BI</div>
-                    <div class="sitem"><span class="si">📈</span>Apache Superset</div>
-                    <div class="sitem"><span class="si">📉</span>Tableau</div>
-                    <div class="sitem"><span class="si">📡</span>Grafana</div>
-                    <div class="sitem"><span class="si">🔍</span>Google Analytics</div>
-                    <div class="sitem"><span class="si">🗄️</span>SQL</div>
-                </div>
-            </div>
-            <div class="rv">
-                <div class="cat-lbl">// Backend &amp; Infrastructure</div>
-                <div class="stack-row">
-                    <div class="sitem"><span class="si">🔷</span>GraphQL</div>
-                    <div class="sitem"><span class="si">🌶️</span>Flask</div>
-                    <div class="sitem"><span class="si">🟢</span>Node.js</div>
-                    <div class="sitem"><span class="si">☁️</span>AWS EC2</div>
-                    <div class="sitem"><span class="si">🔵</span>Microsoft Azure</div>
-                    <div class="sitem"><span class="si">🔄</span>CI/CD</div>
-                    <div class="sitem"><span class="si">📱</span>Radix MDM</div>
-                </div>
-            </div>
-            <div class="rv">
-                <div class="cat-lbl">// Streaming &amp; Pipelines</div>
-                <div class="stack-row">
-                    <div class="sitem"><span class="si">⚡</span>Apache Kafka</div>
-                    <div class="sitem"><span class="si">🌊</span>Apache NiFi</div>
-                    <div class="sitem"><span class="si">🔗</span>Memgraph</div>
-                    <div class="sitem"><span class="si">🔎</span>OpenSearch</div>
-                    <div class="sitem"><span class="si">🔐</span>DRM Systems</div>
-                </div>
-            </div>
-            <div class="rv">
-                <div class="cat-lbl">// AI &amp; Frontend</div>
-                <div class="stack-row">
-                    <div class="sitem"><span class="si">🤖</span>Prompt Engineering</div>
-                    <div class="sitem"><span class="si">🎬</span>Google Veo</div>
-                    <div class="sitem"><span class="si">✨</span>Generative AI</div>
-                    <div class="sitem"><span class="si">⚛️</span>React.js</div>
-                    <div class="sitem"><span class="si">🎨</span>Figma</div>
-                    <div class="sitem"><span class="si">🔍</span>SEO</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </div> <!-- end page-wrap -->
 
-<!-- PROJECTS -->
-<section id="projects" class="sec">
-    <div class="sec-in">
-        <div class="rv">
-            <div class="sec-tag">Projects &amp; Impact</div>
-            <h2 class="sec-h2">What I've Actually Built</h2>
-            <p class="sec-sub">Real systems, real numbers, real impact.</p>
-        </div>
-        <div class="pgrid">
-            <div class="pcard rv">
-                <span class="pctag tc-lion">🎬 Lionsgate</span>
-                <div class="ptitle">OTT Recommendation &amp; Search Engine</div>
-                <div class="pdesc">Built recommendation engine using Memgraph knowledge graph + OpenSearch to power smarter content discovery and personalized viewing on Lionsgate Play.</div>
-                <div class="pstat"><span class="pstat-big">Smart</span><span class="pstat-desc">personalized discovery for millions of viewers</span></div>
-                <div class="ptags"><span class="sk">Memgraph</span><span class="sk">OpenSearch</span><span class="sk">GraphQL</span></div>
-            </div>
-            <div class="pcard rv">
-                <span class="pctag tc-lion">🤖 Lionsgate AI</span>
-                <div class="ptitle">AI Cinematic Video Pipeline</div>
-                <div class="pdesc">End-to-end AI video project: researched true stories, adapted for Indian audiences, scripted scenes, engineered JSON prompts, generated complete film with Google Veo.</div>
-                <div class="pstat"><span class="pstat-big">9+ min</span><span class="pstat-desc">AI-generated cinematic film</span></div>
-                <div class="ptags"><span class="sk">Google Veo</span><span class="sk">Prompt Eng.</span><span class="sk">AI Scripting</span></div>
-            </div>
-            <div class="pcard rv">
-                <span class="pctag tc-strm">📡 Streambox</span>
-                <div class="ptitle">Device Fleet Automation</div>
-                <div class="pdesc">Automated OS &amp; app deployments across 10,000+ devices using Radix MDM. Python-based data ingestion into PostgreSQL eliminated 60–85% of manual effort.</div>
-                <div class="pstat"><span class="pstat-big">10K+</span><span class="pstat-desc">devices automated, 60–85% effort saved</span></div>
-                <div class="ptags"><span class="sk">Radix MDM</span><span class="sk">Python</span><span class="sk">PostgreSQL</span></div>
-            </div>
-            <div class="pcard rv">
-                <span class="pctag tc-mrk">🏆 Merkle</span>
-                <div class="ptitle">Real-Time Data Pipeline</div>
-                <div class="pdesc">Designed Apache NiFi + Kafka → Snowflake pipeline streaming millions of events daily. Enabled auto-scaling on AWS EC2 for improved analytical performance.</div>
-                <div class="pstat"><span class="pstat-big">1M+</span><span class="pstat-desc">events streamed daily to Snowflake</span></div>
-                <div class="ptags"><span class="sk">Kafka</span><span class="sk">Apache NiFi</span><span class="sk">Snowflake</span></div>
-            </div>
-            <div class="pcard rv">
-                <span class="pctag tc-fnq">💹 Finqy</span>
-                <div class="ptitle">Business Portal &amp; Payment Tool</div>
-                <div class="pdesc">Scalable internal planning tool with React, Node.js &amp; Azure. Real-time PayInPayOut data ingestion pipeline with secure multi-role access and CI/CD automation.</div>
-                <div class="pstat"><span class="pstat-big">Real-Time</span><span class="pstat-desc">transactional pipeline &amp; dashboard</span></div>
-                <div class="ptags"><span class="sk">React</span><span class="sk">Node.js</span><span class="sk">Azure</span></div>
-            </div>
-            <div class="pcard rv">
-                <span class="pctag tc-aari">🌐 AARI</span>
-                <div class="ptitle">Full Website Redesign + SEO</div>
-                <div class="pdesc">Complete redesign from scratch — 52+ new responsive pages with top-5 SEO ranking for high-intent keywords. UX improvements and performance optimization throughout.</div>
-                <div class="pstat"><span class="pstat-big">52+</span><span class="pstat-desc">pages built, top-5 SEO ranking</span></div>
-                <div class="ptags"><span class="sk">Web Dev</span><span class="sk">SEO</span><span class="sk">UX Design</span></div>
-            </div>
-        </div>
-    </div>
-</section>
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
 
-<!-- CLIENTS -->
-<section id="clients">
-    <div class="clients-in">
-        <div class="clients-head rv">
-            <div class="sec-tag" style="justify-content:center">Companies &amp; Clients</div>
-            <h2 class="sec-h2" style="text-align:center">Worked With</h2>
-        </div>
-        <div class="clients-row rv">
-            <a href="https://www.linkedin.com/company/streamboxmedia/" class="cli" target="_blank"><img src="images/clients/StreamBox.png" alt="Streambox"></a>
-            <a href="https://www.linkedin.com/company/aari/" class="cli" target="_blank"><img src="images/clients/AARI.png" alt="AARI"></a>
-            <a href="https://www.linkedin.com/products/e-revbay-private-limited-finqy/" class="cli" target="_blank"><img src="images/clients/FINQY.png" alt="FINQY"></a>
-            <a href="https://www.linkedin.com/company/enpointe-india/" class="cli" target="_blank"><img src="images/clients/Enpointe.png" alt="Enpointe"></a>
-            <a href="https://www.linkedin.com/company/merkle/" class="cli" target="_blank"><img src="images/clients/Merkle.png" alt="Merkle"></a>
-        </div>
-    </div>
-</section>
-
-<!-- CTA -->
-<section id="cta">
-    <div class="cta-in rv">
-        <div class="cta-tag">// Let's Connect</div>
-        <h2 class="cta-h">Got a problem<br>worth <span class="grad-text">solving?</span></h2>
-        <p class="cta-sub">Whether you need OTT infrastructure, data pipelines, automation systems, or a complete web solution — I build things that work at scale and hold up under pressure.</p>
-        <div class="cta-btns">
-            <a href="contact.html" class="btn-p">Start a Conversation →</a>
-            <a href="https://drive.google.com/drive/folders/1LHYwRn99KIHiLJ03FCHgDaPhYPWlSUh6?usp=sharing" class="btn-s" target="_blank">Download Resume ↓</a>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <div class="foot-in">
-        <img src="images/Logo.png" alt="Vridhi Gandhi" style="height:30px;filter:brightness(.65)">
-        <ul class="foot-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="certificates.html">Certificates</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div class="foot-soc">
-            <a href="mailto:vridhigandhi@gmail.com" class="soc-btn" title="Email">✉️</a>
-            <a href="https://www.linkedin.com/in/vridhi-gandhi/" class="soc-btn" target="_blank" title="LinkedIn">💼</a>
-            <a href="https://wa.me/917506520052" class="soc-btn" target="_blank" title="WhatsApp">💬</a>
-            <a href="https://www.instagram.com/__yomadic__/" class="soc-btn" target="_blank" title="Instagram">📸</a>
-        </div>
-        <div class="foot-copy">© 2025 Vridhi Gandhi — Built by Vridhi.</div>
-    </div>
-</footer>
-
-<!-- AI CHATBOT -->
-<div class="chat-widget">
-    <div class="chat-panel" id="cpanel">
-        <div class="cp-head">
-            <div class="cp-av">🤖</div>
-            <div><div class="cp-name">Ask Vridhi's AI</div><div class="cp-status"><span class="cp-sdot"></span>online</div></div>
-            <button class="cp-close" onclick="toggleChat()">✕</button>
-        </div>
-        <div class="cp-msgs" id="cmsgs">
-            <div class="cmsg cmsg-bot">Hey! 👋 I'm Vridhi's AI assistant. Ask me about her work, skills, or how to get in touch!</div>
-        </div>
-        <div class="typing" id="typing"><div class="td"></div><div class="td"></div><div class="td"></div></div>
-        <div class="cp-chips">
-            <span class="cchip" onclick="doChip(this)">Current role?</span>
-            <span class="cchip" onclick="doChip(this)">Key skills?</span>
-            <span class="cchip" onclick="doChip(this)">Projects?</span>
-            <span class="cchip" onclick="doChip(this)">Education?</span>
-            <span class="cchip" onclick="doChip(this)">Awards?</span>
-            <span class="cchip" onclick="doChip(this)">Contact?</span>
-        </div>
-        <div class="cp-input-row">
-            <input type="text" id="cinput" placeholder="Ask me anything..." onkeypress="if(event.key==='Enter')sendMsg()">
-            <button class="csend" onclick="sendMsg()">→</button>
-        </div>
-    </div>
-    <button class="chat-toggle" id="ctog" onclick="toggleChat()" title="Chat with AI assistant">🤖</button>
-</div>
-
-<script>
-// ========================================
-// LOADER
-// ========================================
-(function(){
-    const el = document.getElementById('loader');
-    const pct = document.getElementById('ldpct');
-    let v = 0;
-    const msgs = ['Booting systems...','Loading experience...','Rendering portfolio...','Almost there...','Ready.'];
-    let mi = 0;
-    const iv = setInterval(()=>{
-        v = Math.min(v + Math.random()*14, 100);
-        const p = Math.floor(v);
-        pct.textContent = p + '%';
-        if(p > 20 && mi===0){ pct.textContent = msgs[1]; mi=1; }
-        if(p > 50 && mi===1){ pct.textContent = msgs[2]; mi=2; }
-        if(p > 80 && mi===2){ pct.textContent = msgs[3]; mi=3; }
-        if(v >= 100){
-            clearInterval(iv);
-            pct.textContent = msgs[4];
-            setTimeout(()=>{
-                el.style.transition='opacity .55s ease';
-                el.style.opacity='0';
-                setTimeout(()=>el.remove(), 600);
-            }, 300);
-        }
-    }, 110);
-})();
-
-// ========================================
-// CURSOR
-// ========================================
-const cur = document.getElementById('cur');
-const curT = document.getElementById('cur-t');
-let mx=0, my=0, tx=0, ty=0;
-document.addEventListener('mousemove', e=>{
-    mx=e.clientX; my=e.clientY;
-    cur.style.left=(mx-5)+'px'; cur.style.top=(my-5)+'px';
-});
-(function animCur(){
-    tx+=(mx-tx)*.14; ty+=(my-ty)*.14;
-    curT.style.left=(tx-18)+'px'; curT.style.top=(ty-18)+'px';
-    requestAnimationFrame(animCur);
-})();
-document.querySelectorAll('a,button,.sitem,.pcard,.tcard').forEach(el=>{
-    el.addEventListener('mouseenter',()=>cur.style.transform='scale(2.4)');
-    el.addEventListener('mouseleave',()=>cur.style.transform='scale(1)');
-});
-
-// ========================================
-// PARTICLE NETWORK CANVAS
-// ========================================
-const cv = document.getElementById('pcanvas');
-const cx = cv.getContext('2d');
-function resize(){ cv.width=window.innerWidth; cv.height=window.innerHeight; }
-resize();
-window.addEventListener('resize', resize);
-const N=75;
-const pts = Array.from({length:N},()=>({
-    x:Math.random()*window.innerWidth,
-    y:Math.random()*window.innerHeight,
-    vx:(Math.random()-.5)*.45,
-    vy:(Math.random()-.5)*.45,
-    r:Math.random()*1.8+.8,
-    o:Math.random()*.5+.1
-}));
-function drawParticles(){
-    cx.clearRect(0,0,cv.width,cv.height);
-    pts.forEach(p=>{
-        p.x+=p.vx; p.y+=p.vy;
-        if(p.x<0||p.x>cv.width) p.vx*=-1;
-        if(p.y<0||p.y>cv.height) p.vy*=-1;
-        cx.beginPath();
-        cx.arc(p.x,p.y,p.r,0,Math.PI*2);
-        cx.fillStyle=`rgba(239,131,84,${p.o})`;
-        cx.fill();
-    });
-    for(let i=0;i<N;i++){
-        for(let j=i+1;j<N;j++){
-            const dx=pts[i].x-pts[j].x, dy=pts[i].y-pts[j].y;
-            const d=Math.sqrt(dx*dx+dy*dy);
-            if(d<125){
-                cx.beginPath();
-                cx.moveTo(pts[i].x,pts[i].y);
-                cx.lineTo(pts[j].x,pts[j].y);
-                cx.strokeStyle=`rgba(239,131,84,${(1-d/125)*.18})`;
-                cx.lineWidth=.5; cx.stroke();
-            }
-        }
-    }
-    requestAnimationFrame(drawParticles);
-}
-drawParticles();
-
-// ========================================
-// TYPEWRITER
-// ========================================
-const phrases=['OTT streaming infrastructure.','recommendation engines.','AI video pipelines.','data systems at scale.','backends that hold up.','things that actually work.'];
-let pi=0, ci=0, del=false;
-const tw=document.getElementById('tw');
-function type(){
-    const cur2=phrases[pi];
-    if(!del){ tw.textContent=cur2.substring(0,ci+1); ci++; if(ci===cur2.length){del=true;setTimeout(type,2200);return;} }
-    else { tw.textContent=cur2.substring(0,ci-1); ci--; if(ci===0){del=false;pi=(pi+1)%phrases.length;} }
-    setTimeout(type, del?38:68);
-}
-setTimeout(type, 1200);
-
-// ========================================
-// COUNTER ANIMATION
-// ========================================
-const cntObs = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-        if(e.isIntersecting){
-            const t=+e.target.getAttribute('data-t'), step=t/48;
-            let v=0; const iv=setInterval(()=>{
-                v=Math.min(v+step,t);
-                e.target.textContent=Math.floor(v);
-                if(v>=t)clearInterval(iv);
-            },28);
-            cntObs.unobserve(e.target);
-        }
-    });
-},{threshold:.5});
-document.querySelectorAll('.cnt').forEach(el=>cntObs.observe(el));
-
-// ========================================
-// SCROLL REVEAL
-// ========================================
-const rvObs = new IntersectionObserver(entries=>{
-    entries.forEach((e,i)=>{
-        if(e.isIntersecting){
-            setTimeout(()=>e.target.classList.add('on'), i*90);
-            rvObs.unobserve(e.target);
-        }
-    });
-},{threshold:.08});
-document.querySelectorAll('.rv,.rvl,.rvr').forEach(el=>rvObs.observe(el));
-
-// ========================================
-// NAVBAR SHADOW ON SCROLL
-// ========================================
-window.addEventListener('scroll',()=>{
-    document.getElementById('nav').style.boxShadow =
-        window.scrollY>60 ? '0 4px 30px rgba(0,0,0,.5)' : 'none';
-});
-
-// ========================================
-// MOBILE MENU
-// ========================================
-function toggleMenu(){
-    document.getElementById('mmenu').classList.toggle('open');
-}
-
-// ========================================
-// AI CHATBOT
-// ========================================
-const KB = {
-    greet:{
-        p:['hi','hello','hey','namaste','yo','hola'],
-        r:"Hey there! 👋 I'm Vridhi's AI assistant. Ask me about her work, skills, projects, or how to get in touch!"
-    },
-    role:{
-        p:['current','role','job','lionsgate','working now','doing now','what do you do'],
-        r:"Vridhi is currently a **Solution Engineer at Lionsgate Play** 🎬 (Oct 2025–present). She works on OTT platform engineering — building CMS workflows, backend APIs, a recommendation engine with Memgraph + OpenSearch, video pipelines, DRM/streaming ops, and content migration. Basically the infrastructure behind what you stream!"
-    },
-    exp:{
-        p:['experience','career','history','companies','worked','background'],
-        r:"Vridhi has worked at 5+ companies:\n\n🎬 **Lionsgate** — Solution Engineer (current)\n📡 **Streambox Media** — Data Scientist (1 yr)\n🌐 **AARI** — Full-Stack Dev (freelance)\n💹 **Finqy / E-Revbay** — Data Analyst Intern\n🏆 **Merkle** — Data Scientist Intern\nPlus Enpointe India. Want details on any role?"
-    },
-    skills:{
-        p:['skills','tech','stack','technologies','tools','programming'],
-        r:"Vridhi's stack spans several domains:\n\n**Data:** Python, PostgreSQL, Snowflake, Power BI, Tableau, Grafana\n**Backend:** GraphQL, Flask, Node.js, AWS EC2, Azure, CI/CD\n**Streaming:** Kafka, Apache NiFi, Memgraph, OpenSearch\n**AI:** Prompt Engineering, Google Veo, Generative AI\n**Frontend:** React.js, Figma, SEO, UX Design"
-    },
-    projects:{
-        p:['project','portfolio','built','created','what have you'],
-        r:"Key projects:\n\n🔍 **OTT Recommendation Engine** (Lionsgate) — Memgraph + OpenSearch\n🤖 **AI Video Pipeline** — 9+ min cinematic film via Google Veo\n📱 **10K+ Device Automation** (Streambox) — 60-85% effort saved\n📊 **1M+ Events/Day Pipeline** (Merkle) — Kafka → Snowflake\n💹 **Business Portal** (Finqy) — React + Node + Azure\n🌐 **AARI Website** — 52+ pages, top-5 SEO"
-    },
-    edu:{
-        p:['education','degree','college','university','studied','nmims','btech'],
-        r:"Dual degree from **SVKM's NMIMS, Mumbai**:\n\n🎓 **BTech Computer Engineering + AI** (2018–2024, GPA 3.74) — Mukesh Patel School\n🏅 **Honours in Data Science & Analysis** (2021–2024, Grade A+) — Narsee Monjee Institute\n\nTwo prestigious schools, one campus!"
-    },
-    awards:{
-        p:['award','honor','achievement','recognition','problem solver'],
-        r:"Vridhi has two recognitions:\n\n🏆 **'Problem Solver'** — Merkle (May 2022) for consistently impactful delivery\n🎓 **Honours in Data Science & Analysis** — NMIMS (May 2024, Grade A+)\n\nShe was awarded Problem Solver among the intern cohort at Merkle!"
-    },
-    contact:{
-        p:['contact','hire','reach','email','collaborate','work together','connect'],
-        r:"Here's how to reach Vridhi:\n\n✉️ **Email:** vridhigandhi@gmail.com\n💼 **LinkedIn:** linkedin.com/in/vridhi-gandhi\n💬 **WhatsApp:** +91 75065 20052\n📞 **Call:** +91 90823 91198\n\nOr click **'Start a Conversation'** below! She's open to OTT, data, AI and web projects."
-    }
-};
-
-function findReply(txt){
-    const t=txt.toLowerCase();
-    for(const k in KB) if(KB[k].p.some(p=>t.includes(p))) return KB[k].r;
-    return "Hmm, I'm not sure about that. Try asking about Vridhi's **role**, **skills**, **projects**, **education**, or how to **contact** her. Or just go to the contact page! 😊";
-}
-
-function addMsg(txt, isUser){
-    const w=document.getElementById('cmsgs');
-    const d=document.createElement('div');
-    d.className='cmsg '+(isUser?'cmsg-usr':'cmsg-bot');
-    d.innerHTML=txt.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>');
-    w.appendChild(d);
-    w.scrollTop=w.scrollHeight;
-}
-
-function showTyp(){ document.getElementById('typing').classList.add('on'); }
-function hideTyp(){ document.getElementById('typing').classList.remove('on'); }
-
-function sendMsg(){
-    const inp=document.getElementById('cinput');
-    const t=inp.value.trim(); if(!t)return;
-    addMsg(t,true); inp.value='';
-    showTyp();
-    setTimeout(()=>{ hideTyp(); addMsg(findReply(t),false); }, 900+Math.random()*500);
-}
-
-function doChip(el){
-    addMsg(el.textContent,true);
-    showTyp();
-    setTimeout(()=>{ hideTyp(); addMsg(findReply(el.textContent),false); }, 700+Math.random()*400);
-}
-
-function toggleChat(){
-    const p=document.getElementById('cpanel');
-    const b=document.getElementById('ctog');
-    const o=p.classList.toggle('open');
-    b.textContent=o?'✕':'🤖';
-    if(o) document.getElementById('cinput').focus();
-}
-</script>
 </body>
 </html>
