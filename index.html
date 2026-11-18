@@ -1233,29 +1233,22 @@
 // ========================================
 (function(){
     const el = document.getElementById('loader');
+    const bar = el && el.querySelector('.loader-bar');
     const pct = document.getElementById('ldpct');
-    let v = 0;
     const msgs = ['Booting systems...','Loading experience...','Rendering portfolio...','Almost there...','Ready.'];
-    let mi = 0;
-    const iv = setInterval(()=>{
-        v = Math.min(v + Math.random()*14, 100);
-        const p = Math.floor(v);
-        pct.textContent = p + '%';
-        if(p > 20 && mi===0){ pct.textContent = msgs[1]; mi=1; }
-        if(p > 50 && mi===1){ pct.textContent = msgs[2]; mi=2; }
-        if(p > 80 && mi===2){ pct.textContent = msgs[3]; mi=3; }
-        if(v >= 100){
-            clearInterval(iv);
-            pct.textContent = msgs[4];
-            setTimeout(()=>{
-                el.style.transition='opacity .55s ease';
-                el.style.opacity='0';
-                setTimeout(()=>{ try{el.remove()}catch(e){el.style.display='none';} }, 600);
-            }, 300);
-        }
-    }, 110);
-    // Safety fallback — always dismiss after 3s no matter what
-    setTimeout(()=>{ try{el.style.opacity='0'; setTimeout(()=>el.remove(),600);}catch(e){} }, 3000);
+    const dismiss = ()=>{
+        if(!el) return;
+        el.style.transition='opacity .5s ease';
+        el.style.opacity='0';
+        setTimeout(()=>{ try{el.remove();}catch(e){el.style.display='none';} }, 520);
+    };
+    // Animate status messages in fixed steps
+    setTimeout(()=>{ if(pct) pct.textContent=msgs[1]; }, 300);
+    setTimeout(()=>{ if(pct) pct.textContent=msgs[2]; }, 700);
+    setTimeout(()=>{ if(pct) pct.textContent=msgs[3]; }, 1100);
+    setTimeout(()=>{ if(pct) pct.textContent=msgs[4]; }, 1500);
+    // Dismiss at 1.8s — guaranteed, no randomness
+    setTimeout(dismiss, 1800);
 })();
 
 // ========================================
