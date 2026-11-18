@@ -23,7 +23,7 @@
     body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
     ::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--purple);border-radius:3px;}
     a{text-decoration:none;color:inherit;}
-    @media(hover:hover){body{cursor:none;}.cursor,.cursor-trail{display:block;}}
+    @media (pointer: fine){body{cursor:none;}.cursor{display:block!important;}.cursor-trail{display:block!important;}}
     .cursor{display:none;width:10px;height:10px;background:var(--purple);border-radius:50%;position:fixed;pointer-events:none;z-index:99999;mix-blend-mode:normal;transition:transform .08s ease;}
     .cursor-trail{display:none;width:36px;height:36px;border:1px solid rgba(239,131,84,.45);border-radius:50%;position:fixed;pointer-events:none;z-index:99998;transition:all .14s ease;}
     /* NAV */
@@ -190,7 +190,7 @@
             <div class="rvr">
                 <div class="story-img-wrap">
                     <img src="images/me3.jpg" alt="Vridhi Gandhi" class="story-img">
-                    <div class="story-img-badge">🎬 Currently building at Lionsgate Play</div>
+                    <div class="story-img-badge"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg> Currently building at Lionsgate Play</div>
                 </div>
             </div>
         </div>
@@ -282,22 +282,22 @@
         </div>
         <div class="val-grid">
             <div class="vcard rv">
-                <div class="vcard-icon">🔍</div>
+                <div class="vcard-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
                 <div class="vcard-title">Systems Over Symptoms</div>
                 <div class="vcard-text">I don't patch what I don't understand. Before writing a line of code, I want to know why the problem exists, where it lives in the system, and what breaks if I fix it the wrong way. That instinct is what makes the difference between a band-aid and a real solution.</div>
             </div>
             <div class="vcard rv">
-                <div class="vcard-icon">⚡</div>
+                <div class="vcard-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><bolt xmlns="http://www.w3.org/2000/svg"/><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
                 <div class="vcard-title">Precision over Speed</div>
                 <div class="vcard-text">I work fast. But I never rush what matters. When something is running at scale — streaming pipelines, OTT infrastructure, automated device fleets — a careless shortcut becomes a production incident at 2 AM. I build things that hold up.</div>
             </div>
             <div class="vcard rv">
-                <div class="vcard-icon">🌉</div>
+                <div class="vcard-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M6 19V5"/><path d="M18 19V5"/><path d="M2 8h4"/><path d="M20 8h2"/><path d="M2 16h4"/><path d="M20 16h2"/><path d="M6 8c0 4 2.4 6 6 6s6-2 6-6"/></svg></div>
                 <div class="vcard-title">Bridge the Gap</div>
                 <div class="vcard-text">The most valuable work happens at the seam between systems — where data meets product, where backend meets user, where engineering meets business logic. I'm most useful right there, translating between layers that don't naturally talk to each other.</div>
             </div>
             <div class="vcard rv">
-                <div class="vcard-icon">🌱</div>
+                <div class="vcard-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 1 1.5 4.7c-1.7-.1-3.1-.6-4.3-1.2 1.4-1.3 2.9-3.1 2.8-3.5z"/></svg></div>
                 <div class="vcard-title">Learn to Stay Current</div>
                 <div class="vcard-text">From Kafka to GraphQL to Veo — the stack shifts constantly. I don't hold onto tools I've outgrown or avoid ones I haven't touched yet. The skill isn't knowing everything. It's knowing how to learn fast, apply well, and move on when something better exists.</div>
             </div>
@@ -314,7 +314,7 @@
         </div>
         <div class="edu-grid">
             <div class="ecard rv">
-                <div class="ec-icon">🎓</div>
+                <div class="ec-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
                 <div class="ec-deg">BTech Computer Engineering + AI</div>
                 <div class="ec-school">Mukesh Patel School of Technology Management & Engineering, NMIMS</div>
                 <div class="ec-meta">
@@ -325,7 +325,7 @@
                 <div class="ec-desc">Deep foundations in algorithms, systems design, machine learning, and distributed computing — the technical base for everything I've built since.</div>
             </div>
             <div class="ecard rv">
-                <div class="ec-icon">🏅</div>
+                <div class="ec-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
                 <div class="ec-deg">Honours in Data Science & Analysis</div>
                 <div class="ec-school">Narsee Monjee Institute of Management Studies</div>
                 <div class="ec-meta">
@@ -360,10 +360,10 @@
             <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="certificates.html">Certificates</a></li><li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="foot-soc">
-            <a href="mailto:vridhigandhi@gmail.com" class="soc-btn">✉️</a>
-            <a href="https://www.linkedin.com/in/vridhi-gandhi/" class="soc-btn" target="_blank">💼</a>
-            <a href="https://wa.me/917506520052" class="soc-btn" target="_blank">💬</a>
-            <a href="https://www.instagram.com/__yomadic__/" class="soc-btn" target="_blank">📸</a>
+            <a href="mailto:vridhigandhi@gmail.com" class="soc-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>️</a>
+            <a href="https://www.linkedin.com/in/vridhi-gandhi/" class="soc-btn" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></a>
+            <a href="https://wa.me/917506520052" class="soc-btn" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></a>
+            <a href="https://www.instagram.com/__yomadic__/" class="soc-btn" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></a>
         </div>
         <div class="foot-copy">© 2025 Vridhi Gandhi</div>
     </div>

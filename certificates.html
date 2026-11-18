@@ -17,7 +17,7 @@
     body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
     ::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--purple);border-radius:3px;}
     a{text-decoration:none;color:inherit;}
-    @media(hover:hover){body{cursor:none;}.cursor,.cursor-trail{display:block;}}
+    @media (pointer: fine){body{cursor:none;}.cursor{display:block!important;}.cursor-trail{display:block!important;}}
     .cursor{display:none;width:10px;height:10px;background:var(--purple);border-radius:50%;position:fixed;pointer-events:none;z-index:99999;mix-blend-mode:normal;transition:transform .08s ease;}
     .cursor-trail{display:none;width:36px;height:36px;border:1px solid rgba(239,131,84,.45);border-radius:50%;position:fixed;pointer-events:none;z-index:99998;transition:all .14s ease;}
     #nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(24px);background:rgba(3,7,18,.82);border-bottom:1px solid var(--border);transition:box-shadow .3s;}
@@ -250,7 +250,7 @@
 <!-- LIGHTBOX -->
 <div id="lb">
     <div id="lb-inner">
-        <button id="lb-close" onclick="closeLB()">✕</button>
+        <button id="lb-close" onclick="closeLB()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
         <img id="lb-img" src="" alt="">
         <div id="lb-info">
             <div><div id="lb-title"></div><div id="lb-issuer" style="font-size:.8rem;color:var(--muted);margin-top:4px;"></div></div>
@@ -265,10 +265,10 @@
             <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="certificates.html">Certificates</a></li><li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="foot-soc">
-            <a href="mailto:vridhigandhi@gmail.com" class="soc-btn">✉️</a>
-            <a href="https://www.linkedin.com/in/vridhi-gandhi/" class="soc-btn" target="_blank">💼</a>
-            <a href="https://wa.me/917506520052" class="soc-btn" target="_blank">💬</a>
-            <a href="https://www.instagram.com/__yomadic__/" class="soc-btn" target="_blank">📸</a>
+            <a href="mailto:vridhigandhi@gmail.com" class="soc-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>️</a>
+            <a href="https://www.linkedin.com/in/vridhi-gandhi/" class="soc-btn" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></a>
+            <a href="https://wa.me/917506520052" class="soc-btn" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></a>
+            <a href="https://www.instagram.com/__yomadic__/" class="soc-btn" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></a>
         </div>
         <div class="foot-copy">© 2025 Vridhi Gandhi</div>
     </div>

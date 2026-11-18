@@ -54,9 +54,10 @@
     /* ==========================================
        CURSOR (desktop only)
     ========================================== */
-    @media (hover: hover) {
+    @media (pointer: fine) {
         body { cursor: none; }
-        .cursor, .cursor-trail { display: block; }
+        .cursor { display: block !important; }
+        .cursor-trail { display: block !important; }
     }
     .cursor {
         display: none;
@@ -856,9 +857,9 @@
         <div class="hero-photo-wrap">
             <div class="photo-ring">
                 <img src="images/me.jpg" alt="Vridhi Gandhi">
-                <div class="ftag ftag1">🎬 Solution Engineer @ Lionsgate</div>
-                <div class="ftag ftag2">🤖 AI &amp; OTT Systems</div>
-                <div class="ftag ftag3">📊 Data + Backend</div>
+                <div class="ftag ftag1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg> Solution Engineer @ Lionsgate</div>
+                <div class="ftag ftag2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><line x1="12" y1="7" x2="12" y2="11"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg> AI &amp; OTT Systems</div>
+                <div class="ftag ftag3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg> Data + Backend</div>
             </div>
         </div>
     </div>
@@ -876,10 +877,10 @@
                 <p class="about-p">My foundation is a <strong>BTech in Computer Engineering with specialization in AI</strong> from NMIMS, plus Honours in Data Science &amp; Analysis with an A+. I've shipped production systems across backend API development, recommendation engines, video pipelines, and large-scale data automation.</p>
                 <p class="about-p">I don't limit myself to one layer of the stack. The best problems span all of them — so I work across all of them.</p>
                 <div class="value-chips">
-                    <div class="vchip">🔍 Curious by default</div>
-                    <div class="vchip">⚡ Detail-oriented</div>
-                    <div class="vchip">🎯 Built with intent</div>
-                    <div class="vchip">🌱 Always learning</div>
+                    <div class="vchip"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Curious by default</div>
+                    <div class="vchip"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><bolt xmlns="http://www.w3.org/2000/svg"/><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Detail-oriented</div>
+                    <div class="vchip"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> Built with intent</div>
+                    <div class="vchip"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 1 1.5 4.7c-1.7-.1-3.1-.6-4.3-1.2 1.4-1.3 2.9-3.1 2.8-3.5z"/></svg> Always learning</div>
                 </div>
             </div>
             <div class="rvr">
@@ -922,7 +923,7 @@
             <!-- 1: Lionsgate SE (odd → left) -->
             <div class="titem rv">
                 <div class="tcard">
-                    <div class="tco"><div class="tco-icon">🎬</div><div><div class="trole">Solution Engineer</div><div class="tcompany">Lionsgate Play</div></div></div>
+                    <div class="tco"><div class="tco-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg></div><div><div class="trole">Solution Engineer</div><div class="tcompany">Lionsgate Play</div></div></div>
                     <div class="tmeta">
                         <span class="tbadge tb-date">Oct 2025 – Present</span>
                         <span class="tbadge tb-cur">● Current</span>
@@ -944,7 +945,7 @@
                 <div class="tempty"></div>
                 <div class="tdot-col"><div class="tdot"></div></div>
                 <div class="tcard">
-                    <div class="tco"><div class="tco-icon">🤖</div><div><div class="trole">AI &amp; Data Engineer</div><div class="tcompany">Lionsgate Play</div></div></div>
+                    <div class="tco"><div class="tco-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><line x1="12" y1="7" x2="12" y2="11"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg></div><div><div class="trole">AI &amp; Data Engineer</div><div class="tcompany">Lionsgate Play</div></div></div>
                     <div class="tmeta">
                         <span class="tbadge tb-date">Sep 2025 – Oct 2025</span>
                         <span class="tbadge tb-type">Full-Time</span>
@@ -960,7 +961,7 @@
             <!-- 3: Streambox (odd → left) -->
             <div class="titem rv">
                 <div class="tcard">
-                    <div class="tco"><div class="tco-icon">📡</div><div><div class="trole">Data Scientist</div><div class="tcompany">Streambox Media Pvt Ltd.</div></div></div>
+                    <div class="tco"><div class="tco-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg></div><div><div class="trole">Data Scientist</div><div class="tcompany">Streambox Media Pvt Ltd.</div></div></div>
                     <div class="tmeta">
                         <span class="tbadge tb-date">Jun 2024 – May 2025</span>
                         <span class="tbadge tb-type">Full-Time · 1 yr</span>
@@ -981,7 +982,7 @@
                 <div class="tempty"></div>
                 <div class="tdot-col"><div class="tdot"></div></div>
                 <div class="tcard">
-                    <div class="tco"><div class="tco-icon">🌐</div><div><div class="trole">Full-Stack Web Developer</div><div class="tcompany">AARI · Freelance</div></div></div>
+                    <div class="tco"><div class="tco-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div><div class="trole">Full-Stack Web Developer</div><div class="tcompany">AARI · Freelance</div></div></div>
                     <div class="tmeta">
                         <span class="tbadge tb-date">Nov 2023 – May 2024</span>
                         <span class="tbadge tb-type">Freelance · 7 mos</span>
@@ -996,7 +997,7 @@
             <!-- 5: Finqy (odd → left) -->
             <div class="titem rv">
                 <div class="tcard">
-                    <div class="tco"><div class="tco-icon">💹</div><div><div class="trole">Data Analyst Intern</div><div class="tcompany">E-Revbay / Finqy</div></div></div>
+                    <div class="tco"><div class="tco-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div><div><div class="trole">Data Analyst Intern</div><div class="tcompany">E-Revbay / Finqy</div></div></div>
                     <div class="tmeta">
                         <span class="tbadge tb-date">May 2023 – Oct 2023</span>
                         <span class="tbadge tb-type">Internship · 6 mos</span>
@@ -1015,7 +1016,7 @@
                 <div class="tempty"></div>
                 <div class="tdot-col"><div class="tdot"></div></div>
                 <div class="tcard">
-                    <div class="tco"><div class="tco-icon">🏆</div><div><div class="trole">Data Scientist Intern</div><div class="tcompany">Merkle</div></div></div>
+                    <div class="tco"><div class="tco-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></div><div><div class="trole">Data Scientist Intern</div><div class="tcompany">Merkle</div></div></div>
                     <div class="tmeta">
                         <span class="tbadge tb-date">Jan 2022 – Jun 2022</span>
                         <span class="tbadge tb-type">Internship · 6 mos</span>
@@ -1044,48 +1045,48 @@
             <div class="rv">
                 <div class="cat-lbl">// Data &amp; Analytics</div>
                 <div class="stack-row">
-                    <div class="sitem"><span class="si">🐍</span>Python</div>
-                    <div class="sitem"><span class="si">🐘</span>PostgreSQL</div>
-                    <div class="sitem"><span class="si">❄️</span>Snowflake</div>
-                    <div class="sitem"><span class="si">📊</span>Power BI</div>
-                    <div class="sitem"><span class="si">📈</span>Apache Superset</div>
-                    <div class="sitem"><span class="si">📉</span>Tableau</div>
-                    <div class="sitem"><span class="si">📡</span>Grafana</div>
-                    <div class="sitem"><span class="si">🔍</span>Google Analytics</div>
-                    <div class="sitem"><span class="si">🗄️</span>SQL</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10"/><path d="M12 7v5l3 3"/></svg></span>Python</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M3 4s2-2 5-2 5 3 5 3 2-2 5-2"/><path d="M5 20c0-3 1-5 3-7 1.5-1.5 2-3 2-5m4 12c0-3-1-5-3-7"/></svg></span>PostgreSQL</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>️</span>Snowflake</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></span>Power BI</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>Apache Superset</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg></span>Tableau</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg></span>Grafana</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>Google Analytics</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>️</span>SQL</div>
                 </div>
             </div>
             <div class="rv">
                 <div class="cat-lbl">// Backend &amp; Infrastructure</div>
                 <div class="stack-row">
-                    <div class="sitem"><span class="si">🔷</span>GraphQL</div>
-                    <div class="sitem"><span class="si">🌶️</span>Flask</div>
-                    <div class="sitem"><span class="si">🟢</span>Node.js</div>
-                    <div class="sitem"><span class="si">☁️</span>AWS EC2</div>
-                    <div class="sitem"><span class="si">🔵</span>Microsoft Azure</div>
-                    <div class="sitem"><span class="si">🔄</span>CI/CD</div>
-                    <div class="sitem"><span class="si">📱</span>Radix MDM</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><polygon points="12 2 22 12 12 22 2 12"/></svg></span>GraphQL</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M12 2a3 3 0 0 1 3 3c0 1.5-1 2.5-2 3 1 1 2 2.5 2 5 0 3-2 5-5 5s-5-2-5-5c0-2.5 1-4 2-5-1-.5-2-1.5-2-3a3 3 0 0 1 3-3"/><line x1="12" y1="2" x2="12" y2="5"/></svg>️</span>Flask</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><circle cx="12" cy="12" r="10" fill="currentColor" stroke="none"/></svg></span>Node.js</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>️</span>AWS EC2</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><circle cx="12" cy="12" r="10" fill="currentColor" stroke="none"/></svg></span>Microsoft Azure</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4-4.64 4.36A9 9 0 0 1 3.51 15"/></svg></span>CI/CD</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>Radix MDM</div>
                 </div>
             </div>
             <div class="rv">
                 <div class="cat-lbl">// Streaming &amp; Pipelines</div>
                 <div class="stack-row">
-                    <div class="sitem"><span class="si">⚡</span>Apache Kafka</div>
-                    <div class="sitem"><span class="si">🌊</span>Apache NiFi</div>
-                    <div class="sitem"><span class="si">🔗</span>Memgraph</div>
-                    <div class="sitem"><span class="si">🔎</span>OpenSearch</div>
-                    <div class="sitem"><span class="si">🔐</span>DRM Systems</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><bolt xmlns="http://www.w3.org/2000/svg"/><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>Apache Kafka</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg></span>Apache NiFi</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>Memgraph</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>OpenSearch</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>DRM Systems</div>
                 </div>
             </div>
             <div class="rv">
                 <div class="cat-lbl">// AI &amp; Frontend</div>
                 <div class="stack-row">
-                    <div class="sitem"><span class="si">🤖</span>Prompt Engineering</div>
-                    <div class="sitem"><span class="si">🎬</span>Google Veo</div>
-                    <div class="sitem"><span class="si">✨</span>Generative AI</div>
-                    <div class="sitem"><span class="si">⚛️</span>React.js</div>
-                    <div class="sitem"><span class="si">🎨</span>Figma</div>
-                    <div class="sitem"><span class="si">🔍</span>SEO</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><line x1="12" y1="7" x2="12" y2="11"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg></span>Prompt Engineering</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg></span>Google Veo</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>Generative AI</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><circle cx="12" cy="12" r="1"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10"/><path d="M12 2c5.5 0 10 4.5 10 10S17.5 22 12 22"/></svg>️</span>React.js</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></span>Figma</div>
+                    <div class="sitem"><span class="si"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>SEO</div>
                 </div>
             </div>
         </div>
@@ -1102,42 +1103,42 @@
         </div>
         <div class="pgrid">
             <div class="pcard rv">
-                <span class="pctag tc-lion">🎬 Lionsgate</span>
+                <span class="pctag tc-lion"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg> Lionsgate</span>
                 <div class="ptitle">OTT Recommendation &amp; Search Engine</div>
                 <div class="pdesc">Built recommendation engine using Memgraph knowledge graph + OpenSearch to power smarter content discovery and personalized viewing on Lionsgate Play.</div>
                 <div class="pstat"><span class="pstat-big">Smart</span><span class="pstat-desc">personalized discovery for millions of viewers</span></div>
                 <div class="ptags"><span class="sk">Memgraph</span><span class="sk">OpenSearch</span><span class="sk">GraphQL</span></div>
             </div>
             <div class="pcard rv">
-                <span class="pctag tc-lion">🤖 Lionsgate AI</span>
+                <span class="pctag tc-lion"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><line x1="12" y1="7" x2="12" y2="11"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg> Lionsgate AI</span>
                 <div class="ptitle">AI Cinematic Video Pipeline</div>
                 <div class="pdesc">End-to-end AI video project: researched true stories, adapted for Indian audiences, scripted scenes, engineered JSON prompts, generated complete film with Google Veo.</div>
                 <div class="pstat"><span class="pstat-big">9+ min</span><span class="pstat-desc">AI-generated cinematic film</span></div>
                 <div class="ptags"><span class="sk">Google Veo</span><span class="sk">Prompt Eng.</span><span class="sk">AI Scripting</span></div>
             </div>
             <div class="pcard rv">
-                <span class="pctag tc-strm">📡 Streambox</span>
+                <span class="pctag tc-strm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg> Streambox</span>
                 <div class="ptitle">Device Fleet Automation</div>
                 <div class="pdesc">Automated OS &amp; app deployments across 10,000+ devices using Radix MDM. Python-based data ingestion into PostgreSQL eliminated 60–85% of manual effort.</div>
                 <div class="pstat"><span class="pstat-big">10K+</span><span class="pstat-desc">devices automated, 60–85% effort saved</span></div>
                 <div class="ptags"><span class="sk">Radix MDM</span><span class="sk">Python</span><span class="sk">PostgreSQL</span></div>
             </div>
             <div class="pcard rv">
-                <span class="pctag tc-mrk">🏆 Merkle</span>
+                <span class="pctag tc-mrk"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg> Merkle</span>
                 <div class="ptitle">Real-Time Data Pipeline</div>
                 <div class="pdesc">Designed Apache NiFi + Kafka → Snowflake pipeline streaming millions of events daily. Enabled auto-scaling on AWS EC2 for improved analytical performance.</div>
                 <div class="pstat"><span class="pstat-big">1M+</span><span class="pstat-desc">events streamed daily to Snowflake</span></div>
                 <div class="ptags"><span class="sk">Kafka</span><span class="sk">Apache NiFi</span><span class="sk">Snowflake</span></div>
             </div>
             <div class="pcard rv">
-                <span class="pctag tc-fnq">💹 Finqy</span>
+                <span class="pctag tc-fnq"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg> Finqy</span>
                 <div class="ptitle">Business Portal &amp; Payment Tool</div>
                 <div class="pdesc">Scalable internal planning tool with React, Node.js &amp; Azure. Real-time PayInPayOut data ingestion pipeline with secure multi-role access and CI/CD automation.</div>
                 <div class="pstat"><span class="pstat-big">Real-Time</span><span class="pstat-desc">transactional pipeline &amp; dashboard</span></div>
                 <div class="ptags"><span class="sk">React</span><span class="sk">Node.js</span><span class="sk">Azure</span></div>
             </div>
             <div class="pcard rv">
-                <span class="pctag tc-aari">🌐 AARI</span>
+                <span class="pctag tc-aari"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> AARI</span>
                 <div class="ptitle">Full Website Redesign + SEO</div>
                 <div class="pdesc">Complete redesign from scratch — 52+ new responsive pages with top-5 SEO ranking for high-intent keywords. UX improvements and performance optimization throughout.</div>
                 <div class="pstat"><span class="pstat-big">52+</span><span class="pstat-desc">pages built, top-5 SEO ranking</span></div>
@@ -1189,10 +1190,10 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="foot-soc">
-            <a href="mailto:vridhigandhi@gmail.com" class="soc-btn" title="Email">✉️</a>
-            <a href="https://www.linkedin.com/in/vridhi-gandhi/" class="soc-btn" target="_blank" title="LinkedIn">💼</a>
-            <a href="https://wa.me/917506520052" class="soc-btn" target="_blank" title="WhatsApp">💬</a>
-            <a href="https://www.instagram.com/__yomadic__/" class="soc-btn" target="_blank" title="Instagram">📸</a>
+            <a href="mailto:vridhigandhi@gmail.com" class="soc-btn" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>️</a>
+            <a href="https://www.linkedin.com/in/vridhi-gandhi/" class="soc-btn" target="_blank" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></a>
+            <a href="https://wa.me/917506520052" class="soc-btn" target="_blank" title="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></a>
+            <a href="https://www.instagram.com/__yomadic__/" class="soc-btn" target="_blank" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></a>
         </div>
         <div class="foot-copy">© 2025 Vridhi Gandhi — Built by Vridhi.</div>
     </div>
@@ -1202,12 +1203,12 @@
 <div class="chat-widget">
     <div class="chat-panel" id="cpanel">
         <div class="cp-head">
-            <div class="cp-av">🤖</div>
+            <div class="cp-av"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><line x1="12" y1="7" x2="12" y2="11"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg></div>
             <div><div class="cp-name">Ask Vridhi's AI</div><div class="cp-status"><span class="cp-sdot"></span>online</div></div>
-            <button class="cp-close" onclick="toggleChat()">✕</button>
+            <button class="cp-close" onclick="toggleChat()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
         </div>
         <div class="cp-msgs" id="cmsgs">
-            <div class="cmsg cmsg-bot">Hey! 👋 I'm Vridhi's AI assistant. Ask me about her work, skills, or how to get in touch!</div>
+            <div class="cmsg cmsg-bot">Hey! <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M18 11.5V9a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v1.4"/><path d="M14 10V8a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/><path d="M10 9.9V9a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v5"/><path d="M6 14v0a6 6 0 0 0 6 6h2a6 6 0 0 0 6-6v-3a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2"/><line x1="6" y1="14" x2="4" y2="12"/></svg> I'm Vridhi's AI assistant. Ask me about her work, skills, or how to get in touch!</div>
         </div>
         <div class="typing" id="typing"><div class="td"></div><div class="td"></div><div class="td"></div></div>
         <div class="cp-chips">
@@ -1223,7 +1224,7 @@
             <button class="csend" onclick="sendMsg()">→</button>
         </div>
     </div>
-    <button class="chat-toggle" id="ctog" onclick="toggleChat()" title="Chat with AI assistant">🤖</button>
+    <button class="chat-toggle" id="ctog" onclick="toggleChat()" title="Chat with AI assistant"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><line x1="12" y1="7" x2="12" y2="11"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg></button>
 </div>
 
 <script>
@@ -1386,15 +1387,15 @@ function toggleMenu(){
 const KB = {
     greet:{
         p:['hi','hello','hey','namaste','yo','hola'],
-        r:"Hey there! 👋 I'm Vridhi's AI assistant. Ask me about her work, skills, projects, or how to get in touch!"
+        r:"Hey there! <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M18 11.5V9a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v1.4"/><path d="M14 10V8a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/><path d="M10 9.9V9a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v5"/><path d="M6 14v0a6 6 0 0 0 6 6h2a6 6 0 0 0 6-6v-3a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2"/><line x1="6" y1="14" x2="4" y2="12"/></svg> I'm Vridhi's AI assistant. Ask me about her work, skills, projects, or how to get in touch!"
     },
     role:{
         p:['current','role','job','lionsgate','working now','doing now','what do you do'],
-        r:"Vridhi is currently a **Solution Engineer at Lionsgate Play** 🎬 (Oct 2025–present). She works on OTT platform engineering — building CMS workflows, backend APIs, a recommendation engine with Memgraph + OpenSearch, video pipelines, DRM/streaming ops, and content migration. Basically the infrastructure behind what you stream!"
+        r:"Vridhi is currently a **Solution Engineer at Lionsgate Play** <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg> (Oct 2025–present). She works on OTT platform engineering — building CMS workflows, backend APIs, a recommendation engine with Memgraph + OpenSearch, video pipelines, DRM/streaming ops, and content migration. Basically the infrastructure behind what you stream!"
     },
     exp:{
         p:['experience','career','history','companies','worked','background'],
-        r:"Vridhi has worked at 5+ companies:\n\n🎬 **Lionsgate** — Solution Engineer (current)\n📡 **Streambox Media** — Data Scientist (1 yr)\n🌐 **AARI** — Full-Stack Dev (freelance)\n💹 **Finqy / E-Revbay** — Data Analyst Intern\n🏆 **Merkle** — Data Scientist Intern\nPlus Enpointe India. Want details on any role?"
+        r:"Vridhi has worked at 5+ companies:\n\n<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg> **Lionsgate** — Solution Engineer (current)\n<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg> **Streambox Media** — Data Scientist (1 yr)\n<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> **AARI** — Full-Stack Dev (freelance)\n<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg> **Finqy / E-Revbay** — Data Analyst Intern\n<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg> **Merkle** — Data Scientist Intern\nPlus Enpointe India. Want details on any role?"
     },
     skills:{
         p:['skills','tech','stack','technologies','tools','programming'],
@@ -1402,26 +1403,26 @@ const KB = {
     },
     projects:{
         p:['project','portfolio','built','created','what have you'],
-        r:"Key projects:\n\n🔍 **OTT Recommendation Engine** (Lionsgate) — Memgraph + OpenSearch\n🤖 **AI Video Pipeline** — 9+ min cinematic film via Google Veo\n📱 **10K+ Device Automation** (Streambox) — 60-85% effort saved\n📊 **1M+ Events/Day Pipeline** (Merkle) — Kafka → Snowflake\n💹 **Business Portal** (Finqy) — React + Node + Azure\n🌐 **AARI Website** — 52+ pages, top-5 SEO"
+        r:"Key projects:\n\n<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> **OTT Recommendation Engine** (Lionsgate) — Memgraph + OpenSearch\n<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><line x1="12" y1="7" x2="12" y2="11"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg> **AI Video Pipeline** — 9+ min cinematic film via Google Veo\n<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> **10K+ Device Automation** (Streambox) — 60-85% effort saved\n<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg> **1M+ Events/Day Pipeline** (Merkle) — Kafka → Snowflake\n<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg> **Business Portal** (Finqy) — React + Node + Azure\n<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> **AARI Website** — 52+ pages, top-5 SEO"
     },
     edu:{
         p:['education','degree','college','university','studied','nmims','btech'],
-        r:"Dual degree from **SVKM's NMIMS, Mumbai**:\n\n🎓 **BTech Computer Engineering + AI** (2018–2024, GPA 3.74) — Mukesh Patel School\n🏅 **Honours in Data Science & Analysis** (2021–2024, Grade A+) — Narsee Monjee Institute\n\nTwo prestigious schools, one campus!"
+        r:"Dual degree from **SVKM's NMIMS, Mumbai**:\n\n<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> **BTech Computer Engineering + AI** (2018–2024, GPA 3.74) — Mukesh Patel School\n<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg> **Honours in Data Science & Analysis** (2021–2024, Grade A+) — Narsee Monjee Institute\n\nTwo prestigious schools, one campus!"
     },
     awards:{
         p:['award','honor','achievement','recognition','problem solver'],
-        r:"Vridhi has two recognitions:\n\n🏆 **'Problem Solver'** — Merkle (May 2022) for consistently impactful delivery\n🎓 **Honours in Data Science & Analysis** — NMIMS (May 2024, Grade A+)\n\nShe was awarded Problem Solver among the intern cohort at Merkle!"
+        r:"Vridhi has two recognitions:\n\n<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg> **'Problem Solver'** — Merkle (May 2022) for consistently impactful delivery\n<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> **Honours in Data Science & Analysis** — NMIMS (May 2024, Grade A+)\n\nShe was awarded Problem Solver among the intern cohort at Merkle!"
     },
     contact:{
         p:['contact','hire','reach','email','collaborate','work together','connect'],
-        r:"Here's how to reach Vridhi:\n\n✉️ **Email:** vridhigandhi@gmail.com\n💼 **LinkedIn:** linkedin.com/in/vridhi-gandhi\n💬 **WhatsApp:** +91 75065 20052\n📞 **Call:** +91 90823 91198\n\nOr click **'Start a Conversation'** below! She's open to OTT, data, AI and web projects."
+        r:"Here's how to reach Vridhi:\n\n<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>️ **Email:** vridhigandhi@gmail.com\n<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> **LinkedIn:** linkedin.com/in/vridhi-gandhi\n<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> **WhatsApp:** +91 75065 20052\n<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11 19.79 19.79 0 0 1 1.61 2.38 2 2 0 0 1 3.59.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.09 6.09l1.19-1.19a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> **Call:** +91 90823 91198\n\nOr click **'Start a Conversation'** below! She's open to OTT, data, AI and web projects."
     }
 };
 
 function findReply(txt){
     const t=txt.toLowerCase();
     for(const k in KB) if(KB[k].p.some(p=>t.includes(p))) return KB[k].r;
-    return "Hmm, I'm not sure about that. Try asking about Vridhi's **role**, **skills**, **projects**, **education**, or how to **contact** her. Or just go to the contact page! 😊";
+    return "Hmm, I'm not sure about that. Try asking about Vridhi's **role**, **skills**, **projects**, **education**, or how to **contact** her. Or just go to the contact page! <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>";
 }
 
 function addMsg(txt, isUser){
@@ -1454,7 +1455,7 @@ function toggleChat(){
     const p=document.getElementById('cpanel');
     const b=document.getElementById('ctog');
     const o=p.classList.toggle('open');
-    b.textContent=o?'✕':'🤖';
+    b.textContent=o?'<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>':'<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><line x1="12" y1="7" x2="12" y2="11"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>';
     if(o) document.getElementById('cinput').focus();
 }
 </script>
