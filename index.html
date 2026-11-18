@@ -1250,10 +1250,12 @@
             setTimeout(()=>{
                 el.style.transition='opacity .55s ease';
                 el.style.opacity='0';
-                setTimeout(()=>el.remove(), 600);
+                setTimeout(()=>{ try{el.remove()}catch(e){el.style.display='none';} }, 600);
             }, 300);
         }
     }, 110);
+    // Safety fallback — always dismiss after 3s no matter what
+    setTimeout(()=>{ try{el.style.opacity='0'; setTimeout(()=>el.remove(),600);}catch(e){} }, 3000);
 })();
 
 // ========================================
