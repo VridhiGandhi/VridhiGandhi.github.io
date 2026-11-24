@@ -2,12 +2,18 @@
 <html lang="en">
 <head>
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K75LMHVFNP"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-K75LMHVFNP');
+        window.addEventListener('load', function () {
+            var s = document.createElement('script');
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-K75LMHVFNP';
+            s.async = true;
+            document.head.appendChild(s);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', 'G-K75LMHVFNP');
+        });
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,9 +24,16 @@
     <meta property="og:title" content="Vridhi Gandhi — Solution Engineer">
     <meta property="og:description" content="Solution Engineer at Lionsgate Play. Building OTT infrastructure, AI systems, recommendation engines, and data pipelines.">
     <meta property="og:url" content="https://vridhigandhi.github.io/">
-    <meta property="og:image" content="https://vridhigandhi.github.io/images/me.webp">
+    <meta property="og:image" content="https://vridhigandhi.github.io/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Vridhi Gandhi — Solution Engineer">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://vridhigandhi.github.io/images/og-image.png">
     <meta name="theme-color" content="#1e2232">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Person","name":"Vridhi Gandhi","jobTitle":"Solution Engineer","worksFor":{"@type":"Organization","name":"Lionsgate Play"},"url":"https://vridhigandhi.github.io/","image":"https://vridhigandhi.github.io/images/me.webp","sameAs":["https://www.linkedin.com/in/vridhi-gandhi/"],"alumniOf":{"@type":"CollegeOrUniversity","name":"SVKM's NMIMS"}}
+    </script>
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
@@ -47,7 +60,7 @@
         --green:        #ef8354;
         --text:         #ffffff;
         --muted:        #bfc0c0;
-        --dim:          #7a8599;
+        --dim:          #a3adbf;
         --border:       rgba(239,131,84,0.2);
         --card:         rgba(255,255,255,0.03);
         --card-border:  rgba(239,131,84,0.15);
@@ -249,7 +262,7 @@
     @keyframes blink2 { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
     .hero-pre {
         font-family: 'JetBrains Mono', monospace;
-        font-size: 0.85rem; color: var(--cyan);
+        font-size: 0.85rem; color:var(--cyan-l);
         margin-bottom: 14px;
         animation: fadeUp 0.6s ease 0.4s both;
     }
@@ -275,7 +288,7 @@
     }
     .tw-prefix { color: var(--text); }
     #tw {
-        color: var(--cyan);
+        color:var(--cyan-l);
         border-right: 2px solid var(--cyan);
         animation: twBlink 0.7s infinite;
     }
@@ -362,7 +375,7 @@
         border: 1px solid transparent;
     }
     .ftag1 { top: 16px; right: -16px; color: var(--purple-l); border-color: rgba(239,131,84,0.35); animation: flt1 3s ease-in-out infinite; }
-    .ftag2 { bottom: 70px; left: -28px; color: var(--cyan); border-color: rgba(6,182,212,0.35); animation: flt2 3.6s ease-in-out infinite; }
+    .ftag2 { bottom: 70px; left: -28px; color:var(--cyan-l); border-color: rgba(6,182,212,0.35); animation: flt2 3.6s ease-in-out infinite; }
     .ftag3 { bottom: 18px; right: 0; color: var(--green); border-color: rgba(239,131,84,0.35); animation: flt3 4.1s ease-in-out infinite; }
     @keyframes flt1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
     @keyframes flt2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(9px)} }
@@ -505,7 +518,7 @@
         padding: 3px 9px; border-radius: 100px;
         font-family:'JetBrains Mono',monospace; font-size:.68rem;
     }
-    .tb-date { background:rgba(6,182,212,.09); color:var(--cyan); border:1px solid rgba(6,182,212,.2); }
+    .tb-date { background:rgba(6,182,212,.09); color:var(--cyan-l); border:1px solid rgba(6,182,212,.2); }
     .tb-cur  { background:rgba(239,131,84,.09); color:var(--green); border:1px solid rgba(239,131,84,.2); }
     .tb-type { background:rgba(239,131,84,.09); color:var(--purple-l); border:1px solid rgba(239,131,84,.2); }
     .tbuls { list-style:none; display:flex; flex-direction:column; gap:7px; }
@@ -571,7 +584,7 @@
         margin-bottom:18px;
     }
     .tc-lion  { background:rgba(239,131,84,.1); color:var(--purple-l); border:1px solid rgba(239,131,84,.22); }
-    .tc-strm  { background:rgba(6,182,212,.1);  color:var(--cyan);     border:1px solid rgba(6,182,212,.22); }
+    .tc-strm  { background:rgba(6,182,212,.1);  color:var(--cyan-l);     border:1px solid rgba(6,182,212,.22); }
     .tc-mrk   { background:rgba(239,131,84,.1); color:var(--green);    border:1px solid rgba(239,131,84,.22); }
     .tc-fnq   { background:rgba(251,191,36,.1); color:#ef8354;         border:1px solid rgba(251,191,36,.22); }
     .tc-aari  { background:rgba(244,114,182,.1);color:#ef8354;         border:1px solid rgba(244,114,182,.22); }
@@ -620,7 +633,7 @@
     }
     @keyframes ctaGlow { 0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)} 50%{opacity:1;transform:translate(-50%,-50%) scale(1.2)} }
     .cta-in { position:relative; z-index:1; max-width:680px; margin:0 auto; }
-    .cta-tag { font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--cyan); letter-spacing:.22em; margin-bottom:22px; }
+    .cta-tag { font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--cyan-l); letter-spacing:.22em; margin-bottom:22px; }
     .cta-h { font-family:'Space Grotesk',sans-serif; font-size:clamp(2.4rem,5vw,3.8rem); font-weight:700; line-height:1.1; margin-bottom:22px; }
     .cta-sub { font-size:1.05rem; color:var(--muted); margin-bottom:46px; line-height:1.75; }
     .cta-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
@@ -795,9 +808,16 @@
         .photo-ring { width:220px; height:220px; }
         .ftag1, .ftag2, .ftag3 { display:none; }
     }
+    
+    /* accessibility */
+    .skip-link{position:absolute;left:-9999px;top:8px;z-index:10000;background:#ef8354;color:#1e2232;padding:10px 16px;border-radius:8px;font-weight:600;text-decoration:none;}
+    .skip-link:focus{left:8px;}
+    :focus-visible{outline:2px solid #f4a07a;outline-offset:3px;}
+    @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important;}}
     </style>
 </head>
 <body>
+<a class="skip-link" href="#hero">Skip to content</a>
 
 <!-- CURSOR -->
 <div class="cursor" id="cur"></div>
@@ -1169,11 +1189,11 @@
             <h2 class="sec-h2" style="text-align:center">Worked With</h2>
         </div>
         <div class="clients-row rv">
-            <a href="https://www.linkedin.com/company/streamboxmedia/" class="cli" target="_blank"><img src="images/clients/StreamBox.png" alt="Streambox"></a>
-            <a href="https://www.linkedin.com/company/aari/" class="cli" target="_blank"><img src="images/clients/AARI.png" alt="AARI"></a>
-            <a href="https://www.linkedin.com/products/e-revbay-private-limited-finqy/" class="cli" target="_blank"><img src="images/clients/FINQY.png" alt="FINQY"></a>
-            <a href="https://www.linkedin.com/company/enpointe-india/" class="cli" target="_blank"><img src="images/clients/Enpointe.png" alt="Enpointe"></a>
-            <a href="https://www.linkedin.com/company/merkle/" class="cli" target="_blank"><img src="images/clients/Merkle.png" alt="Merkle"></a>
+            <a href="https://www.linkedin.com/company/streamboxmedia/" class="cli" target="_blank"><img loading="lazy" decoding="async" src="images/clients/StreamBox.webp" alt="Streambox"></a>
+            <a href="https://www.linkedin.com/company/aari/" class="cli" target="_blank"><img loading="lazy" decoding="async" src="images/clients/AARI.webp" alt="AARI"></a>
+            <a href="https://www.linkedin.com/products/e-revbay-private-limited-finqy/" class="cli" target="_blank"><img loading="lazy" decoding="async" src="images/clients/FINQY.webp" alt="FINQY"></a>
+            <a href="https://www.linkedin.com/company/enpointe-india/" class="cli" target="_blank"><img loading="lazy" decoding="async" src="images/clients/Enpointe.webp" alt="Enpointe"></a>
+            <a href="https://www.linkedin.com/company/merkle/" class="cli" target="_blank"><img loading="lazy" decoding="async" src="images/clients/Merkle.webp" alt="Merkle"></a>
         </div>
     </div>
 </section>
@@ -1429,7 +1449,7 @@ const KB = {
 
 function findReply(txt){
     const t=txt.toLowerCase();
-    for(const k in KB) if(KB[k].p.some(p=>t.includes(p))) return KB[k].r;
+    for(const k in KB) if(KB[k].p.some(p=>p.length<=4 ? new RegExp('\\b'+p+'\\b').test(t) : t.includes(p))) return KB[k].r;
     return "Hmm, I'm not sure about that. Try asking about Vridhi's **role**, **skills**, **projects**, **education**, or how to **contact** her. Or just go to the contact page! ";
 }
 
@@ -1437,7 +1457,7 @@ function addMsg(txt, isUser){
     const w=document.getElementById('cmsgs');
     const d=document.createElement('div');
     d.className='cmsg '+(isUser?'cmsg-usr':'cmsg-bot');
-    d.innerHTML=txt.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>');
+    d.innerHTML=txt.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>');
     w.appendChild(d);
     w.scrollTop=w.scrollHeight;
 }

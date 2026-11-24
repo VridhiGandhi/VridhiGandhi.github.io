@@ -1,8 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K75LMHVFNP"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K75LMHVFNP');</script>
+    <script>
+        window.addEventListener('load', function () {
+            var s = document.createElement('script');
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-K75LMHVFNP';
+            s.async = true;
+            document.head.appendChild(s);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', 'G-K75LMHVFNP');
+        });
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Certificates — Vridhi Gandhi</title>
@@ -13,8 +24,12 @@
     <meta property="og:title" content="Certificates — Vridhi Gandhi">
     <meta property="og:description" content="Certifications in machine learning, data science, AI, and programming — Vridhi Gandhi, Solution Engineer.">
     <meta property="og:url" content="https://vridhigandhi.github.io/certificates.html">
-    <meta property="og:image" content="https://vridhigandhi.github.io/images/me.webp">
+    <meta property="og:image" content="https://vridhigandhi.github.io/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Vridhi Gandhi — Solution Engineer">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://vridhigandhi.github.io/images/og-image.png">
     <meta name="theme-color" content="#1e2232">
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
@@ -27,7 +42,7 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
     <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-    :root{--bg:#1e2232;--bg2:#2d3142;--bg3:#353a52;--purple:#ef8354;--purple-l:#f4a07a;--cyan:#4f5d75;--green:#ef8354;--text:#ffffff;--muted:#bfc0c0;--dim:#7a8599;--border:rgba(239,131,84,0.2);--card:rgba(255,255,255,0.03);--card-border:rgba(239,131,84,0.15);}
+    :root{--bg:#1e2232;--bg2:#2d3142;--bg3:#353a52;--purple:#ef8354;--purple-l:#f4a07a;--cyan:#4f5d75;--green:#ef8354;--text:#ffffff;--muted:#bfc0c0;--dim:#a3adbf;--border:rgba(239,131,84,0.2);--card:rgba(255,255,255,0.03);--card-border:rgba(239,131,84,0.15);}
     html{scroll-behavior:smooth;}
     body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
     ::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--purple);border-radius:3px;}
@@ -54,7 +69,7 @@
     .page-hero{padding:140px 40px 80px;background:var(--bg2);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
     .page-hero::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(239,131,84,.08) 0%,transparent 70%);top:-100px;right:-100px;pointer-events:none;}
     .page-hero-in{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
-    .ph-tag{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--cyan);letter-spacing:.22em;text-transform:uppercase;margin-bottom:16px;}
+    .ph-tag{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--cyan-l);letter-spacing:.22em;text-transform:uppercase;margin-bottom:16px;}
     .ph-h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.4rem,5vw,3.6rem);font-weight:700;line-height:1.1;margin-bottom:18px;}
     .grad-text{background:linear-gradient(135deg,var(--purple-l) 0%,var(--cyan) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
     .ph-sub{font-size:1.05rem;color:var(--muted);max-width:600px;line-height:1.75;margin-bottom:36px;}
@@ -114,9 +129,16 @@
     @media(max-width:900px){.cert-grid{grid-template-columns:1fr 1fr;}}
     @media(max-width:768px){#certs{padding:50px 22px 70px;}#nav{padding:14px 22px;}.nav-links{display:none;}.hamburger{display:flex;}.page-hero{padding:110px 22px 60px;}.ph-stats{gap:22px;}}
     @media(max-width:520px){.cert-grid{grid-template-columns:1fr;}}
+    
+    /* accessibility */
+    .skip-link{position:absolute;left:-9999px;top:8px;z-index:10000;background:#ef8354;color:#1e2232;padding:10px 16px;border-radius:8px;font-weight:600;text-decoration:none;}
+    .skip-link:focus{left:8px;}
+    :focus-visible{outline:2px solid #f4a07a;outline-offset:3px;}
+    @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important;}}
     </style>
 </head>
 <body>
+<a class="skip-link" href="#certs">Skip to content</a>
 <div class="cursor" id="cur"></div>
 <div class="cursor-trail" id="cur-t"></div>
 
@@ -164,97 +186,97 @@
         <div class="cert-grid" id="cert-grid">
 
             <div class="cert-card rv" data-cat="data" onclick="openLB(this)">
-                <div class="cert-img-wrap"><img src="images/Certificates/Applied Data Science Capstone_page-0001.webp" alt="Applied Data Science Capstone" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
+                <div class="cert-img-wrap"><img width="1200" height="927" src="images/Certificates/Applied Data Science Capstone_page-0001.webp" alt="Applied Data Science Capstone" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
                 <div class="cert-body"><div class="cert-cat">Data Science</div><div class="cert-name">Applied Data Science Capstone</div><div class="cert-issuer">IBM / Coursera</div></div>
             </div>
 
             <div class="cert-card rv" data-cat="prog" onclick="openLB(this)">
-                <div class="cert-img-wrap"><img src="images/Certificates/Code Yourself! An Introduction to Programming_page-0001.webp" alt="Code Yourself" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
+                <div class="cert-img-wrap"><img width="1200" height="927" src="images/Certificates/Code Yourself! An Introduction to Programming_page-0001.webp" alt="Code Yourself" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
                 <div class="cert-body"><div class="cert-cat">Programming</div><div class="cert-name">Code Yourself! An Introduction to Programming</div><div class="cert-issuer">University of Edinburgh / Coursera</div></div>
             </div>
 
             <div class="cert-card rv" data-cat="data" onclick="openLB(this)">
-                <div class="cert-img-wrap"><img src="images/Certificates/Data Analysis with Python_page-0001.webp" alt="Data Analysis with Python" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
+                <div class="cert-img-wrap"><img width="1200" height="927" src="images/Certificates/Data Analysis with Python_page-0001.webp" alt="Data Analysis with Python" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
                 <div class="cert-body"><div class="cert-cat">Data Science</div><div class="cert-name">Data Analysis with Python</div><div class="cert-issuer">IBM / Coursera</div></div>
             </div>
 
             <div class="cert-card rv" data-cat="data" onclick="openLB(this)">
-                <div class="cert-img-wrap"><img src="images/Certificates/Data Visualization with Python_page-0001.webp" alt="Data Visualization with Python" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
+                <div class="cert-img-wrap"><img width="1200" height="927" src="images/Certificates/Data Visualization with Python_page-0001.webp" alt="Data Visualization with Python" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
                 <div class="cert-body"><div class="cert-cat">Data Science</div><div class="cert-name">Data Visualization with Python</div><div class="cert-issuer">IBM / Coursera</div></div>
             </div>
 
             <div class="cert-card rv" data-cat="data" onclick="openLB(this)">
-                <div class="cert-img-wrap"><img src="images/Certificates/Databases and SQL for Data Science with Python_page-0001.webp" alt="Databases and SQL" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
+                <div class="cert-img-wrap"><img width="1200" height="927" src="images/Certificates/Databases and SQL for Data Science with Python_page-0001.webp" alt="Databases and SQL" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
                 <div class="cert-body"><div class="cert-cat">Data Science</div><div class="cert-name">Databases and SQL for Data Science with Python</div><div class="cert-issuer">IBM / Coursera</div></div>
             </div>
 
             <div class="cert-card rv" data-cat="dl" onclick="openLB(this)">
-                <div class="cert-img-wrap"><img src="images/Certificates/Improving Deep Neural Networks - Hyperparameter Tuning, Regularization and Optimization_page-0001.webp" alt="Improving Deep Neural Networks" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
+                <div class="cert-img-wrap"><img width="1200" height="927" src="images/Certificates/Improving Deep Neural Networks - Hyperparameter Tuning, Regularization and Optimization_page-0001.webp" alt="Improving Deep Neural Networks" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
                 <div class="cert-body"><div class="cert-cat">Deep Learning</div><div class="cert-name">Improving Deep Neural Networks</div><div class="cert-issuer">DeepLearning.AI / Coursera</div></div>
             </div>
 
             <div class="cert-card rv" data-cat="prog" onclick="openLB(this)">
-                <div class="cert-img-wrap"><img src="images/Certificates/Learning How to Learn - Powerful mental tools to help you master tough subjects_page-0001.webp" alt="Learning How to Learn" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
+                <div class="cert-img-wrap"><img width="1200" height="927" src="images/Certificates/Learning How to Learn - Powerful mental tools to help you master tough subjects_page-0001.webp" alt="Learning How to Learn" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
                 <div class="cert-body"><div class="cert-cat">Learning Skills</div><div class="cert-name">Learning How to Learn</div><div class="cert-issuer">UC San Diego / Coursera</div></div>
             </div>
 
             <div class="cert-card rv" data-cat="ml" onclick="openLB(this)">
-                <div class="cert-img-wrap"><img src="images/Certificates/Machine Learning - Classification_page-0001.webp" alt="ML Classification" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
+                <div class="cert-img-wrap"><img width="1200" height="927" src="images/Certificates/Machine Learning - Classification_page-0001.webp" alt="ML Classification" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
                 <div class="cert-body"><div class="cert-cat">Machine Learning</div><div class="cert-name">Machine Learning — Classification</div><div class="cert-issuer">University of Washington / Coursera</div></div>
             </div>
 
             <div class="cert-card rv" data-cat="ml" onclick="openLB(this)">
-                <div class="cert-img-wrap"><img src="images/Certificates/Machine Learning - Clustering & Retrieval_page-0001.webp" alt="ML Clustering" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
+                <div class="cert-img-wrap"><img width="1200" height="927" src="images/Certificates/Machine Learning - Clustering & Retrieval_page-0001.webp" alt="ML Clustering" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
                 <div class="cert-body"><div class="cert-cat">Machine Learning</div><div class="cert-name">Machine Learning — Clustering & Retrieval</div><div class="cert-issuer">University of Washington / Coursera</div></div>
             </div>
 
             <div class="cert-card rv" data-cat="ml" onclick="openLB(this)">
-                <div class="cert-img-wrap"><img src="images/Certificates/Machine Learning - Regression_page-0001.webp" alt="ML Regression" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
+                <div class="cert-img-wrap"><img width="1200" height="927" src="images/Certificates/Machine Learning - Regression_page-0001.webp" alt="ML Regression" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
                 <div class="cert-body"><div class="cert-cat">Machine Learning</div><div class="cert-name">Machine Learning — Regression</div><div class="cert-issuer">University of Washington / Coursera</div></div>
             </div>
 
             <div class="cert-card rv" data-cat="ml" onclick="openLB(this)">
-                <div class="cert-img-wrap"><img src="images/Certificates/Machine Learning Foundations - A Case Study Approach_page-0001.webp" alt="ML Foundations" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
+                <div class="cert-img-wrap"><img width="1200" height="927" src="images/Certificates/Machine Learning Foundations - A Case Study Approach_page-0001.webp" alt="ML Foundations" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
                 <div class="cert-body"><div class="cert-cat">Machine Learning</div><div class="cert-name">Machine Learning Foundations: A Case Study Approach</div><div class="cert-issuer">University of Washington / Coursera</div></div>
             </div>
 
             <div class="cert-card rv" data-cat="dl" onclick="openLB(this)">
-                <div class="cert-img-wrap"><img src="images/Certificates/Neural Networks and Deep Learning_page-0001.webp" alt="Neural Networks" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
+                <div class="cert-img-wrap"><img width="1200" height="927" src="images/Certificates/Neural Networks and Deep Learning_page-0001.webp" alt="Neural Networks" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
                 <div class="cert-body"><div class="cert-cat">Deep Learning</div><div class="cert-name">Neural Networks and Deep Learning</div><div class="cert-issuer">DeepLearning.AI / Coursera</div></div>
             </div>
 
             <div class="cert-card rv" data-cat="prog" onclick="openLB(this)">
-                <div class="cert-img-wrap"><img src="images/Certificates/Python Programming - A Concise Introduction_page-0001.webp" alt="Python Programming" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
+                <div class="cert-img-wrap"><img width="1200" height="927" src="images/Certificates/Python Programming - A Concise Introduction_page-0001.webp" alt="Python Programming" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
                 <div class="cert-body"><div class="cert-cat">Programming</div><div class="cert-name">Python Programming: A Concise Introduction</div><div class="cert-issuer">Wesleyan University / Coursera</div></div>
             </div>
 
             <div class="cert-card rv" data-cat="data" onclick="openLB(this)">
-                <div class="cert-img-wrap"><img src="images/Certificates/Python for Data Science, AI & Development_page-0001.webp" alt="Python for Data Science" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
+                <div class="cert-img-wrap"><img width="1200" height="927" src="images/Certificates/Python for Data Science, AI & Development_page-0001.webp" alt="Python for Data Science" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
                 <div class="cert-body"><div class="cert-cat">Data Science</div><div class="cert-name">Python for Data Science, AI & Development</div><div class="cert-issuer">IBM / Coursera</div></div>
             </div>
 
             <div class="cert-card rv" data-cat="dl" onclick="openLB(this)">
-                <div class="cert-img-wrap"><img src="images/Certificates/Sequences Time Series and Prediction_page-0001.webp" alt="Sequences Time Series" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
+                <div class="cert-img-wrap"><img width="1200" height="927" src="images/Certificates/Sequences Time Series and Prediction_page-0001.webp" alt="Sequences Time Series" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
                 <div class="cert-body"><div class="cert-cat">Deep Learning</div><div class="cert-name">Sequences, Time Series and Prediction</div><div class="cert-issuer">DeepLearning.AI / Coursera</div></div>
             </div>
 
             <div class="cert-card rv" data-cat="data" onclick="openLB(this)">
-                <div class="cert-img-wrap"><img src="images/Certificates/Statistics for Data Science with Python_page-0001.webp" alt="Statistics for Data Science" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
+                <div class="cert-img-wrap"><img width="1200" height="927" src="images/Certificates/Statistics for Data Science with Python_page-0001.webp" alt="Statistics for Data Science" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
                 <div class="cert-body"><div class="cert-cat">Data Science</div><div class="cert-name">Statistics for Data Science with Python</div><div class="cert-issuer">IBM / Coursera</div></div>
             </div>
 
             <div class="cert-card rv" data-cat="dl" onclick="openLB(this)">
-                <div class="cert-img-wrap"><img src="images/Certificates/Structuring Machine Learning Projects_page-0001.webp" alt="Structuring ML Projects" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
+                <div class="cert-img-wrap"><img width="1200" height="927" src="images/Certificates/Structuring Machine Learning Projects_page-0001.webp" alt="Structuring ML Projects" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
                 <div class="cert-body"><div class="cert-cat">Deep Learning</div><div class="cert-name">Structuring Machine Learning Projects</div><div class="cert-issuer">DeepLearning.AI / Coursera</div></div>
             </div>
 
             <div class="cert-card rv" data-cat="ml" onclick="openLB(this)">
-                <div class="cert-img-wrap"><img src="images/Certificates/The Power of Machine Learning - Boost Business, Accumulate Clicks, Fight Fraud, and Deny Deadbeats_page-0001.webp" alt="Power of ML" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
+                <div class="cert-img-wrap"><img width="1200" height="927" src="images/Certificates/The Power of Machine Learning - Boost Business, Accumulate Clicks, Fight Fraud, and Deny Deadbeats_page-0001.webp" alt="Power of ML" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
                 <div class="cert-body"><div class="cert-cat">Machine Learning</div><div class="cert-name">The Power of Machine Learning</div><div class="cert-issuer">Coursera</div></div>
             </div>
 
             <div class="cert-card rv" data-cat="data" onclick="openLB(this)">
-                <div class="cert-img-wrap"><img src="images/Certificates/Tools for Data Science_page-0001.webp" alt="Tools for Data Science" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
+                <div class="cert-img-wrap"><img width="1200" height="927" src="images/Certificates/Tools for Data Science_page-0001.webp" alt="Tools for Data Science" loading="lazy"><div class="cert-overlay"><span class="cert-overlay-txt">View Certificate</span></div></div>
                 <div class="cert-body"><div class="cert-cat">Data Science</div><div class="cert-name">Tools for Data Science</div><div class="cert-issuer">IBM / Coursera</div></div>
             </div>
 
@@ -263,7 +285,7 @@
 </section>
 
 <!-- LIGHTBOX -->
-<div id="lb">
+<div id="lb" role="dialog" aria-modal="true" aria-label="Certificate preview">
     <div id="lb-inner">
         <button id="lb-close" onclick="closeLB()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
         <img id="lb-img" src="" alt="">
@@ -324,6 +346,7 @@ function openLB(card){
     document.getElementById('lb').classList.add('open');
     document.body.style.overflow='hidden';
 }
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeLB();});
 function closeLB(){document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}
 document.getElementById('lb').addEventListener('click',e=>{if(e.target===document.getElementById('lb'))closeLB();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLB();});
