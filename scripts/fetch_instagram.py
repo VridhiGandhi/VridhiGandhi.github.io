@@ -8,12 +8,18 @@ WebP in images/travel/, and writes data/instagram.json.
 If anything fails, the script exits non-zero WITHOUT touching existing files,
 so the site keeps showing the last good posts.
 """
-import io, json, os, re, sys, urllib.parse, urllib.request
+import io, json, os, re, sys, urllib.error, urllib.parse, urllib.request
 from datetime import datetime, timezone
 from PIL import Image
 
-API_BASE = os.environ.get("IG_API_BASE", "https://graph.instagram.com").rstrip("/")
 API_VERSION = os.environ.get("IG_API_VERSION", "v26.0")
+# Public (non-secret) ID of the Instagram account; used by the graph.facebook.com style endpoint.
+IG_USER_ID = os.environ.get("IG_USER_ID", "17841447229593140").strip()
+# Endpoints are tried in order; the first one that accepts the token wins.
+#  - graph.instagram.com/me           : tokens from "Instagram API with Instagram Login" (IGAA...)
+#  - graph.facebook.com/<IG_USER_ID>  : tokens from Facebook Login for Business / system users (EAA...)
+HOSTS = [h for h in os.environ.get(
+    "IG_HOSTS", "https://graph.instagram.com/me,https://graph.facebook.com/" + IG_USER_ID).split(",") if h]
 TOKEN = os.environ.get("IG_TOKEN", "").strip()
 MAX_POSTS = int(os.environ.get("IG_MAX_POSTS", "9"))
 SIZE = 640
@@ -49,10 +55,28 @@ def main():
     if not TOKEN:
         sys.exit("IG_TOKEN is not set")
     query = urllib.parse.urlencode({"fields": FIELDS, "limit": 25, "access_token": TOKEN})
-    url = f"{API_BASE}/{API_VERSION}/me/media?{query}" if API_VERSION else f"{API_BASE}/me/media?{query}"
-    payload = json.loads(get(url))
-    if "data" not in payload:
-        sys.exit("Unexpected API response (no 'data')")
+    payload, errors = None, []
+    for base in HOSTS:
+        # build "<host>/<version>/<me or id>/media"
+        parts = base.rstrip("/").rsplit("/", 1)
+        url = f"{parts[0]}/{API_VERSION}/{parts[1]}/media?{query}"
+        try:
+            data = json.loads(get(url))
+            if "data" in data:
+                payload = data
+                break
+            errors.append(f"{parts[0]}: no 'data' in response")
+        except urllib.error.HTTPError as e:
+            # Print only Meta's error message, never the URL (it contains the token).
+            try:
+                msg = json.loads(e.read()).get("error", {}).get("message", "")
+            except Exception:
+                msg = ""
+            errors.append(f"{parts[0]}: HTTP {e.code} {msg}".strip())
+        except Exception as e:
+            errors.append(f"{parts[0]}: {type(e).__name__}")
+    if payload is None:
+        sys.exit("All endpoints failed:\n  " + "\n  ".join(errors))
 
     posts, files = [], {}
     for item in payload["data"]:
