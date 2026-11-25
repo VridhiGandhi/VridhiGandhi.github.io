@@ -1,0 +1,21 @@
+name: Refresh Instagram token
+# Optional. Needs a repo secret SECRETS_PAT: a fine-grained token limited to this
+# repo with "Secrets: Read and write". Without it, refresh the token by hand
+# (Meta app dashboard) before the 60 days run out.
+on:
+  schedule:
+    - cron: "0 3 1 * *"
+  workflow_dispatch:
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Refresh long-lived token
+        env:
+          IG_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
+          GH_TOKEN: ${{ secrets.SECRETS_PAT }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then echo "SECRETS_PAT not set; skipping"; exit 0; fi
+          NEW=$(curl -fsS "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${IG_TOKEN}" | python3 -c "import sys,json; print(json.load(sys.stdin)['access_token'])")
+          echo "::add-mask::$NEW"
+          gh secret set INSTAGRAM_TOKEN --body "$NEW" --repo "${{ github.repository }}"

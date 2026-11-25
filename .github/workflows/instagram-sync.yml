@@ -1,0 +1,35 @@
+name: Sync Instagram
+# Note: scheduled workflows only run on the repository's default branch.
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: instagram-sync
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pillow
+      - name: Fetch latest posts
+        env:
+          IG_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
+        run: python scripts/fetch_instagram.py
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/instagram.json images/travel
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "chore: sync Instagram posts"
+            git push
+          fi
